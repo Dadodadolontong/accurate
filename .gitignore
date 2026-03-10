@@ -1,0 +1,13 @@
+# Environment variables (secrets)
+.env
+
+# Claude Code local settings
+.claude/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs
+*.log
