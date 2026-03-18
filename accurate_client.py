@@ -34,6 +34,13 @@ from datetime import datetime, timezone
 
 import requests
 
+from schema_defs import (
+    CUSTOMER_COLUMNS,
+    SALES_INVOICE_COLUMNS,
+    SALES_ORDER_COLUMNS,
+    SALES_RETURN_COLUMNS,
+    make_fields_param,
+)
 from config import (
     ACCURATE_API_TOKEN,
     ACCURATE_HOST,
@@ -88,18 +95,36 @@ class AccurateClient:
         path: str,
         last_update: datetime | None = None,
         fields: str | None = None,
+        extra_params: dict | None = None,
     ) -> list[dict]:
         """Fetch every page from a list endpoint, optionally filtered by lastUpdate.
 
         Parameters
         ----------
-        path:        e.g. ``/api/customer/list.do``
-        last_update: when set, only records updated at or after this time are
-                     fetched (incremental sync).
-        fields:      comma-separated list of fields to return.
-                     The API returns only ``id`` when this is omitted.
+        path:         e.g. ``/api/customer/list.do``
+        last_update:  when set, only records updated at or after this time are
+                      fetched (incremental sync).
+        fields:       comma-separated list of fields to return.
+                      The API returns only ``id`` when this is omitted.
+        extra_params: any additional raw API query parameters, merged in after
+                      the standard ones.  Useful for:
+
+                      Additional filters::
+
+                          {"filter.branchId.op": "EQUAL", "filter.branchId.val": "5"}
+                          {"filter.status.op": "EQUAL",   "filter.status.val": "POSTED"}
+                          {"filter.suspended.op": "EQUAL","filter.suspended.val": "false"}
+
+                      Sorting::
+
+                          {"sp.sort": "lastUpdate", "sp.sortOrder": "ASC"}
+
+                      Note: ``sp.page`` and ``sp.pageSize`` are managed internally
+                      and will be overwritten even if supplied here.
         """
         params: dict = {"sp.pageSize": PAGE_SIZE}
+        if extra_params:
+            params.update(extra_params)
         if last_update:
             params["filter.lastUpdate.op"]  = "GREATER_EQUAL_THAN"
             params["filter.lastUpdate.val"] = last_update.strftime("%d/%m/%Y %H:%M:%S")
@@ -157,29 +182,11 @@ class AccurateClient:
     # list endpoint, then call detail.do for each record individually.
     # This is acceptable because there are typically very few categories (<50).
 
-    _FIELDS_CUSTOMER = (
-        "id,customerNo,name,email,mobilePhone,workPhone,fax,"
-        "billStreet,billCity,billProvince,billZipCode,billCountry,"
-        "categoryId,category,currencyId,defaultTermId,term,"
-        "notes,website,npwpNo,suspended,customerTaxType,documentCode,"
-        "lastUpdate,createDate"
-    )
-
-    _FIELDS_SALES_INVOICE = (
-        "id,number,transDate,dueDate,taxDate,shipDate,"
-        "customerId,customer,totalAmount,subTotal,salesAmount,"
-        "tax1Amount,tax1Rate,outstanding,status,approvalStatus,"
-        "description,masterSalesmanId,masterSalesmanName,"
-        "branchId,branchName,currencyId,rate,detailItem"
-    )
-
-    _FIELDS_SALES_RETURN = (
-        "id,number,transDate,taxDate,"
-        "customerId,customer,invoiceId,totalAmount,subTotal,"
-        "returnAmount,tax1Amount,tax1Rate,"
-        "returnType,returnStatusType,approvalStatus,"
-        "description,branchId,currencyId,rate,detailItem,detailExpense"
-    )
+    # Field lists are derived from schema_defs.*_COLUMNS – edit those, not here.
+    _FIELDS_CUSTOMER      = make_fields_param(CUSTOMER_COLUMNS)
+    _FIELDS_SALES_INVOICE = make_fields_param(SALES_INVOICE_COLUMNS)
+    _FIELDS_SALES_ORDER   = make_fields_param(SALES_ORDER_COLUMNS)
+    _FIELDS_SALES_RETURN  = make_fields_param(SALES_RETURN_COLUMNS)
 
     def get_customer_categories(self, last_update: datetime | None = None) -> list[dict]:
         """Fetch all customer categories.
@@ -206,23 +213,93 @@ class AccurateClient:
         logger.info("Fetched %d customer categories (via detail endpoint)", len(results))
         return results
 
-    def get_customers(self, last_update: datetime | None = None) -> list[dict]:
+    def get_customers(
+        self,
+        last_update: datetime | None = None,
+        extra_params: dict | None = None,
+    ) -> list[dict]:
         return self.get_list(
             "/api/customer/list.do",
             last_update,
             fields=self._FIELDS_CUSTOMER,
+            extra_params=extra_params,
         )
 
-    def get_sales_invoices(self, last_update: datetime | None = None) -> list[dict]:
-        return self.get_list(
+    def _enrich_detail_fields(
+        self,
+        records: list[dict],
+        detail_path: str,
+        fields: list[str],
+    ) -> None:
+        """Fetch detail.do for each record and attach the requested fields in-place.
+
+        Used to retrieve array fields (detailItem, detailExpense) that the list
+        endpoint does not return even when included in the ``fields`` parameter.
+        """
+        logger.info(
+            "Fetching detail for %d record(s) from %s (fields: %s)",
+            len(records), detail_path, fields,
+        )
+        for rec in records:
+            rec_id = rec.get("id")
+            if not rec_id:
+                continue
+            try:
+                body = self._get(detail_path, {"id": rec_id})
+                if body.get("s") and body.get("d"):
+                    detail = body["d"]
+                    for field in fields:
+                        rec[field] = detail.get(field)
+                else:
+                    logger.warning("Detail fetch returned no data for id=%s", rec_id)
+            except Exception as exc:
+                logger.warning("Detail fetch failed for id=%s: %s", rec_id, exc)
+
+    def get_sales_orders(
+        self,
+        last_update: datetime | None = None,
+        extra_params: dict | None = None,
+    ) -> list[dict]:
+        records = self.get_list(
+            "/api/sales-order/list.do",
+            last_update,
+            fields=self._FIELDS_SALES_ORDER,
+            extra_params=extra_params,
+        )
+        if records:
+            self._enrich_detail_fields(
+                records, "/api/sales-order/detail.do", ["detailItem", "detailExpense"]
+            )
+        return records
+
+    def get_sales_invoices(
+        self,
+        last_update: datetime | None = None,
+        extra_params: dict | None = None,
+    ) -> list[dict]:
+        records = self.get_list(
             "/api/sales-invoice/list.do",
             last_update,
             fields=self._FIELDS_SALES_INVOICE,
+            extra_params=extra_params,
         )
+        if records:
+            self._enrich_detail_fields(records, "/api/sales-invoice/detail.do", ["detailItem"])
+        return records
 
-    def get_sales_returns(self, last_update: datetime | None = None) -> list[dict]:
-        return self.get_list(
+    def get_sales_returns(
+        self,
+        last_update: datetime | None = None,
+        extra_params: dict | None = None,
+    ) -> list[dict]:
+        records = self.get_list(
             "/api/sales-return/list.do",
             last_update,
             fields=self._FIELDS_SALES_RETURN,
+            extra_params=extra_params,
         )
+        if records:
+            self._enrich_detail_fields(
+                records, "/api/sales-return/detail.do", ["detailItem", "detailExpense"]
+            )
+        return records

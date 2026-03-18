@@ -21,16 +21,18 @@ HOST       = "https://zeus.accurate.id"
 # ─────────────────────────────────────────────────────────────────────────────
 # CALL  ← change the path and params to probe any endpoint
 # ─────────────────────────────────────────────────────────────────────────────
-PATH   = "/accurate/api/customer-category/detail.do"
+PATH   = "/accurate/api/sales-order/detail.do"
 
 PARAMS = {
-    "id": 2000
+    "number": "SO.0325-001"
     # Uncomment and edit to request specific fields:
-    # "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,lastUpdate,createDate",
+    # "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     #
     # Uncomment to filter by last-update date:
     # "filter.lastUpdate.op" : "GREATER_EQUAL_THAN",
     # "filter.lastUpdate.val": "01/01/2026 00:00:00",
+    #"sp.page"    : 1,
+    #"sp.pageSize": 5,
 }
 
 # Other endpoints you can try (just change PATH above):

@@ -4,17 +4,26 @@ All tables use ReplacingMergeTree(updated_at) so that repeated INSERTs are
 idempotent.  Deduplication happens on background merge; use
 ``SELECT … FINAL`` when you need immediate consistency (e.g. sync_log reads).
 
-Table schemas are kept in sync with the actual Accurate API response fields
-discovered by probing the live endpoints.
+Entity table schemas are auto-generated from schema_defs.*_COLUMNS definitions.
+To add, remove, or rename a field, edit schema_defs.py only.
 """
 
 import logging
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 import clickhouse_connect
 from clickhouse_connect.driver.client import Client
 
 from config import CH_DATABASE, CH_HOST, CH_PASSWORD, CH_PORT, CH_SECURE, CH_USER
+from schema_defs import (
+    CUSTOMER_CATEGORY_COLUMNS,
+    CUSTOMER_COLUMNS,
+    SALES_INVOICE_COLUMNS,
+    SALES_ORDER_COLUMNS,
+    SALES_RETURN_COLUMNS,
+    col_names,
+    make_ddl,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -50,102 +59,58 @@ _DDL = [
     ORDER BY entity
     """,
 
-    # ------------------------------------------------------------------
-    # customer_categories
-    # API fields: id, name, nameWithIndentStrip, lvl, defaultCategory,
-    #             sub, parent{id,name}
-    # ------------------------------------------------------------------
-    """
-    CREATE TABLE IF NOT EXISTS customer_categories (
-        id               Int64,
-        name             String,
-        name_strip       String,
-        lvl              Int32,
-        default_category Bool,
-        sub              Bool,
-        parent_id        Nullable(Int64),
-        parent_name      String,
-        updated_at       DateTime DEFAULT now()
-    ) ENGINE = ReplacingMergeTree(updated_at)
-    ORDER BY id
-    """,
+    # Entity tables – DDL auto-generated from schema_defs.*_COLUMNS.
+    # To add/remove/rename a column, edit schema_defs.py only.
+    make_ddl("customer_categories", CUSTOMER_CATEGORY_COLUMNS),
+    make_ddl("customers",           CUSTOMER_COLUMNS),
+    make_ddl("sales_orders",        SALES_ORDER_COLUMNS),
 
     # ------------------------------------------------------------------
-    # customers
-    # API fields: id, customerNo, name, email, mobilePhone, workPhone,
-    #   fax, billStreet, billCity, billProvince, billZipCode, billCountry,
-    #   categoryId, category{name}, currencyId, term{name},
-    #   notes, website, npwpNo, suspended, customerTaxType, documentCode,
-    #   lastUpdate, createDate
+    # sales_order_items
+    # API detailItem fields: id, seq, itemId, item{no,name}, itemUnit{name},
+    #   quantity, unitPrice, totalPrice, tax1Rate, tax1Amount
     # ------------------------------------------------------------------
     """
-    CREATE TABLE IF NOT EXISTS customers (
-        id                Int64,
-        customer_no       String,
-        name              String,
-        email             String,
-        mobile_phone      String,
-        work_phone        String,
-        fax               String,
-        bill_street       String,
-        bill_city         String,
-        bill_province     String,
-        bill_zip_code     String,
-        bill_country      String,
-        category_id       Nullable(Int64),
-        category_name     String,
-        currency_id       Nullable(Int64),
-        term_name         String,
-        notes             String,
-        website           String,
-        npwp_no           String,
-        suspended         Bool,
-        customer_tax_type String,
-        document_code     String,
-        last_update       Nullable(DateTime),
-        create_date       Nullable(DateTime),
-        updated_at        DateTime DEFAULT now()
-    ) ENGINE = ReplacingMergeTree(updated_at)
-    ORDER BY id
-    """,
-
-    # ------------------------------------------------------------------
-    # sales_invoices  (header only – line items in sales_invoice_items)
-    # API fields: id, number, transDate, dueDate, taxDate, shipDate,
-    #   customerId, customer{name}, totalAmount, subTotal, salesAmount,
-    #   tax1Amount, tax1Rate, outstanding, status, approvalStatus,
-    #   description, masterSalesmanId, masterSalesmanName,
-    #   branchId, branchName, currencyId, rate
-    # ------------------------------------------------------------------
-    """
-    CREATE TABLE IF NOT EXISTS sales_invoices (
+    CREATE TABLE IF NOT EXISTS sales_order_items (
         id               Int64,
-        number           String,
-        trans_date       Nullable(Date),
-        due_date         Nullable(Date),
-        tax_date         Nullable(Date),
-        ship_date        Nullable(Date),
-        customer_id      Nullable(Int64),
-        customer_name    String,
-        total_amount     Nullable(Float64),
-        sub_total        Nullable(Float64),
-        sales_amount     Nullable(Float64),
-        tax1_amount      Nullable(Float64),
+        sales_order_id   Int64,
+        seq              Int32,
+        item_id          Nullable(Int64),
+        item_no          String,
+        item_name        String,
+        item_unit        String,
+        quantity         Nullable(Float64),
+        unit_price       Nullable(Float64),
+        total_price      Nullable(Float64),
         tax1_rate        Nullable(Float64),
-        outstanding      Bool,
-        status           String,
-        approval_status  String,
-        description      String,
-        salesman_id      Nullable(Int64),
-        salesman_name    String,
-        branch_id        Nullable(Int64),
-        branch_name      String,
-        currency_id      Nullable(Int64),
-        rate             Nullable(Float64),
+        tax1_amount      Nullable(Float64),
         updated_at       DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
-    ORDER BY id
+    ORDER BY (sales_order_id, id)
     """,
+
+    # ------------------------------------------------------------------
+    # sales_order_expenses  (expense line items from detailExpense)
+    # API detailExpense fields: id, seq, accountId, account{name},
+    #   description, amount, tax1Rate, tax1Amount
+    # ------------------------------------------------------------------
+    """
+    CREATE TABLE IF NOT EXISTS sales_order_expenses (
+        id               Int64,
+        sales_order_id   Int64,
+        seq              Int32,
+        account_id       Nullable(Int64),
+        account_name     String,
+        description      String,
+        amount           Nullable(Float64),
+        tax1_rate        Nullable(Float64),
+        tax1_amount      Nullable(Float64),
+        updated_at       DateTime DEFAULT now()
+    ) ENGINE = ReplacingMergeTree(updated_at)
+    ORDER BY (sales_order_id, id)
+    """,
+
+    make_ddl("sales_invoices",      SALES_INVOICE_COLUMNS),
 
     # ------------------------------------------------------------------
     # sales_invoice_items
@@ -171,38 +136,27 @@ _DDL = [
     ORDER BY (sales_invoice_id, id)
     """,
 
+    make_ddl("sales_returns", SALES_RETURN_COLUMNS),
+
     # ------------------------------------------------------------------
-    # sales_returns  (header only – line items in sales_return_items)
-    # API fields: id, number, transDate, taxDate,
-    #   customerId, customer{name}, invoiceId,
-    #   totalAmount, subTotal, returnAmount, tax1Amount, tax1Rate,
-    #   returnType, returnStatusType, approvalStatus,
-    #   description, branchId, currencyId, rate
+    # period – date dimension table with Indonesian holiday data
     # ------------------------------------------------------------------
     """
-    CREATE TABLE IF NOT EXISTS sales_returns (
-        id                  Int64,
-        number              String,
-        trans_date          Nullable(Date),
-        tax_date            Nullable(Date),
-        customer_id         Nullable(Int64),
-        customer_name       String,
-        invoice_id          Nullable(Int64),
-        total_amount        Nullable(Float64),
-        sub_total           Nullable(Float64),
-        return_amount       Nullable(Float64),
-        tax1_amount         Nullable(Float64),
-        tax1_rate           Nullable(Float64),
-        return_type         String,
-        return_status_type  String,
-        approval_status     String,
-        description         String,
-        branch_id           Nullable(Int64),
-        currency_id         Nullable(Int64),
-        rate                Nullable(Float64),
-        updated_at          DateTime DEFAULT now()
+    CREATE TABLE IF NOT EXISTS period (
+        full_date             Date,
+        year                  Int16,
+        semester              Int8,
+        quarter               Int8,
+        month                 Int8,
+        day                   Int8,
+        day_of_week           Int8,
+        is_weekend            UInt8,
+        is_holiday            UInt8,
+        holiday_name          String,
+        working_day_of_month  Int16,
+        updated_at            DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
-    ORDER BY id
+    ORDER BY full_date
     """,
 
     # ------------------------------------------------------------------
@@ -220,6 +174,27 @@ _DDL = [
         quantity         Nullable(Float64),
         unit_price       Nullable(Float64),
         total_price      Nullable(Float64),
+        tax1_rate        Nullable(Float64),
+        tax1_amount      Nullable(Float64),
+        updated_at       DateTime DEFAULT now()
+    ) ENGINE = ReplacingMergeTree(updated_at)
+    ORDER BY (sales_return_id, id)
+    """,
+
+    # ------------------------------------------------------------------
+    # sales_return_expenses  (expense line items from detailExpense)
+    # API detailExpense fields: id, seq, accountId, account{name},
+    #   description, amount, tax1Rate, tax1Amount
+    # ------------------------------------------------------------------
+    """
+    CREATE TABLE IF NOT EXISTS sales_return_expenses (
+        id               Int64,
+        sales_return_id  Int64,
+        seq              Int32,
+        account_id       Nullable(Int64),
+        account_name     String,
+        description      String,
+        amount           Nullable(Float64),
         tax1_rate        Nullable(Float64),
         tax1_amount      Nullable(Float64),
         updated_at       DateTime DEFAULT now()
@@ -267,10 +242,15 @@ def reset_table(table_name: str):
 _DATA_TABLES = [
     "customer_categories",
     "customers",
+    "sales_orders",
+    "sales_order_items",
+    "sales_order_expenses",
     "sales_invoices",
     "sales_invoice_items",
     "sales_returns",
     "sales_return_items",
+    "sales_return_expenses",
+    "period",
 ]
 
 
@@ -287,6 +267,99 @@ def reset_all_tables():
     for table in _DATA_TABLES:
         reset_table(table)
     logger.info("All data tables reset.  Run the sync to repopulate.")
+
+
+# ---------------------------------------------------------------------------
+# Period table
+# ---------------------------------------------------------------------------
+
+def populate_period_table(start_year: int = 2024, end_year: int | None = None):
+    """Populate the period table with one row per calendar day.
+
+    Covers *start_year* through *end_year* (inclusive).  Defaults to the
+    current year + 2 so the table always has a useful planning horizon.
+
+    Indonesian public holidays are fetched via the ``holidays`` library.
+    ``working_day_of_month`` is a 1-based counter that increments only on
+    weekdays (Mon–Fri) that are not public holidays; it is 0 for weekends
+    and public holidays.
+
+    The table is truncated before re-insertion so this function is safe to
+    call repeatedly.
+    """
+    try:
+        import holidays as holidays_lib  # type: ignore
+    except ImportError as exc:
+        raise RuntimeError(
+            "The 'holidays' package is required.  Run: pip install holidays>=0.46"
+        ) from exc
+
+    if end_year is None:
+        end_year = datetime.now().year + 2
+
+    # Build a combined holiday dict for all target years
+    id_holidays: dict[date, str] = {}
+    for yr in range(start_year, end_year + 1):
+        id_holidays.update(holidays_lib.Indonesia(years=yr))
+
+    rows: list[list] = []
+    now = datetime.now()
+
+    current = date(start_year, 1, 1)
+    last = date(end_year, 12, 31)
+
+    # Track working-day counter per (year, month)
+    working_day_counters: dict[tuple[int, int], int] = {}
+
+    while current <= last:
+        yr = current.year
+        mo = current.month
+        dy = current.day
+        semester = 1 if mo <= 6 else 2
+        quarter = (mo - 1) // 3 + 1
+        dow = current.isoweekday()  # 1=Mon … 7=Sun
+        is_weekend = 1 if dow >= 6 else 0
+        is_holiday = 1 if current in id_holidays else 0
+        holiday_name = id_holidays.get(current, "")
+
+        is_working = 1 if (is_weekend == 0 and is_holiday == 0) else 0
+        key = (yr, mo)
+        if is_working:
+            working_day_counters[key] = working_day_counters.get(key, 0) + 1
+            wdm = working_day_counters[key]
+        else:
+            wdm = 0
+
+        rows.append([
+            current,
+            yr,
+            semester,
+            quarter,
+            mo,
+            dy,
+            dow,
+            is_weekend,
+            is_holiday,
+            holiday_name,
+            wdm,
+            now,
+        ])
+        current += timedelta(days=1)
+
+    client = _get_client()
+    client.command("TRUNCATE TABLE IF EXISTS period")
+    client.insert(
+        "period",
+        rows,
+        column_names=[
+            "full_date", "year", "semester", "quarter", "month", "day",
+            "day_of_week", "is_weekend", "is_holiday", "holiday_name",
+            "working_day_of_month", "updated_at",
+        ],
+    )
+    logger.info(
+        "Period table populated: %d rows (%d–%d)", len(rows), start_year, end_year
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -316,6 +389,16 @@ def update_sync_log(entity: str, sync_time: datetime, records_synced: int):
     )
 
 
+def reset_sync_time(entity: str):
+    """Reset the sync time for *entity* to 2026-01-01 so the next run re-syncs from that date.
+
+    Call this after changing a _FIELDS_* constant so all records are re-fetched
+    with the new field set.
+    """
+    update_sync_log(entity, datetime(2026, 1, 1, 0, 0, 0), 0)
+    logger.info("Reset sync time for '%s' to 2026-01-01", entity)
+
+
 # ---------------------------------------------------------------------------
 # Upsert helpers
 # ---------------------------------------------------------------------------
@@ -341,10 +424,7 @@ def upsert_customer_categories(records: list[dict]):
             ]
             for r in records
         ],
-        column_names=[
-            "id", "name", "name_strip", "lvl", "default_category", "sub",
-            "parent_id", "parent_name", "updated_at",
-        ],
+        column_names=col_names(CUSTOMER_CATEGORY_COLUMNS),
     )
     logger.info("Upserted %d customer_categories", len(records))
 
@@ -372,10 +452,10 @@ def upsert_customers(records: list[dict]):
                 _s(r.get("billCountry")),
                 r.get("categoryId") or _nested(r, "category", "id"),
                 _s(_nested(r, "category", "name") or _nested(r, "category", "nameWithIndentStrip")),
-                r.get("currencyId") or _nested(r, "currency", "id"),
+                _s(_nested(r, "currency", "code")),
+                r.get("defaultTermId"),
                 _s(_nested(r, "term", "name")),
                 _s(r.get("notes")),
-                _s(r.get("website")),
                 _s(r.get("npwpNo")),
                 bool(r.get("suspended")),
                 _s(r.get("customerTaxType")),
@@ -386,17 +466,117 @@ def upsert_customers(records: list[dict]):
             ]
             for r in records
         ],
-        column_names=[
-            "id", "customer_no", "name", "email",
-            "mobile_phone", "work_phone", "fax",
-            "bill_street", "bill_city", "bill_province", "bill_zip_code", "bill_country",
-            "category_id", "category_name", "currency_id", "term_name",
-            "notes", "website", "npwp_no", "suspended",
-            "customer_tax_type", "document_code",
-            "last_update", "create_date", "updated_at",
-        ],
+        column_names=col_names(CUSTOMER_COLUMNS),
     )
     logger.info("Upserted %d customers", len(records))
+
+
+def upsert_sales_orders(records: list[dict]):
+    if not records:
+        return
+    now = datetime.now()
+    client = _get_client()
+    client.insert(
+        "sales_orders",
+        [
+            [
+                r["id"],
+                _s(r.get("number")),
+                _parse_date(r.get("transDate")),
+                _parse_date(r.get("shipDate")),
+                r.get("customerId") or _nested(r, "customer", "id"),
+                _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+                r.get("totalAmount"),
+                r.get("subTotal"),
+                r.get("salesAmount"),
+                r.get("tax1Amount"),
+                r.get("tax1Rate"),
+                _s(r.get("status")),
+                _s(r.get("approvalStatus")),
+                _s(r.get("description")),
+                _s(r.get("poNumber")),
+                r.get("masterSalesmanId"),
+                _s(r.get("masterSalesmanName")),
+                r.get("branchId"),
+                _s(r.get("branchName")),
+                r.get("currencyId"),
+                r.get("rate"),
+                _parse_timestamp(r.get("lastUpdate")),
+                now,
+            ]
+            for r in records
+        ],
+        column_names=col_names(SALES_ORDER_COLUMNS),
+    )
+    logger.info("Upserted %d sales_orders", len(records))
+
+    # Line items
+    all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
+    if all_items:
+        _insert_sales_order_items(client, now, all_items)
+
+    # Expense line items
+    all_expenses = [(r["id"], exp) for r in records for exp in (r.get("detailExpense") or [])]
+    if all_expenses:
+        _insert_sales_order_expenses(client, now, all_expenses)
+
+
+def _insert_sales_order_items(client: Client, now: datetime, pairs: list[tuple]):
+    client.insert(
+        "sales_order_items",
+        [
+            [
+                item.get("id"),
+                order_id,
+                int(item.get("seq") or 0),
+                item.get("itemId"),
+                _s(_nested(item, "item", "no")),
+                _s(item.get("detailName") or _nested(item, "item", "name")),
+                _s(_nested(item, "itemUnit", "name")),
+                item.get("quantity"),
+                item.get("unitPrice"),
+                item.get("totalPrice"),
+                item.get("tax1Rate"),
+                item.get("tax1Amount"),
+                now,
+            ]
+            for order_id, item in pairs
+        ],
+        column_names=[
+            "id", "sales_order_id", "seq",
+            "item_id", "item_no", "item_name", "item_unit",
+            "quantity", "unit_price", "total_price",
+            "tax1_rate", "tax1_amount", "updated_at",
+        ],
+    )
+    logger.info("Upserted %d sales_order_items", len(pairs))
+
+
+def _insert_sales_order_expenses(client: Client, now: datetime, pairs: list[tuple]):
+    client.insert(
+        "sales_order_expenses",
+        [
+            [
+                exp.get("id"),
+                order_id,
+                int(exp.get("seq") or 0),
+                exp.get("accountId") or _nested(exp, "account", "id"),
+                _s(_nested(exp, "account", "name")),
+                _s(exp.get("description")),
+                exp.get("amount"),
+                exp.get("tax1Rate"),
+                exp.get("tax1Amount"),
+                now,
+            ]
+            for order_id, exp in pairs
+        ],
+        column_names=[
+            "id", "sales_order_id", "seq",
+            "account_id", "account_name", "description",
+            "amount", "tax1_rate", "tax1_amount", "updated_at",
+        ],
+    )
+    logger.info("Upserted %d sales_order_expenses", len(pairs))
 
 
 def upsert_sales_invoices(records: list[dict]):
@@ -435,20 +615,14 @@ def upsert_sales_invoices(records: list[dict]):
             ]
             for r in records
         ],
-        column_names=[
-            "id", "number", "trans_date", "due_date", "tax_date", "ship_date",
-            "customer_id", "customer_name",
-            "total_amount", "sub_total", "sales_amount", "tax1_amount", "tax1_rate",
-            "outstanding", "status", "approval_status", "description",
-            "salesman_id", "salesman_name", "branch_id", "branch_name",
-            "currency_id", "rate", "updated_at",
-        ],
+        column_names=col_names(SALES_INVOICE_COLUMNS),
     )
     logger.info("Upserted %d sales_invoices", len(records))
 
     # Line items
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
+        logger.info("Upserting %d sales_invoice_items", len(all_items)) 
         _insert_sales_invoice_items(client, now, all_items)
 
 
@@ -515,13 +689,7 @@ def upsert_sales_returns(records: list[dict]):
             ]
             for r in records
         ],
-        column_names=[
-            "id", "number", "trans_date", "tax_date",
-            "customer_id", "customer_name", "invoice_id",
-            "total_amount", "sub_total", "return_amount", "tax1_amount", "tax1_rate",
-            "return_type", "return_status_type", "approval_status", "description",
-            "branch_id", "currency_id", "rate", "updated_at",
-        ],
+        column_names=col_names(SALES_RETURN_COLUMNS),
     )
     logger.info("Upserted %d sales_returns", len(records))
 
@@ -529,6 +697,11 @@ def upsert_sales_returns(records: list[dict]):
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
         _insert_sales_return_items(client, now, all_items)
+
+    # Expense line items
+    all_expenses = [(r["id"], exp) for r in records for exp in (r.get("detailExpense") or [])]
+    if all_expenses:
+        _insert_sales_return_expenses(client, now, all_expenses)
 
 
 def _insert_sales_return_items(client: Client, now: datetime, pairs: list[tuple]):
@@ -560,6 +733,33 @@ def _insert_sales_return_items(client: Client, now: datetime, pairs: list[tuple]
         ],
     )
     logger.info("Upserted %d sales_return_items", len(pairs))
+
+
+def _insert_sales_return_expenses(client: Client, now: datetime, pairs: list[tuple]):
+    client.insert(
+        "sales_return_expenses",
+        [
+            [
+                exp.get("id"),
+                return_id,
+                int(exp.get("seq") or 0),
+                exp.get("accountId") or _nested(exp, "account", "id"),
+                _s(_nested(exp, "account", "name")),
+                _s(exp.get("description")),
+                exp.get("amount"),
+                exp.get("tax1Rate"),
+                exp.get("tax1Amount"),
+                now,
+            ]
+            for return_id, exp in pairs
+        ],
+        column_names=[
+            "id", "sales_return_id", "seq",
+            "account_id", "account_name", "description",
+            "amount", "tax1_rate", "tax1_amount", "updated_at",
+        ],
+    )
+    logger.info("Upserted %d sales_return_expenses", len(pairs))
 
 
 # ---------------------------------------------------------------------------

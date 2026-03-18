@@ -15,6 +15,7 @@ from db_manager import (
     update_sync_log,
     upsert_customer_categories,
     upsert_customers,
+    upsert_sales_orders,
     upsert_sales_invoices,
     upsert_sales_returns,
 )
@@ -32,25 +33,43 @@ logger = logging.getLogger(__name__)
 # -----------------------------------------------------------------
 # Per-entity sync descriptor
 # -----------------------------------------------------------------
+# Each entry supports an optional "extra_params" key: a dict of raw
+# Accurate API query parameters applied to every list request for that
+# entity.  Useful for scoping syncs by branch, status, etc.  Examples:
+#
+#   "extra_params": {"filter.branchId.op": "EQUAL",
+#                    "filter.branchId.val": "5"}
+#   "extra_params": {"filter.status.op": "EQUAL",
+#                    "filter.status.val": "POSTED"}
+#   "extra_params": {"sp.sort": "lastUpdate", "sp.sortOrder": "ASC"}
+# -----------------------------------------------------------------
 ENTITIES: list[dict] = [
     {
-        "name": "customer_categories",
-        "fetch": lambda client, since: client.get_customer_categories(since),
+        "name":   "customer_categories",
+        "fetch":  lambda client, since, p: client.get_customer_categories(since),
         "upsert": upsert_customer_categories,
     },
     {
-        "name": "customers",
-        "fetch": lambda client, since: client.get_customers(since),
+        "name":   "customers",
+        "fetch":  lambda client, since, p: client.get_customers(since, extra_params=p),
         "upsert": upsert_customers,
+        # Example: only active customers
+        # "extra_params": {"filter.suspended.op": "EQUAL", "filter.suspended.val": "false"},
     },
     {
-        "name": "sales_invoices",
-        "fetch": lambda client, since: client.get_sales_invoices(since),
+        "name":   "sales_orders",
+        "fetch":  lambda client, since, p: client.get_sales_orders(since, extra_params=p),
+        "upsert": upsert_sales_orders,
+    },
+    {
+        "name":   "sales_invoices",
+        "fetch":  lambda client, since, p: client.get_sales_invoices(since, extra_params=p),
         "upsert": upsert_sales_invoices,
+        "extra_params": {"filter.invoiceDp":"False"}
     },
     {
-        "name": "sales_returns",
-        "fetch": lambda client, since: client.get_sales_returns(since),
+        "name":   "sales_returns",
+        "fetch":  lambda client, since, p: client.get_sales_returns(since, extra_params=p),
         "upsert": upsert_sales_returns,
     },
 ]
@@ -61,6 +80,7 @@ def _sync_entity(
     name: str,
     fetch_fn: Callable,
     upsert_fn: Callable,
+    extra_params: dict | None = None,
 ) -> int:
     """Fetch and upsert one entity.  Returns the number of records synced."""
     last_sync = get_last_sync_time(name)
@@ -71,7 +91,7 @@ def _sync_entity(
     else:
         logger.info("[%s] Full sync (no previous sync found)", name)
 
-    records = fetch_fn(client, last_sync)
+    records = fetch_fn(client, last_sync, extra_params)
     logger.info("[%s] %d record(s) retrieved", name, len(records))
 
     if records:
@@ -99,6 +119,7 @@ def run_sync():
                 entity["name"],
                 entity["fetch"],
                 entity["upsert"],
+                entity.get("extra_params"),
             )
             results[entity["name"]] = count
         except Exception as exc:
