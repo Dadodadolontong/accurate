@@ -268,7 +268,8 @@ class AccurateClient:
         )
         if records:
             self._enrich_detail_fields(
-                records, "/api/sales-order/detail.do", ["detailItem", "detailExpense"]
+                records, "/api/sales-order/detail.do",
+                ["detailItem", "detailExpense", "processHistory"],
             )
         return records
 

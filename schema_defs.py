@@ -97,8 +97,11 @@ SALES_ORDER_COLUMNS: list[Column] = [
     Column("branchId",           "branch_id",       "Nullable(Int64)"),
     Column("branchName",         "branch_name",     "String"),
     Column("currencyId",         "currency_id",     "Nullable(Int64)"),
-    Column("rate",               "rate",            "Nullable(Float64)"),
-    Column("lastUpdate",         "last_update",     "Nullable(DateTime)"),
+    Column("rate",               "rate",              "Nullable(Float64)"),
+    Column("lastUpdate",         "last_update",       "Nullable(DateTime)"),
+    # Derived from processHistory: first entry where historyType == "SI"
+    Column("processHistory",     "sales_invoice_id",  "Nullable(Int64)"),
+    Column("processHistory",     "sales_invoice_name","String"),
     Column("detailItem",         "sales_order_items",    ""),  # child table
     Column("detailExpense",      "sales_order_expenses", ""),  # child table
 ]

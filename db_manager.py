@@ -471,6 +471,22 @@ def upsert_customers(records: list[dict]):
     logger.info("Upserted %d customers", len(records))
 
 
+def _extract_si_from_history(record: dict) -> tuple:
+    """Scan processHistory for the first entry with historyType == 'SI'.
+
+    Returns (id, historyNumber) or (None, "") when no SI entry is found.
+    Field names are checked in both camelCase and PascalCase to be resilient
+    to API casing variations.
+    """
+    for h in (record.get("processHistory") or []):
+        htype = h.get("historyType") or h.get("HistoryType") or ""
+        if htype.upper() == "SI":
+            inv_id   = h.get("id") or h.get("ID")
+            inv_name = _s(h.get("historyNumber") or h.get("HistoryNumber"))
+            return inv_id, inv_name
+    return None, ""
+
+
 def upsert_sales_orders(records: list[dict]):
     if not records:
         return
@@ -502,6 +518,7 @@ def upsert_sales_orders(records: list[dict]):
                 r.get("currencyId"),
                 r.get("rate"),
                 _parse_timestamp(r.get("lastUpdate")),
+                *_extract_si_from_history(r),   # sales_invoice_id, sales_invoice_name
                 now,
             ]
             for r in records

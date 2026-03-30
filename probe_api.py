@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG  ← put your credentials here
 # ─────────────────────────────────────────────────────────────────────────────
-API_TOKEN  = "aat.NTA.eyJ2IjoxLCJ1IjoyODE4NDEsImQiOjQ2ODYzNSwiYWkiOjY0NjUwLCJhayI6ImQ5MzkzNWI1LTZlZTItNDIyNi05NjhlLWZiNTUxNmFlNGQ5MCIsImFuIjoiQkFOIiwiYXAiOiIyNzZmMDBhMy02MzE3LTRmZjMtYjA0Ny04ZjdhMGE4MTY3ZjEiLCJ0IjoxNzcxMjEwNTMwNTQ2fQ.wzLfi9Fjk6sT8y/ux1FUQ++VV7IPxWT/6kJddQgCsCxfT0LxrBg0zKiFrqtFDWQp0JIkJB/sXCmZMiVM1HtZ/P5eJ0c1LcBHdec7qdzdvfkrM7PtrKftKXhuS0Saw5orxUTH31EuyKOa86v6Th/A7/W4v6PfnJ+GYVcykZT6FSD4VuJZ5o2gs3uouL9P+dJGe4K5koCq87Q=.Is58bWtFYS4vGazsBXBvnnmQI7LiDU2f8hwGZmqyFcs"
+API_TOKEN  = "aat.MTUx.eyJ2IjoxLCJ1IjoyODE4NDEsImQiOjQ2ODYzNSwiYWkiOjY0NjUwLCJhayI6ImQ5MzkzNWI1LTZlZTItNDIyNi05NjhlLWZiNTUxNmFlNGQ5MCIsImFuIjoiQkFOIiwiYXAiOiIyNzZmMDBhMy02MzE3LTRmZjMtYjA0Ny04ZjdhMGE4MTY3ZjEiLCJ0IjoxNzc0NzA0NzM1MTA5fQ.JaMR7zXpybmS950ZOy0Xhd3U6gfLTOU3D3ESOv3fGY7hj8UgfAM37zw7q0SwUTdOynkre++Y7TmFf4J+QO373DYIkPhOn+TavbPYg/j8rZfv62QA1z2TQnwMK9shgb6rpWL0JuT7Pupt8IR0KRGT1Q5uqITuX0Cv5BNMWRpD06dtlKtMkuGipads3C8UJLETLb2P67yv8gg=.QSRdumOpB2JhtUor4r1YHPZDgGW22q7Yql1qVWKuU7o"
 SIG_SECRET = "hENDHfaS3TtuCQ0fZrX1R2irpp02XhBkD6zMl8B60YrXDnCCEdpBgfoHqMIqXA1J"
 HOST       = "https://zeus.accurate.id"
 
@@ -24,7 +24,7 @@ HOST       = "https://zeus.accurate.id"
 PATH   = "/accurate/api/sales-order/detail.do"
 
 PARAMS = {
-    "number": "SO.0325-001"
+    "number": "SO.0326-651"
     # Uncomment and edit to request specific fields:
     # "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     #
