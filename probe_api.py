@@ -10,23 +10,24 @@ import hmac
 import json
 import requests
 from datetime import datetime, timezone
+from config import ACCURATE_API_TOKEN, ACCURATE_SIGNATURE_SECRET, ACCURATE_HOST
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG  ← put your credentials here
 # ─────────────────────────────────────────────────────────────────────────────
-API_TOKEN  = "aat.MTUx.eyJ2IjoxLCJ1IjoyODE4NDEsImQiOjQ2ODYzNSwiYWkiOjY0NjUwLCJhayI6ImQ5MzkzNWI1LTZlZTItNDIyNi05NjhlLWZiNTUxNmFlNGQ5MCIsImFuIjoiQkFOIiwiYXAiOiIyNzZmMDBhMy02MzE3LTRmZjMtYjA0Ny04ZjdhMGE4MTY3ZjEiLCJ0IjoxNzc0NzA0NzM1MTA5fQ.JaMR7zXpybmS950ZOy0Xhd3U6gfLTOU3D3ESOv3fGY7hj8UgfAM37zw7q0SwUTdOynkre++Y7TmFf4J+QO373DYIkPhOn+TavbPYg/j8rZfv62QA1z2TQnwMK9shgb6rpWL0JuT7Pupt8IR0KRGT1Q5uqITuX0Cv5BNMWRpD06dtlKtMkuGipads3C8UJLETLb2P67yv8gg=.QSRdumOpB2JhtUor4r1YHPZDgGW22q7Yql1qVWKuU7o"
-SIG_SECRET = "hENDHfaS3TtuCQ0fZrX1R2irpp02XhBkD6zMl8B60YrXDnCCEdpBgfoHqMIqXA1J"
-HOST       = "https://zeus.accurate.id"
+API_TOKEN  = ACCURATE_API_TOKEN
+SIG_SECRET = ACCURATE_SIGNATURE_SECRET
+HOST       = ACCURATE_HOST
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CALL  ← change the path and params to probe any endpoint
 # ─────────────────────────────────────────────────────────────────────────────
-PATH   = "/accurate/api/sales-order/detail.do"
+PATH   = "/accurate/api/sales-invoice/detail.do"
 
 PARAMS = {
-    "number": "SO.0326-651"
+    "number": 'SI.0326.808',
     # Uncomment and edit to request specific fields:
-    # "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
+    #"fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     #
     # Uncomment to filter by last-update date:
     # "filter.lastUpdate.op" : "GREATER_EQUAL_THAN",

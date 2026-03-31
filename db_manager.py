@@ -502,6 +502,7 @@ def upsert_sales_orders(records: list[dict]):
                 _parse_date(r.get("shipDate")),
                 _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+                _s(_nested(r, "customer", "customerNo")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
                 r.get("salesAmount"),
@@ -614,6 +615,7 @@ def upsert_sales_invoices(records: list[dict]):
                 _id(r.get("customerId"), "customerId", _s(r.get("number")))
                 or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+                _s(_nested(r, "customer", "customerNo")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
                 r.get("salesAmount"),
@@ -690,6 +692,7 @@ def upsert_sales_returns(records: list[dict]):
                 _parse_date(r.get("taxDate")),
                 _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+                _s(_nested(r, "customer", "customerNo")),
                 _id(r.get("invoiceId")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
