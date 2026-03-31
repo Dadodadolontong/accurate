@@ -8,6 +8,7 @@ import logging
 import logging.handlers
 from datetime import datetime
 from typing import Callable
+from config import LOGGER_FILE
 
 from accurate_client import AccurateClient
 from db_manager import (
