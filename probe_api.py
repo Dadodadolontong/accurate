@@ -8,6 +8,7 @@ import base64
 import hashlib
 import hmac
 import json
+import os
 import requests
 from datetime import datetime, timezone
 from config import ACCURATE_API_TOKEN, ACCURATE_SIGNATURE_SECRET, ACCURATE_HOST
@@ -22,18 +23,18 @@ HOST       = ACCURATE_HOST
 # ─────────────────────────────────────────────────────────────────────────────
 # CALL  ← change the path and params to probe any endpoint
 # ─────────────────────────────────────────────────────────────────────────────
-PATH   = "/accurate/api/sales-invoice/detail.do"
+PATH   = "/accurate/api/customer/list.do"
 
 PARAMS = {
-    "number": 'SI.0326.808',
+    #"number": 'SI.0326.808',
     # Uncomment and edit to request specific fields:
+    "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     #"fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
-    #
     # Uncomment to filter by last-update date:
-    # "filter.lastUpdate.op" : "GREATER_EQUAL_THAN",
-    # "filter.lastUpdate.val": "01/01/2026 00:00:00",
+    #"filter.customerNo.op" : "EQUAL",
+    #"filter.customerNo.val": "CUST.05026",
     #"sp.page"    : 1,
-    #"sp.pageSize": 5,
+    "sp.pageSize": 6000,
 }
 
 # Other endpoints you can try (just change PATH above):
@@ -44,6 +45,14 @@ PARAMS = {
 #   /accurate/api/sales-invoice/detail.do     + PARAMS = {"id": 116255}
 #   /accurate/api/sales-return/list.do
 #   /accurate/api/sales-return/detail.do      + PARAMS = {"id": 23701}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# DUMP OPTIONS
+# Set DUMP_PAGES = True to paginate through all pages and write each raw
+# page response to a separate JSON file under DUMP_DIR.
+# ─────────────────────────────────────────────────────────────────────────────
+DUMP_PAGES = True
+DUMP_DIR   = "debug_responses"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Engine – nothing to edit below this line
@@ -103,12 +112,96 @@ def _print_structure(obj, indent: int = 0, max_depth: int = 4):
         print(f"{pad}{_type_summary(obj)}")
 
 
+def _dump_page(body: dict, page: int, run_ts: str, endpoint_slug: str):
+    """Write a single page response to DUMP_DIR/<slug>_<ts>_page<N>.json."""
+    os.makedirs(DUMP_DIR, exist_ok=True)
+    filename = f"{endpoint_slug}_{run_ts}_page{page:04d}.json"
+    path = os.path.join(DUMP_DIR, filename)
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(body, fh, ensure_ascii=False, indent=2)
+    print(f"  → dumped to {path}")
+
+
+def _endpoint_slug() -> str:
+    """Turn /accurate/api/customer/list.do → customer_list"""
+    parts = [p for p in PATH.strip("/").split("/") if p not in ("accurate", "api")]
+    return "_".join(parts).replace(".do", "")
+
+
+def fetch_all_pages(run_ts: str) -> list[dict]:
+    """Paginate through all pages, optionally dumping each one to disk.
+
+    Returns the combined list of records from all pages.
+    """
+    page_size = PARAMS.get("sp.pageSize", 100)
+    slug = _endpoint_slug()
+    all_records: list[dict] = []
+    page = 1
+
+    while True:
+        params = dict(PARAMS)
+        params["sp.page"] = page
+
+        url = HOST + PATH
+        resp = requests.get(url, headers=_build_headers(), params=params, timeout=30)
+        resp.raise_for_status()
+        body = resp.json()
+
+        sp         = body.get("sp") or {}
+        page_count = sp.get("pageCount", 0)
+        row_count  = sp.get("rowCount", "?")
+        records    = body.get("d") or []
+
+        print(
+            f"  page {page:>4} → {len(records):>5} record(s)"
+            f"  (running total: {len(all_records) + len(records)} / {row_count},"
+            f"  pageCount: {page_count or 'unknown'})"
+        )
+
+        if DUMP_PAGES:
+            _dump_page(body, page, run_ts, slug)
+
+        if not body.get("s"):
+            print(f"  API error: {body.get('d')}")
+            break
+
+        all_records.extend(records)
+
+        if page_count > 0:
+            if page >= page_count:
+                break
+        else:
+            if len(records) < page_size:
+                break
+
+        page += 1
+
+    return all_records
+
+
 def main():
+    run_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+
     url = HOST + PATH
     print(f"GET {url}")
     print(f"Params: {json.dumps(PARAMS, indent=2)}")
+    if DUMP_PAGES:
+        print(f"Page dumps enabled → {DUMP_DIR}/")
     print("-" * 60)
 
+    if DUMP_PAGES or PARAMS.get("sp.pageSize"):
+        # Paginated mode: walk all pages
+        all_records = fetch_all_pages(run_ts)
+        print("-" * 60)
+        print(f"Total records across all pages: {len(all_records)}")
+        if all_records:
+            print("\n" + "=" * 60)
+            print("STRUCTURE TREE (first record)")
+            print("=" * 60)
+            _print_structure(all_records[0])
+        return
+
+    # Single-request mode (no pagination)
     resp = requests.get(url, headers=_build_headers(), params=PARAMS, timeout=30)
     print(f"HTTP {resp.status_code}")
     print("-" * 60)

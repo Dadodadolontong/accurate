@@ -1,0 +1,2714 @@
+{
+  "s": true,
+  "d": [
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:25:44",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 Arnistuti",
+      "id": 14501,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00504",
+      "email": null,
+      "createDate": "24/05/2024 13:25:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 12:08:35",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 Bu Hanun/Antika",
+      "id": 14450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00500",
+      "email": null,
+      "createDate": "24/05/2024 12:08:35"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 12:16:57",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 Heri M Alwi",
+      "id": 14500,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00502",
+      "email": null,
+      "createDate": "24/05/2024 12:16:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 12:13:17",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 Radiansyah",
+      "id": 14451,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00501",
+      "email": null,
+      "createDate": "24/05/2024 12:13:17"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 11:57:49",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 irma maryam",
+      "id": 14400,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00499",
+      "email": null,
+      "createDate": "24/05/2024 11:57:49"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:21:37",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0511 saud",
+      "id": 14452,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00503",
+      "email": null,
+      "createDate": "24/05/2024 13:21:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:55:52",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0512 Abhi",
+      "id": 14600,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00510",
+      "email": null,
+      "createDate": "24/05/2024 13:55:52"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:59:05",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0512 Ardi",
+      "id": 15004,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00684",
+      "email": null,
+      "createDate": "05/06/2024 08:59:05"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:46:05",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0512 Faizin",
+      "id": 14502,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00509",
+      "email": null,
+      "createDate": "24/05/2024 13:46:05"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:37:20",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0512 Husein Bamajbu",
+      "id": 14551,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00507",
+      "email": null,
+      "createDate": "24/05/2024 13:37:20"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:32",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:33:43",
+      "lastUpdate": "26/03/2025 15:40:32",
+      "name": "FM0512 Senliy",
+      "id": 14401,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00506",
+      "email": null,
+      "createDate": "24/05/2024 13:33:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:40:08",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0512 euis",
+      "id": 14552,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00508",
+      "email": null,
+      "createDate": "24/05/2024 13:40:08"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:04:19",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0513 Nafiqoh Asnaf",
+      "id": 14402,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00512",
+      "email": null,
+      "createDate": "24/05/2024 14:04:19"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:42:29",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0514 Antok",
+      "id": 14554,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00515",
+      "email": null,
+      "createDate": "24/05/2024 14:42:29"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:31:17",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0514 Ibu Yani",
+      "id": 14601,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00514",
+      "email": null,
+      "createDate": "24/05/2024 14:31:17"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:52:19",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0514 Riduan",
+      "id": 14403,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00517",
+      "email": null,
+      "createDate": "24/05/2024 14:52:19"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 15:00:13",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0515 Agus",
+      "id": 14651,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00518",
+      "email": null,
+      "createDate": "24/05/2024 15:00:13"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 15:27:07",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0516 Adhe",
+      "id": 14503,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00520",
+      "email": null,
+      "createDate": "24/05/2024 15:27:07"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 15:40:19",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0516 Jaelani",
+      "id": 14602,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00521",
+      "email": null,
+      "createDate": "24/05/2024 15:40:19"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 15:23:51",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0516 Suwito",
+      "id": 14351,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00519",
+      "email": null,
+      "createDate": "24/05/2024 15:23:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 15:45:07",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0516 Yayah Sukayah",
+      "id": 14504,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00523",
+      "email": null,
+      "createDate": "24/05/2024 15:45:07"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 16:40:22",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0518 H. Fahrudin",
+      "id": 14701,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00527",
+      "email": null,
+      "createDate": "24/05/2024 16:40:22"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 16:43:53",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0518 Yudi Munawar",
+      "id": 14405,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00528",
+      "email": null,
+      "createDate": "24/05/2024 16:43:53"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:33",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 17:09:35",
+      "lastUpdate": "26/03/2025 15:40:33",
+      "name": "FM0519 Abd Kholik",
+      "id": 14603,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00530",
+      "email": null,
+      "createDate": "24/05/2024 17:09:35"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 08:52:53",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0519 ArjunaJuna/mama juna",
+      "id": 14407,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00532",
+      "email": null,
+      "createDate": "27/05/2024 08:52:53"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 17:14:55",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0519 Bur Han/ Burhan siram",
+      "id": 14352,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00531",
+      "email": null,
+      "createDate": "24/05/2024 17:14:55"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:29:34",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0520 B S",
+      "id": 14557,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00535",
+      "email": null,
+      "createDate": "27/05/2024 09:29:34"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:41:28",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0520 Faris",
+      "id": 14604,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00538",
+      "email": null,
+      "createDate": "27/05/2024 09:41:28"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:33:10",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0520 Rahma",
+      "id": 14506,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00536",
+      "email": null,
+      "createDate": "27/05/2024 09:33:10"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:37:29",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0520 daili amdar",
+      "id": 14408,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00537",
+      "email": null,
+      "createDate": "27/05/2024 09:37:29"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:07:42",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0521 Asep Beras",
+      "id": 14653,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00541",
+      "email": null,
+      "createDate": "27/05/2024 10:07:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:12:21",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0521 Ern",
+      "id": 14507,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00542",
+      "email": null,
+      "createDate": "27/05/2024 10:12:21"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:52:51",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0521 Muchlis",
+      "id": 14605,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00540",
+      "email": null,
+      "createDate": "27/05/2024 09:52:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 09:46:19",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0521 Suparmi",
+      "id": 14354,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00539",
+      "email": null,
+      "createDate": "27/05/2024 09:46:19"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:24:43",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0522 Okky",
+      "id": 14606,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00544",
+      "email": null,
+      "createDate": "27/05/2024 10:24:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:34",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:14:31",
+      "lastUpdate": "26/03/2025 15:40:34",
+      "name": "FM0522 Sunardi",
+      "id": 14508,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00543",
+      "email": null,
+      "createDate": "27/05/2024 10:14:31"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 11:06:13",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 H. Muhammad Yamin",
+      "id": 14355,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00549",
+      "email": null,
+      "createDate": "27/05/2024 11:06:13"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:38:34",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Ian",
+      "id": 14558,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00546",
+      "email": null,
+      "createDate": "27/05/2024 10:38:34"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:46:33",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Lutfi Hernowo",
+      "id": 14607,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00548",
+      "email": null,
+      "createDate": "27/05/2024 10:46:33"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:42:37",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Pipin Aripin",
+      "id": 14559,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00547",
+      "email": null,
+      "createDate": "27/05/2024 10:42:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 11:18:14",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Sani",
+      "id": 14509,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00550",
+      "email": null,
+      "createDate": "27/05/2024 11:18:14"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 16:37:28",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Titin Rasyid",
+      "id": 15003,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00669",
+      "email": null,
+      "createDate": "04/06/2024 16:37:28"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 11:23:38",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0523 Wahyu",
+      "id": 14356,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00551",
+      "email": null,
+      "createDate": "27/05/2024 11:23:38"
+    },
+    {
+      "lastUpdateView": "27 Sep 2025 11:46:46",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:48:58",
+      "lastUpdate": "27/09/2025 11:46:46",
+      "name": "FM0524 Achmad Fahrie",
+      "id": 15105,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.00653",
+      "email": null,
+      "createDate": "04/06/2024 14:48:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:14:27",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0524 Fejri Rahman",
+      "id": 15201,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00649",
+      "email": null,
+      "createDate": "04/06/2024 14:14:27"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:47:00",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0524 Kafi Mubarok",
+      "id": 15104,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00652",
+      "email": null,
+      "createDate": "04/06/2024 14:47:00"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:39:37",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0524 Wachid ismail",
+      "id": 15103,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00650",
+      "email": null,
+      "createDate": "04/06/2024 14:39:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:42:35",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0524 Wawan Supendi",
+      "id": 15153,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00651",
+      "email": null,
+      "createDate": "04/06/2024 14:42:35"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:09:29",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0525 Hati Safiah",
+      "id": 15250,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00657",
+      "email": null,
+      "createDate": "04/06/2024 15:09:29"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:35",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:14:23",
+      "lastUpdate": "26/03/2025 15:40:35",
+      "name": "FM0525 Paekan",
+      "id": 15107,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00659",
+      "email": null,
+      "createDate": "04/06/2024 15:14:23"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:12:02",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0525 muslimin",
+      "id": 15106,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00658",
+      "email": null,
+      "createDate": "04/06/2024 15:12:02"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:27:44",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0526 Idha Kasim",
+      "id": 15008,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00714",
+      "email": null,
+      "createDate": "06/06/2024 09:27:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:30:27",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0526 Idham Khalid",
+      "id": 14951,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00663",
+      "email": null,
+      "createDate": "04/06/2024 15:30:27"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:21:30",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0526 Muhammad Perdi",
+      "id": 15203,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00661",
+      "email": null,
+      "createDate": "04/06/2024 15:21:30"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:27:12",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0526 Tini",
+      "id": 14904,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00662",
+      "email": null,
+      "createDate": "04/06/2024 15:27:12"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 16:33:57",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0527 Amirudin",
+      "id": 14907,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00668",
+      "email": null,
+      "createDate": "04/06/2024 16:33:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:43:15",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0527 Irwansyah",
+      "id": 14905,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00665",
+      "email": null,
+      "createDate": "04/06/2024 15:43:15"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 16:22:12",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0527 Kasno",
+      "id": 15204,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00666",
+      "email": null,
+      "createDate": "04/06/2024 16:22:12"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 16:24:33",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0527 Roni",
+      "id": 14906,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00667",
+      "email": null,
+      "createDate": "04/06/2024 16:24:33"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:34:03",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0528",
+      "id": 15057,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00675",
+      "email": null,
+      "createDate": "05/06/2024 08:34:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:29:53",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0528 Hj. Nurdiyati",
+      "id": 15205,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00673",
+      "email": null,
+      "createDate": "05/06/2024 08:29:53"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:36",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:32:03",
+      "lastUpdate": "26/03/2025 15:40:36",
+      "name": "FM0528 Sholihin Sofyan",
+      "id": 15109,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00674",
+      "email": null,
+      "createDate": "05/06/2024 08:32:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:41:39",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0529 Atmawi",
+      "id": 15156,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00678",
+      "email": null,
+      "createDate": "05/06/2024 08:41:39"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:39:33",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0529 Drs simons Achmad",
+      "id": 15110,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00677",
+      "email": null,
+      "createDate": "05/06/2024 08:39:33"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:37:30",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0529 Sarmili",
+      "id": 15206,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00676",
+      "email": null,
+      "createDate": "05/06/2024 08:37:30"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:46:03",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0529 milah",
+      "id": 14908,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00679",
+      "email": null,
+      "createDate": "05/06/2024 08:46:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:53:44",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0530 H Nono Sumarno BS",
+      "id": 15207,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00681",
+      "email": null,
+      "createDate": "05/06/2024 08:53:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:51:39",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0530 Yurika Sanger",
+      "id": 15157,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00680",
+      "email": null,
+      "createDate": "05/06/2024 08:51:39"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 09:19:42",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0531 Naswir",
+      "id": 15112,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00686",
+      "email": null,
+      "createDate": "05/06/2024 09:19:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 09:10:59",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0531 suhantoro",
+      "id": 15058,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00685",
+      "email": null,
+      "createDate": "05/06/2024 09:10:59"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:04:22",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0601 Fathur R",
+      "id": 15006,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00696",
+      "email": null,
+      "createDate": "06/06/2024 08:04:22"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:01:00",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0601 NIDAUL ASIYAH",
+      "id": 15113,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00694",
+      "email": null,
+      "createDate": "06/06/2024 08:01:00"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:02:54",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0601 Wati Mariyati",
+      "id": 14909,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00695",
+      "email": null,
+      "createDate": "06/06/2024 08:02:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:19:21",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0602 Dedi Setiadi",
+      "id": 14952,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00700",
+      "email": null,
+      "createDate": "06/06/2024 08:19:21"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:37",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:13:42",
+      "lastUpdate": "26/03/2025 15:40:37",
+      "name": "FM0602 Ika",
+      "id": 15160,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00698",
+      "email": null,
+      "createDate": "06/06/2024 08:13:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:17:04",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0602 Syarifah",
+      "id": 14910,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00699",
+      "email": null,
+      "createDate": "06/06/2024 08:17:04"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:48:57",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Asep Hadian",
+      "id": 15162,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00707",
+      "email": null,
+      "createDate": "06/06/2024 08:48:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:40:40",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Bpk Aris",
+      "id": 15161,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00706",
+      "email": null,
+      "createDate": "06/06/2024 08:40:40"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:37:16",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Irwan",
+      "id": 15251,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00705",
+      "email": null,
+      "createDate": "06/06/2024 08:37:16"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:30:13",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Widiasmara Annas",
+      "id": 15060,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00703",
+      "email": null,
+      "createDate": "06/06/2024 08:30:13"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:33:30",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Yazan",
+      "id": 15215,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00704",
+      "email": null,
+      "createDate": "06/06/2024 08:33:30"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:27:04",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 Yusnita",
+      "id": 15214,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00702",
+      "email": null,
+      "createDate": "06/06/2024 08:27:04"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:24:03",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0603 indra agunawan",
+      "id": 15213,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00701",
+      "email": null,
+      "createDate": "06/06/2024 08:24:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:03:11",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0604 Agus",
+      "id": 14911,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00712",
+      "email": null,
+      "createDate": "06/06/2024 09:03:11"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:57:14",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0604 Bu Hamka",
+      "id": 15061,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00709",
+      "email": null,
+      "createDate": "06/06/2024 08:57:14"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:01:21",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0604 Huserma",
+      "id": 15115,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00711",
+      "email": null,
+      "createDate": "06/06/2024 09:01:21"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:59:31",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0604 JANUAR Ismar LUBIS",
+      "id": 15114,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00710",
+      "email": null,
+      "createDate": "06/06/2024 08:59:31"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:33:20",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0605 Feriyadi",
+      "id": 15116,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00717",
+      "email": null,
+      "createDate": "06/06/2024 09:33:20"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:29:29",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0605 Paryono",
+      "id": 15062,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00715",
+      "email": null,
+      "createDate": "06/06/2024 09:29:29"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:38",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:31:23",
+      "lastUpdate": "26/03/2025 15:40:38",
+      "name": "FM0605 Suryono",
+      "id": 14953,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00716",
+      "email": null,
+      "createDate": "06/06/2024 09:31:23"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:39",
+      "mobilePhone": "62 812-2220-4401",
+      "createDateView": "13 May 2024 21:59:01",
+      "lastUpdate": "26/03/2025 15:40:39",
+      "name": "FM1230 Mama Rafi",
+      "id": 13802,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00438",
+      "email": null,
+      "createDate": "13/05/2024 21:59:01"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:39",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 10:33:47",
+      "lastUpdate": "26/03/2025 15:40:39",
+      "name": "FM1230 poyonnapolion",
+      "id": 14409,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00545",
+      "email": null,
+      "createDate": "27/05/2024 10:33:47"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:39",
+      "mobilePhone": "62 851-3242-9880",
+      "createDateView": "19 Apr 2024 14:49:54",
+      "lastUpdate": "26/03/2025 15:40:39",
+      "name": "FM1231 Suheni",
+      "id": 11704,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00267",
+      "email": null,
+      "createDate": "19/04/2024 14:49:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:40:39",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:57:27",
+      "lastUpdate": "26/03/2025 15:40:39",
+      "name": "FMsarah",
+      "id": 14903,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00656",
+      "email": null,
+      "createDate": "04/06/2024 14:57:27"
+    },
+    {
+      "lastUpdateView": "10 Dec 2025 10:18:57",
+      "mobilePhone": "+62 853-8307-3770",
+      "createDateView": "10 Dec 2025 10:18:57",
+      "lastUpdate": "10/12/2025 10:18:57",
+      "name": "FREDDY NELSON",
+      "id": 66303,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04817",
+      "email": null,
+      "createDate": "10/12/2025 10:18:57"
+    },
+    {
+      "lastUpdateView": "11 Nov 2025 11:01:56",
+      "mobilePhone": "081372573320",
+      "createDateView": "25 Jul 2024 13:48:59",
+      "lastUpdate": "11/11/2025 11:01:56",
+      "name": "FUJI RAHAYU",
+      "id": 19005,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01028",
+      "email": null,
+      "createDate": "25/07/2024 13:48:59"
+    },
+    {
+      "lastUpdateView": "21 Oct 2025 13:28:30",
+      "mobilePhone": "081256736099",
+      "createDateView": "21 Oct 2025 13:28:30",
+      "lastUpdate": "21/10/2025 13:28:30",
+      "name": "Fachrudin",
+      "id": 61050,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04152",
+      "email": null,
+      "createDate": "21/10/2025 13:28:30"
+    },
+    {
+      "lastUpdateView": "04 Jan 2026 05:43:37",
+      "mobilePhone": null,
+      "createDateView": "04 Jan 2026 05:42:22",
+      "lastUpdate": "04/01/2026 05:43:37",
+      "name": "Fadlulloh",
+      "id": 69650,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05109",
+      "email": null,
+      "createDate": "04/01/2026 05:42:22"
+    },
+    {
+      "lastUpdateView": "11 Aug 2025 15:00:16",
+      "mobilePhone": "+62 823-7492-3443",
+      "createDateView": "11 Aug 2025 15:00:16",
+      "lastUpdate": "11/08/2025 15:00:16",
+      "name": "Fadlun",
+      "id": 55303,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03360",
+      "email": null,
+      "createDate": "11/08/2025 15:00:16"
+    },
+    {
+      "lastUpdateView": "22 Mar 2026 20:15:31",
+      "mobilePhone": "+62 819-9090-4484",
+      "createDateView": "22 Mar 2026 20:15:31",
+      "lastUpdate": "22/03/2026 20:15:31",
+      "name": "Fahada",
+      "id": 78462,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05808",
+      "email": null,
+      "createDate": "22/03/2026 20:15:31"
+    }
+  ],
+  "sp": {
+    "page": 19,
+    "sort": null,
+    "pageSize": 100,
+    "pageCount": 59,
+    "rowCount": 5893,
+    "start": 1800,
+    "limit": null
+  }
+}

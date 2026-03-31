@@ -376,7 +376,7 @@ def get_last_sync_time(entity: str) -> datetime | None:
     )
     if result.result_rows:
         return result.result_rows[0][0]
-    return datetime(2026, 1, 1, 0, 0, 0)
+    return None  # no prior sync → fetch all records (no lastUpdate filter)
 
 
 def update_sync_log(entity: str, sync_time: datetime, records_synced: int):
@@ -390,13 +390,17 @@ def update_sync_log(entity: str, sync_time: datetime, records_synced: int):
 
 
 def reset_sync_time(entity: str):
-    """Reset the sync time for *entity* to 2026-01-01 so the next run re-syncs from that date.
+    """Delete the sync_log entry for *entity* so the next run does a full fetch.
 
     Call this after changing a _FIELDS_* constant so all records are re-fetched
     with the new field set.
     """
-    update_sync_log(entity, datetime(2026, 1, 1, 0, 0, 0), 0)
-    logger.info("Reset sync time for '%s' to 2026-01-01", entity)
+    client = _get_client()
+    client.command(
+        "ALTER TABLE sync_log DELETE WHERE entity = {entity:String}",
+        parameters={"entity": entity},
+    )
+    logger.info("Reset sync time for '%s' – next run will do a full fetch", entity)
 
 
 # ---------------------------------------------------------------------------

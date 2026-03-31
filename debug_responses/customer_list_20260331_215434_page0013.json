@@ -1,0 +1,2714 @@
+{
+  "s": true,
+  "d": [
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": "+62 813-2721-9909",
+      "createDateView": "10 Mar 2025 09:12:40",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Diana",
+      "id": 38752,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02314",
+      "email": null,
+      "createDate": "10/03/2025 09:12:40"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": "081278273175",
+      "createDateView": "15 Jan 2025 11:03:14",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Diana",
+      "id": 31202,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01911",
+      "email": null,
+      "createDate": "15/01/2025 11:03:14"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": "082153603478",
+      "createDateView": "27 Dec 2024 16:47:34",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Diana Yana",
+      "id": 29201,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01666",
+      "email": null,
+      "createDate": "27/12/2024 16:47:34"
+    },
+    {
+      "lastUpdateView": "05 May 2025 10:40:21",
+      "mobilePhone": "08126552454",
+      "createDateView": "05 May 2025 10:40:21",
+      "lastUpdate": "05/05/2025 10:40:21",
+      "name": "Diana maya",
+      "id": 44600,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02661",
+      "email": null,
+      "createDate": "05/05/2025 10:40:21"
+    },
+    {
+      "lastUpdateView": "01 Oct 2025 09:42:42",
+      "mobilePhone": "+62 812-9302-6903",
+      "createDateView": "01 Oct 2025 09:42:41",
+      "lastUpdate": "01/10/2025 09:42:42",
+      "name": "Didi",
+      "id": 58963,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03955",
+      "email": null,
+      "createDate": "01/10/2025 09:42:41"
+    },
+    {
+      "lastUpdateView": "28 Nov 2025 10:55:00",
+      "mobilePhone": "+62 812-2701-014",
+      "createDateView": "28 Nov 2025 10:55:00",
+      "lastUpdate": "28/11/2025 10:55:00",
+      "name": "Didi Rudwianto",
+      "id": 65152,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04637",
+      "email": null,
+      "createDate": "28/11/2025 10:55:00"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": "+62 812-6007-0590",
+      "createDateView": "20 Mar 2025 08:27:23",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Didih s",
+      "id": 39860,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02386",
+      "email": null,
+      "createDate": "20/03/2025 08:27:23"
+    },
+    {
+      "lastUpdateView": "22 Dec 2025 10:30:45",
+      "mobilePhone": "085381825801",
+      "createDateView": "22 Dec 2025 10:30:45",
+      "lastUpdate": "22/12/2025 10:30:45",
+      "name": "Didik Dzf",
+      "id": 67706,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04953",
+      "email": null,
+      "createDate": "22/12/2025 10:30:45"
+    },
+    {
+      "lastUpdateView": "06 Jan 2026 09:28:01",
+      "mobilePhone": "089678013111",
+      "createDateView": "06 Jan 2026 09:28:01",
+      "lastUpdate": "06/01/2026 09:28:01",
+      "name": "Didik Wahyudiadi",
+      "id": 69602,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05120",
+      "email": null,
+      "createDate": "06/01/2026 09:28:01"
+    },
+    {
+      "lastUpdateView": "24 Oct 2025 13:31:44",
+      "mobilePhone": "0813 1711 1318",
+      "createDateView": "24 Oct 2025 13:31:44",
+      "lastUpdate": "24/10/2025 13:31:44",
+      "name": "Dien Latief Aisyati",
+      "id": 60804,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04183",
+      "email": null,
+      "createDate": "24/10/2025 13:31:44"
+    },
+    {
+      "lastUpdateView": "10 Oct 2025 08:39:58",
+      "mobilePhone": "085810441055",
+      "createDateView": "10 Oct 2025 08:39:58",
+      "lastUpdate": "10/10/2025 08:39:58",
+      "name": "Diesy",
+      "id": 59406,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04030",
+      "email": null,
+      "createDate": "10/10/2025 08:39:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": null,
+      "createDateView": "03 Apr 2024 14:52:32",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Dika",
+      "id": 11250,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "AGEN",
+        "id": 153
+      },
+      "customerNo": "CUST.00208",
+      "email": null,
+      "createDate": "03/04/2024 14:52:32"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": null,
+      "createDateView": "14 Jan 2025 00:03:29",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Diki Zulkarnain",
+      "id": 30612,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01879",
+      "email": null,
+      "createDate": "14/01/2025 00:03:29"
+    },
+    {
+      "lastUpdateView": "28 Jul 2025 12:36:48",
+      "mobilePhone": "+62 856-8126-143",
+      "createDateView": "28 Jul 2025 12:36:48",
+      "lastUpdate": "28/07/2025 12:36:48",
+      "name": "Dila",
+      "id": 54403,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03206",
+      "email": null,
+      "createDate": "28/07/2025 12:36:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2026 09:58:13",
+      "mobilePhone": "+62 812-1085-7252",
+      "createDateView": "26 Mar 2026 09:58:13",
+      "lastUpdate": "26/03/2026 09:58:13",
+      "name": "Dilah",
+      "id": 78322,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05832",
+      "email": null,
+      "createDate": "26/03/2026 09:58:13"
+    },
+    {
+      "lastUpdateView": "26 Sep 2025 11:08:46",
+      "mobilePhone": "+62 813-9658-0043",
+      "createDateView": "26 Sep 2025 11:08:46",
+      "lastUpdate": "26/09/2025 11:08:46",
+      "name": "Dilla",
+      "id": 59251,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03886",
+      "email": null,
+      "createDate": "26/09/2025 11:08:46"
+    },
+    {
+      "lastUpdateView": "08 May 2025 09:29:44",
+      "mobilePhone": "081260737537",
+      "createDateView": "08 May 2025 09:29:44",
+      "lastUpdate": "08/05/2025 09:29:44",
+      "name": "Dilla",
+      "id": 45450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02708",
+      "email": null,
+      "createDate": "08/05/2025 09:29:44"
+    },
+    {
+      "lastUpdateView": "04 Nov 2025 15:00:32",
+      "mobilePhone": "08114441711 / 08114411711",
+      "createDateView": "04 Nov 2025 09:53:05",
+      "lastUpdate": "04/11/2025 15:00:32",
+      "name": "Dilla Amar BA Makassar",
+      "id": 62352,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "AGEN",
+        "id": 153
+      },
+      "customerNo": "CUST.04296",
+      "email": null,
+      "createDate": "04/11/2025 09:53:05"
+    },
+    {
+      "lastUpdateView": "11 Sep 2025 09:34:46",
+      "mobilePhone": "0811195797",
+      "createDateView": "11 Sep 2025 09:34:46",
+      "lastUpdate": "11/09/2025 09:34:46",
+      "name": "Dillah",
+      "id": 57107,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03679",
+      "email": null,
+      "createDate": "11/09/2025 09:34:46"
+    },
+    {
+      "lastUpdateView": "24 Apr 2025 14:07:31",
+      "mobilePhone": "082323667801",
+      "createDateView": "24 Apr 2025 14:07:31",
+      "lastUpdate": "24/04/2025 14:07:31",
+      "name": "Dimas Aditya",
+      "id": 44451,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02571",
+      "email": null,
+      "createDate": "24/04/2025 14:07:31"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:11",
+      "mobilePhone": "081380994483",
+      "createDateView": "14 Jan 2025 00:01:05",
+      "lastUpdate": "26/03/2025 15:37:11",
+      "name": "Dimas jahe",
+      "id": 30953,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01878",
+      "email": null,
+      "createDate": "14/01/2025 00:01:05"
+    },
+    {
+      "lastUpdateView": "12 Mar 2026 09:12:25",
+      "mobilePhone": "08113986776",
+      "createDateView": "12 Mar 2026 09:12:25",
+      "lastUpdate": "12/03/2026 09:12:25",
+      "name": "Dina",
+      "id": 78207,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05730",
+      "email": null,
+      "createDate": "12/03/2026 09:12:25"
+    },
+    {
+      "lastUpdateView": "25 Aug 2025 11:25:05",
+      "mobilePhone": "+62 812-5376-6712",
+      "createDateView": "25 Aug 2025 11:25:05",
+      "lastUpdate": "25/08/2025 11:25:05",
+      "name": "Dina",
+      "id": 56355,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03478",
+      "email": null,
+      "createDate": "25/08/2025 11:25:05"
+    },
+    {
+      "lastUpdateView": "03 Dec 2025 09:25:55",
+      "mobilePhone": "+62 819-0526-4300",
+      "createDateView": "03 Dec 2025 09:25:55",
+      "lastUpdate": "03/12/2025 09:25:55",
+      "name": "Dina",
+      "id": 65063,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04723",
+      "email": null,
+      "createDate": "03/12/2025 09:25:55"
+    },
+    {
+      "lastUpdateView": "24 Jun 2025 08:40:08",
+      "mobilePhone": "+62 852-4638-9693",
+      "createDateView": "24 Jun 2025 08:40:08",
+      "lastUpdate": "24/06/2025 08:40:08",
+      "name": "Dina Rahma",
+      "id": 51001,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02963",
+      "email": null,
+      "createDate": "24/06/2025 08:40:08"
+    },
+    {
+      "lastUpdateView": "08 Sep 2025 11:26:29",
+      "mobilePhone": "081316567666",
+      "createDateView": "08 Sep 2025 11:26:29",
+      "lastUpdate": "08/09/2025 11:26:29",
+      "name": "Dinah",
+      "id": 57204,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03640",
+      "email": null,
+      "createDate": "08/09/2025 11:26:29"
+    },
+    {
+      "lastUpdateView": "14 Oct 2025 09:01:05",
+      "mobilePhone": "08170007714",
+      "createDateView": "14 Oct 2025 09:01:05",
+      "lastUpdate": "14/10/2025 09:01:05",
+      "name": "Dinar",
+      "id": 59810,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04067",
+      "email": null,
+      "createDate": "14/10/2025 09:01:05"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "08154663964",
+      "createDateView": "11 Dec 2024 08:33:39",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dindin Wirdayanti",
+      "id": 27450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01546",
+      "email": null,
+      "createDate": "11/12/2024 08:33:39"
+    },
+    {
+      "lastUpdateView": "11 Aug 2025 15:16:23",
+      "mobilePhone": "081316051145",
+      "createDateView": "11 Aug 2025 15:16:23",
+      "lastUpdate": "11/08/2025 15:16:23",
+      "name": "Dini",
+      "id": 55453,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03361",
+      "email": null,
+      "createDate": "11/08/2025 15:16:23"
+    },
+    {
+      "lastUpdateView": "05 May 2025 14:38:00",
+      "mobilePhone": "08815634714",
+      "createDateView": "05 May 2025 14:38:00",
+      "lastUpdate": "05/05/2025 14:38:00",
+      "name": "Dini Nurlia",
+      "id": 44603,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02679",
+      "email": null,
+      "createDate": "05/05/2025 14:38:00"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "081511140107",
+      "createDateView": "14 Feb 2025 09:28:55",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dini Oktaviani",
+      "id": 34853,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02165",
+      "email": null,
+      "createDate": "14/02/2025 09:28:55"
+    },
+    {
+      "lastUpdateView": "21 Jul 2025 13:28:48",
+      "mobilePhone": "081393944051",
+      "createDateView": "21 Jul 2025 13:28:48",
+      "lastUpdate": "21/07/2025 13:28:48",
+      "name": "Dini Rofiah",
+      "id": 53407,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03135",
+      "email": null,
+      "createDate": "21/07/2025 13:28:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "+62 895-3864-13311",
+      "createDateView": "24 Mar 2025 10:35:51",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dini handayani",
+      "id": 39908,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02419",
+      "email": null,
+      "createDate": "24/03/2025 10:35:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": null,
+      "createDateView": "09 Jun 2022 10:57:59",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dinny Ricko",
+      "id": 2651,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "RESELLER",
+        "id": 158
+      },
+      "customerNo": "CUST.00067",
+      "email": null,
+      "createDate": "09/06/2022 10:57:59"
+    },
+    {
+      "lastUpdateView": "06 Jan 2026 09:45:22",
+      "mobilePhone": "085263353458",
+      "createDateView": "06 Jan 2026 09:45:21",
+      "lastUpdate": "06/01/2026 09:45:22",
+      "name": "Dion admaneza/imal",
+      "id": 69701,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05123",
+      "email": null,
+      "createDate": "06/01/2026 09:45:21"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "087752096225",
+      "createDateView": "26 Apr 2024 15:57:31",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dirut.RS Sari Asih Ciledug",
+      "id": 12052,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00316",
+      "email": null,
+      "createDate": "26/04/2024 15:57:31"
+    },
+    {
+      "lastUpdateView": "02 Jul 2025 09:23:11",
+      "mobilePhone": "087877593844",
+      "createDateView": "02 Jul 2025 09:23:11",
+      "lastUpdate": "02/07/2025 09:23:11",
+      "name": "Dita Tacil",
+      "id": 52001,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03027",
+      "email": null,
+      "createDate": "02/07/2025 09:23:11"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "08121068448",
+      "createDateView": "15 Jan 2025 14:35:07",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Diva",
+      "id": 31402,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01921",
+      "email": null,
+      "createDate": "15/01/2025 14:35:07"
+    },
+    {
+      "lastUpdateView": "21 Feb 2026 11:16:39",
+      "mobilePhone": null,
+      "createDateView": "21 Feb 2026 11:16:39",
+      "lastUpdate": "21/02/2026 11:16:39",
+      "name": "Diyah",
+      "id": 75957,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05384",
+      "email": null,
+      "createDate": "21/02/2026 11:16:39"
+    },
+    {
+      "lastUpdateView": "31 Dec 2025 11:33:08",
+      "mobilePhone": "+62 816-1516-1436",
+      "createDateView": "31 Dec 2025 11:33:08",
+      "lastUpdate": "31/12/2025 11:33:08",
+      "name": "Djamali",
+      "id": 68411,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05056",
+      "email": null,
+      "createDate": "31/12/2025 11:33:08"
+    },
+    {
+      "lastUpdateView": "27 Oct 2025 11:06:44",
+      "mobilePhone": "082214135122",
+      "createDateView": "27 Oct 2025 11:06:44",
+      "lastUpdate": "27/10/2025 11:06:44",
+      "name": "Djuariah",
+      "id": 60961,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04212",
+      "email": null,
+      "createDate": "27/10/2025 11:06:44"
+    },
+    {
+      "lastUpdateView": "18 Feb 2026 10:39:42",
+      "mobilePhone": "+62818676905",
+      "createDateView": "18 Feb 2026 10:39:42",
+      "lastUpdate": "18/02/2026 10:39:42",
+      "name": "Djuli",
+      "id": 75450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05326",
+      "email": null,
+      "createDate": "18/02/2026 10:39:42"
+    },
+    {
+      "lastUpdateView": "16 Feb 2026 14:05:48",
+      "mobilePhone": "085241281917",
+      "createDateView": "16 Feb 2026 14:05:48",
+      "lastUpdate": "16/02/2026 14:05:48",
+      "name": "Djusman. L",
+      "id": 75201,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05324",
+      "email": null,
+      "createDate": "16/02/2026 14:05:48"
+    },
+    {
+      "lastUpdateView": "21 Mar 2026 05:30:19",
+      "mobilePhone": "081366370662",
+      "createDateView": "21 Mar 2026 05:30:19",
+      "lastUpdate": "21/03/2026 05:30:19",
+      "name": "Dlala Amirah",
+      "id": 78461,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05800",
+      "email": null,
+      "createDate": "21/03/2026 05:30:19"
+    },
+    {
+      "lastUpdateView": "25 Aug 2025 13:36:05",
+      "mobilePhone": "+62 813-2235-2231",
+      "createDateView": "25 Aug 2025 13:36:05",
+      "lastUpdate": "25/08/2025 13:36:05",
+      "name": "Doddi Setiadi",
+      "id": 56651,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03488",
+      "email": null,
+      "createDate": "25/08/2025 13:36:05"
+    },
+    {
+      "lastUpdateView": "21 Jul 2025 14:34:52",
+      "mobilePhone": "+62 896-3552-3038",
+      "createDateView": "21 Jul 2025 14:34:52",
+      "lastUpdate": "21/07/2025 14:34:52",
+      "name": "Dody Sugianto",
+      "id": 53609,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03144",
+      "email": null,
+      "createDate": "21/07/2025 14:34:52"
+    },
+    {
+      "lastUpdateView": "19 Feb 2026 10:08:04",
+      "mobilePhone": "+6281219742579",
+      "createDateView": "19 Feb 2026 10:08:04",
+      "lastUpdate": "19/02/2026 10:08:04",
+      "name": "Donny Sukardono",
+      "id": 75950,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05345",
+      "email": null,
+      "createDate": "19/02/2026 10:08:04"
+    },
+    {
+      "lastUpdateView": "13 Sep 2025 11:43:46",
+      "mobilePhone": "082315217828",
+      "createDateView": "13 Sep 2025 11:43:46",
+      "lastUpdate": "13/09/2025 11:43:46",
+      "name": "Donny Yogarasa",
+      "id": 57366,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03708",
+      "email": null,
+      "createDate": "13/09/2025 11:43:46"
+    },
+    {
+      "lastUpdateView": "25 Oct 2025 09:32:22",
+      "mobilePhone": "+62 822-8277-4009",
+      "createDateView": "25 Oct 2025 09:32:22",
+      "lastUpdate": "25/10/2025 09:32:22",
+      "name": "Dr Honesty Kusuma",
+      "id": 60856,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04194",
+      "email": null,
+      "createDate": "25/10/2025 09:32:22"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "62 811-2255-505",
+      "createDateView": "09 Feb 2022 16:34:17",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dr. ADILLA",
+      "id": 1250,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "RESELLER",
+        "id": 158
+      },
+      "customerNo": "A00143",
+      "email": null,
+      "createDate": "09/02/2022 16:34:17"
+    },
+    {
+      "lastUpdateView": "18 Aug 2025 13:39:37",
+      "mobilePhone": "0812326002",
+      "createDateView": "18 Aug 2025 13:39:37",
+      "lastUpdate": "18/08/2025 13:39:37",
+      "name": "Dr. Evelyn Komaratih, dr., SpM(K)",
+      "id": 55855,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03424",
+      "email": null,
+      "createDate": "18/08/2025 13:39:37"
+    },
+    {
+      "lastUpdateView": "27 Jan 2026 09:59:16",
+      "mobilePhone": "081386679379",
+      "createDateView": "27 Jan 2026 09:59:16",
+      "lastUpdate": "27/01/2026 09:59:16",
+      "name": "Dr. Sukron Kasiron, MA",
+      "id": 72901,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05199",
+      "email": null,
+      "createDate": "27/01/2026 09:59:16"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "082158725674",
+      "createDateView": "13 Mar 2025 10:56:13",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Drs.H.Anang Kamberani BBA",
+      "id": 39350,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02336",
+      "email": null,
+      "createDate": "13/03/2025 10:56:13"
+    },
+    {
+      "lastUpdateView": "10 Oct 2025 10:17:40",
+      "mobilePhone": "081322576398",
+      "createDateView": "10 Oct 2025 10:17:40",
+      "lastUpdate": "10/10/2025 10:17:40",
+      "name": "Dudi Herdiana",
+      "id": 59804,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04034",
+      "email": null,
+      "createDate": "10/10/2025 10:17:40"
+    },
+    {
+      "lastUpdateView": "18 Sep 2025 20:28:50",
+      "mobilePhone": "081319881147",
+      "createDateView": "18 Sep 2025 20:28:50",
+      "lastUpdate": "18/09/2025 20:28:50",
+      "name": "Duralim",
+      "id": 58000,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03785",
+      "email": null,
+      "createDate": "18/09/2025 20:28:50"
+    },
+    {
+      "lastUpdateView": "14 Feb 2026 17:14:50",
+      "mobilePhone": "085228296948",
+      "createDateView": "14 Feb 2026 17:14:50",
+      "lastUpdate": "14/02/2026 17:14:50",
+      "name": "Duriani sengnge",
+      "id": 75250,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05311",
+      "email": null,
+      "createDate": "14/02/2026 17:14:50"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:12",
+      "mobilePhone": "+62 821-2446-5299",
+      "createDateView": "19 Jan 2025 00:06:52",
+      "lastUpdate": "26/03/2025 15:37:12",
+      "name": "Dusun Jaka",
+      "id": 31901,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01940",
+      "email": null,
+      "createDate": "19/01/2025 00:06:52"
+    },
+    {
+      "lastUpdateView": "30 Mar 2026 11:52:31",
+      "mobilePhone": "+62 812-9889-2715",
+      "createDateView": "30 Mar 2026 11:52:31",
+      "lastUpdate": "30/03/2026 11:52:31",
+      "name": "Dwi",
+      "id": 78704,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05895",
+      "email": null,
+      "createDate": "30/03/2026 11:52:31"
+    },
+    {
+      "lastUpdateView": "18 Oct 2025 18:14:16",
+      "mobilePhone": "+62 812-9507-8854",
+      "createDateView": "18 Oct 2025 18:14:16",
+      "lastUpdate": "18/10/2025 18:14:16",
+      "name": "Dwi",
+      "id": 60552,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04127",
+      "email": null,
+      "createDate": "18/10/2025 18:14:16"
+    },
+    {
+      "lastUpdateView": "08 Apr 2025 13:39:08",
+      "mobilePhone": "+62 895-3224-92236",
+      "createDateView": "08 Apr 2025 13:39:08",
+      "lastUpdate": "08/04/2025 13:39:08",
+      "name": "Dwi",
+      "id": 42602,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02471",
+      "email": null,
+      "createDate": "08/04/2025 13:39:08"
+    },
+    {
+      "lastUpdateView": "04 Mar 2026 13:38:44",
+      "mobilePhone": "+628122991395",
+      "createDateView": "04 Mar 2026 13:38:44",
+      "lastUpdate": "04/03/2026 13:38:44",
+      "name": "Dwi Aris",
+      "id": 77555,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05625",
+      "email": null,
+      "createDate": "04/03/2026 13:38:44"
+    },
+    {
+      "lastUpdateView": "01 Dec 2025 10:11:11",
+      "mobilePhone": "081350706973",
+      "createDateView": "01 Dec 2025 10:11:10",
+      "lastUpdate": "01/12/2025 10:11:11",
+      "name": "Dwi Morina",
+      "id": 64856,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04674",
+      "email": null,
+      "createDate": "01/12/2025 10:11:10"
+    },
+    {
+      "lastUpdateView": "28 Jul 2025 13:06:16",
+      "mobilePhone": "+62 823-1214-7161",
+      "createDateView": "28 Jul 2025 13:06:16",
+      "lastUpdate": "28/07/2025 13:06:16",
+      "name": "Dwi Retno",
+      "id": 54503,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03214",
+      "email": null,
+      "createDate": "28/07/2025 13:06:16"
+    },
+    {
+      "lastUpdateView": "24 Jul 2025 09:51:24",
+      "mobilePhone": "081292524919",
+      "createDateView": "24 Jul 2025 09:51:24",
+      "lastUpdate": "24/07/2025 09:51:24",
+      "name": "Dwi Setya N",
+      "id": 54250,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03174",
+      "email": null,
+      "createDate": "24/07/2025 09:51:24"
+    },
+    {
+      "lastUpdateView": "13 Mar 2026 08:35:36",
+      "mobilePhone": "+62 812-7271-5737",
+      "createDateView": "13 Mar 2026 08:35:36",
+      "lastUpdate": "13/03/2026 08:35:36",
+      "name": "Dwi Sulistianingsih",
+      "id": 78403,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05735",
+      "email": null,
+      "createDate": "13/03/2026 08:35:36"
+    },
+    {
+      "lastUpdateView": "16 Oct 2025 09:53:38",
+      "mobilePhone": "081803848237",
+      "createDateView": "16 Oct 2025 09:53:38",
+      "lastUpdate": "16/10/2025 09:53:38",
+      "name": "Dwi Wahyu",
+      "id": 60050,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04087",
+      "email": null,
+      "createDate": "16/10/2025 09:53:38"
+    },
+    {
+      "lastUpdateView": "28 Nov 2025 14:46:31",
+      "mobilePhone": "+62 813-5060-5854",
+      "createDateView": "28 Nov 2025 14:46:31",
+      "lastUpdate": "28/11/2025 14:46:31",
+      "name": "Dwi komawanti",
+      "id": 65105,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04647",
+      "email": null,
+      "createDate": "28/11/2025 14:46:31"
+    },
+    {
+      "lastUpdateView": "01 Nov 2025 08:02:42",
+      "mobilePhone": "087856697762",
+      "createDateView": "01 Nov 2025 08:02:42",
+      "lastUpdate": "01/11/2025 08:02:42",
+      "name": "Dwi rakhliana",
+      "id": 61952,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04266",
+      "email": null,
+      "createDate": "01/11/2025 08:02:42"
+    },
+    {
+      "lastUpdateView": "16 Feb 2026 14:03:36",
+      "mobilePhone": "+628115025306",
+      "createDateView": "16 Feb 2026 14:03:36",
+      "lastUpdate": "16/02/2026 14:03:36",
+      "name": "Dwi sogi",
+      "id": 75352,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05323",
+      "email": null,
+      "createDate": "16/02/2026 14:03:36"
+    },
+    {
+      "lastUpdateView": "24 Oct 2025 09:54:03",
+      "mobilePhone": "+62 857-3095-6829",
+      "createDateView": "24 Oct 2025 09:54:03",
+      "lastUpdate": "24/10/2025 09:54:03",
+      "name": "Dwi wati hartati/ p.Ali Mu'Ajis",
+      "id": 60954,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.04174",
+      "email": null,
+      "createDate": "24/10/2025 09:54:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": "081882836784",
+      "createDateView": "29 Oct 2024 14:35:19",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "Dwiwiati",
+      "id": 25450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01403",
+      "email": null,
+      "createDate": "29/10/2024 14:35:19"
+    },
+    {
+      "lastUpdateView": "13 Mar 2026 11:12:42",
+      "mobilePhone": "+62 817-0336-0109",
+      "createDateView": "13 Mar 2026 11:12:42",
+      "lastUpdate": "13/03/2026 11:12:42",
+      "name": "Dyah",
+      "id": 78404,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05744",
+      "email": null,
+      "createDate": "13/03/2026 11:12:42"
+    },
+    {
+      "lastUpdateView": "27 Sep 2025 09:25:55",
+      "mobilePhone": "081998045737",
+      "createDateView": "27 Sep 2025 09:25:55",
+      "lastUpdate": "27/09/2025 09:25:55",
+      "name": "Dyah Awalliyah",
+      "id": 58907,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03892",
+      "email": null,
+      "createDate": "27/09/2025 09:25:55"
+    },
+    {
+      "lastUpdateView": "25 Aug 2025 11:42:12",
+      "mobilePhone": "+62 813-3068-8033",
+      "createDateView": "25 Aug 2025 11:42:12",
+      "lastUpdate": "25/08/2025 11:42:12",
+      "name": "Dyah Ayu",
+      "id": 56302,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.03484",
+      "email": null,
+      "createDate": "25/08/2025 11:42:12"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": "08156712121",
+      "createDateView": "04 Nov 2024 16:36:51",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "Dyah Nuraini",
+      "id": 25700,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01410",
+      "email": null,
+      "createDate": "04/11/2024 16:36:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": "081533382769",
+      "createDateView": "02 May 2024 11:50:30",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "Dyah Pertiwi",
+      "id": 12650,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00349",
+      "email": null,
+      "createDate": "02/05/2024 11:50:30"
+    },
+    {
+      "lastUpdateView": "21 Feb 2026 10:57:27",
+      "mobilePhone": "+6281511191882",
+      "createDateView": "21 Feb 2026 10:57:27",
+      "lastUpdate": "21/02/2026 10:57:27",
+      "name": "Dylan Ariza",
+      "id": 75956,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05382",
+      "email": null,
+      "createDate": "21/02/2026 10:57:27"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "30 May 2022 15:44:51",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "E Herni",
+      "id": 2563,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00056",
+      "email": null,
+      "createDate": "30/05/2022 15:44:51"
+    },
+    {
+      "lastUpdateView": "07 Oct 2025 16:09:48",
+      "mobilePhone": null,
+      "createDateView": "07 Oct 2025 16:09:48",
+      "lastUpdate": "07/10/2025 16:09:48",
+      "name": "EA - XL Axiata",
+      "id": 59454,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.04007",
+      "email": null,
+      "createDate": "07/10/2025 16:09:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "15 Aug 2024 15:45:34",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "EBA ELIA",
+      "id": 20601,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.01126",
+      "email": null,
+      "createDate": "15/08/2024 15:45:34"
+    },
+    {
+      "lastUpdateView": "25 Feb 2026 13:18:46",
+      "mobilePhone": "+62811193369",
+      "createDateView": "25 Feb 2026 13:18:46",
+      "lastUpdate": "25/02/2026 13:18:46",
+      "name": "EDA",
+      "id": 76652,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05467",
+      "email": null,
+      "createDate": "25/02/2026 13:18:46"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "09 Dec 2024 15:45:33",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "EDHA",
+      "id": 27055,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01537",
+      "email": null,
+      "createDate": "09/12/2024 15:45:33"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "19 Aug 2024 15:26:00",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "EDY MAKMUR",
+      "id": 20504,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.01147",
+      "email": null,
+      "createDate": "19/08/2024 15:26:00"
+    },
+    {
+      "lastUpdateView": "24 Apr 2025 10:41:08",
+      "mobilePhone": "+62 811-1666-630",
+      "createDateView": "24 Apr 2025 10:41:08",
+      "lastUpdate": "24/04/2025 10:41:08",
+      "name": "EDY PRASETYO",
+      "id": 44551,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02563",
+      "email": null,
+      "createDate": "24/04/2025 10:41:08"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": "081363912979",
+      "createDateView": "23 Oct 2024 09:19:57",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "EKA HASANAH",
+      "id": 24900,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01386",
+      "email": null,
+      "createDate": "23/10/2024 09:19:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": "081282279640",
+      "createDateView": "11 Feb 2025 14:43:54",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "EKA RAHMAWATI",
+      "id": 34952,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02132",
+      "email": null,
+      "createDate": "11/02/2025 14:43:54"
+    },
+    {
+      "lastUpdateView": "03 Jan 2026 17:17:37",
+      "mobilePhone": null,
+      "createDateView": "03 Jan 2026 17:17:37",
+      "lastUpdate": "03/01/2026 17:17:37",
+      "name": "EKO",
+      "id": 69100,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.05081",
+      "email": null,
+      "createDate": "03/01/2026 17:17:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "11 Jun 2024 13:40:36",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "ELIZA",
+      "id": 16052,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00762",
+      "email": null,
+      "createDate": "11/06/2024 13:40:36"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "09 Jul 2024 13:52:05",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "ELIZAWATI",
+      "id": 17752,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00920",
+      "email": null,
+      "createDate": "09/07/2024 13:52:05"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:13",
+      "mobilePhone": null,
+      "createDateView": "08 Aug 2024 11:26:12",
+      "lastUpdate": "26/03/2025 15:37:13",
+      "name": "ELLEN YOZERIZAL",
+      "id": 20350,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.01116",
+      "email": null,
+      "createDate": "08/08/2024 11:26:12"
+    },
+    {
+      "lastUpdateView": "20 Feb 2026 14:20:38",
+      "mobilePhone": "087878473509",
+      "createDateView": "15 Jul 2024 11:02:57",
+      "lastUpdate": "20/02/2026 14:20:38",
+      "name": "ELLY APRIDAH",
+      "id": 18300,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "RESELLER",
+        "id": 158
+      },
+      "customerNo": "CUST.00944",
+      "email": null,
+      "createDate": "15/07/2024 11:02:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": null,
+      "createDateView": "27 Jun 2024 14:10:23",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "ELNAWATI",
+      "id": 16559,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00854",
+      "email": null,
+      "createDate": "27/06/2024 14:10:23"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": "+62 812-3060-3577",
+      "createDateView": "21 Feb 2025 14:08:34",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "ELOK SUDJONO",
+      "id": 37550,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02205",
+      "email": null,
+      "createDate": "21/02/2025 14:08:34"
+    },
+    {
+      "lastUpdateView": "28 Apr 2025 11:10:01",
+      "mobilePhone": "081388284366",
+      "createDateView": "28 Apr 2025 11:10:01",
+      "lastUpdate": "28/04/2025 11:10:01",
+      "name": "ELSI Fitriana",
+      "id": 44456,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.02579",
+      "email": null,
+      "createDate": "28/04/2025 11:10:01"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": null,
+      "createDateView": "20 Aug 2024 11:53:57",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "EMAN NURIKSAN",
+      "id": 20458,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.01151",
+      "email": null,
+      "createDate": "20/08/2024 11:53:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": "62 811-128-449",
+      "createDateView": "08 Sep 2022 14:50:59",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "EMART MINIMARKET",
+      "id": 5700,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "SPESIAL CHANNEL",
+        "id": 155
+      },
+      "customerNo": "CUST.00106",
+      "email": null,
+      "createDate": "08/09/2022 14:50:59"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": null,
+      "createDateView": "09 Jul 2024 14:32:03",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "EMERALDA NOOR ACHNI TOKPED ALANABI",
+      "id": 17651,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00924",
+      "email": null,
+      "createDate": "09/07/2024 14:32:03"
+    },
+    {
+      "lastUpdateView": "20 Feb 2026 14:16:02",
+      "mobilePhone": "085278535353",
+      "createDateView": "22 Jul 2024 15:18:24",
+      "lastUpdate": "20/02/2026 14:16:02",
+      "name": "EMIL ARIF AR PUSAT",
+      "id": 18905,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "RESELLER",
+        "id": 158
+      },
+      "customerNo": "CUST.00988",
+      "email": null,
+      "createDate": "22/07/2024 15:18:24"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": "081334267080",
+      "createDateView": "31 Dec 2024 13:45:17",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "EMMA",
+      "id": 29404,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01719",
+      "email": null,
+      "createDate": "31/12/2024 13:45:17"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:14",
+      "mobilePhone": "085220008473",
+      "createDateView": "17 Dec 2024 10:30:54",
+      "lastUpdate": "26/03/2025 15:37:14",
+      "name": "EMMA",
+      "id": 27355,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "parentNode": true,
+          "nameWithIndent": "Root",
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.01594",
+      "email": null,
+      "createDate": "17/12/2024 10:30:54"
+    }
+  ],
+  "sp": {
+    "page": 13,
+    "sort": null,
+    "pageSize": 100,
+    "pageCount": 59,
+    "rowCount": 5893,
+    "start": 1200,
+    "limit": null
+  }
+}

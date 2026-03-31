@@ -1,0 +1,2714 @@
+{
+  "s": true,
+  "d": [
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:25",
+      "mobilePhone": "62 812-1932-7723",
+      "createDateView": "18 Apr 2024 17:22:18",
+      "lastUpdate": "26/03/2025 15:37:25",
+      "name": "FM0209 ajeng",
+      "id": 11559,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00259",
+      "email": null,
+      "createDate": "18/04/2024 17:22:18"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:25",
+      "mobilePhone": "62 823-2743-0300",
+      "createDateView": "19 Apr 2024 15:19:01",
+      "lastUpdate": "26/03/2025 15:37:25",
+      "name": "FM0217 Mujianto",
+      "id": 11564,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00273",
+      "email": null,
+      "createDate": "19/04/2024 15:19:01"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:25",
+      "mobilePhone": "62 852-6408-7732",
+      "createDateView": "02 May 2024 13:22:57",
+      "lastUpdate": "26/03/2025 15:37:25",
+      "name": "FM0223 Puji Susilo",
+      "id": 12750,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00357",
+      "email": null,
+      "createDate": "02/05/2024 13:22:57"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:25",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:55:54",
+      "lastUpdate": "26/03/2025 15:37:25",
+      "name": "FM0226 Agus",
+      "id": 15208,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00682",
+      "email": null,
+      "createDate": "05/06/2024 08:55:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:25",
+      "mobilePhone": "62 822-4617-2974",
+      "createDateView": "13 May 2024 22:14:34",
+      "lastUpdate": "26/03/2025 15:37:25",
+      "name": "FM0226 asrori setiawan",
+      "id": 13551,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00441",
+      "email": null,
+      "createDate": "13/05/2024 22:14:34"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 856-0651-9772",
+      "createDateView": "21 Apr 2024 20:56:10",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0226 totoklakone",
+      "id": 11950,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00286",
+      "email": null,
+      "createDate": "21/04/2024 20:56:10"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 857-4609-4180",
+      "createDateView": "23 Apr 2024 09:48:39",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0227 Sukarji RT",
+      "id": 11853,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00302",
+      "email": null,
+      "createDate": "23/04/2024 09:48:39"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 813-7154-0077",
+      "createDateView": "11 May 2024 23:34:45",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0229 Latifah",
+      "id": 13450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00416",
+      "email": null,
+      "createDate": "11/05/2024 23:34:45"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 877-0264-0729",
+      "createDateView": "17 Apr 2024 08:22:51",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0301 Mohammad Ilyas. Skep. Ns",
+      "id": 11650,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00221",
+      "email": null,
+      "createDate": "17/04/2024 08:22:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 852-3519-8408",
+      "createDateView": "21 Apr 2024 21:10:06",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0301 PASOPATI",
+      "id": 11851,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00288",
+      "email": null,
+      "createDate": "21/04/2024 21:10:06"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 813-4673-9882",
+      "createDateView": "22 Apr 2024 16:16:48",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0301 Paud Islam",
+      "id": 12050,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00301",
+      "email": null,
+      "createDate": "22/04/2024 16:16:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 817-9224-441",
+      "createDateView": "21 Apr 2024 21:29:31",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0302 Attin. S",
+      "id": 11952,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00292",
+      "email": null,
+      "createDate": "21/04/2024 21:29:31"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 813-1789-6044",
+      "createDateView": "11 May 2024 22:58:35",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0302 Susy",
+      "id": 13352,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00407",
+      "email": null,
+      "createDate": "11/05/2024 22:58:35"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:18:58",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0303 Cik Usman",
+      "id": 15202,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00660",
+      "email": null,
+      "createDate": "04/06/2024 15:18:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:26",
+      "mobilePhone": "62 815-7222-2030",
+      "createDateView": "13 May 2024 21:51:37",
+      "lastUpdate": "26/03/2025 15:37:26",
+      "name": "FM0306 Eulis Aminah",
+      "id": 13850,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00436",
+      "email": null,
+      "createDate": "13/05/2024 21:51:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:55:03",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0306 Farida",
+      "id": 15002,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00655",
+      "email": null,
+      "createDate": "04/06/2024 14:55:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 853-5861-7948",
+      "createDateView": "13 May 2024 21:44:44",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0307 Mhd Amin",
+      "id": 13800,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00434",
+      "email": null,
+      "createDate": "13/05/2024 21:44:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 813-3528-5689",
+      "createDateView": "24 Apr 2024 09:33:37",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0307 Muhammad Yusuf",
+      "id": 12005,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00306",
+      "email": null,
+      "createDate": "24/04/2024 09:33:37"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 09:25:43",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0309 Siti Khadijah",
+      "id": 15007,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00713",
+      "email": null,
+      "createDate": "06/06/2024 09:25:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "085256750008",
+      "createDateView": "17 Apr 2024 10:36:01",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0310 Achmad Musa",
+      "id": 11653,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00227",
+      "email": null,
+      "createDate": "17/04/2024 10:36:01"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "+62 878-8967-6123",
+      "createDateView": "13 May 2024 13:24:39",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0311 Aman/abdurrahman",
+      "id": 13500,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00426",
+      "email": null,
+      "createDate": "13/05/2024 13:24:39"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "085954369120",
+      "createDateView": "17 Apr 2024 14:27:23",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0313 Faruk Jamil",
+      "id": 11554,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00241",
+      "email": null,
+      "createDate": "17/04/2024 14:27:23"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 812-2257-4378",
+      "createDateView": "19 Apr 2024 15:57:32",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0313 Wawan Ruswandi",
+      "id": 11705,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.00281",
+      "email": null,
+      "createDate": "19/04/2024 15:57:32"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 857-4667-3956",
+      "createDateView": "18 Apr 2024 11:24:48",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0318 Warung Luwes Bu Kholip",
+      "id": 11663,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00253",
+      "email": null,
+      "createDate": "18/04/2024 11:24:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 815-1182-0232",
+      "createDateView": "21 Apr 2024 21:05:54",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0320 Putramurphy",
+      "id": 12000,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00287",
+      "email": null,
+      "createDate": "21/04/2024 21:05:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "62 856-9937-238",
+      "createDateView": "13 May 2024 21:48:28",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0324 Enti Sanukhan",
+      "id": 13751,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00435",
+      "email": null,
+      "createDate": "13/05/2024 21:48:28"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:27",
+      "mobilePhone": "+62 812-1595-6310",
+      "createDateView": "24 May 2024 14:45:50",
+      "lastUpdate": "26/03/2025 15:37:27",
+      "name": "FM0324 sulastri",
+      "id": 14700,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.00516",
+      "email": null,
+      "createDate": "24/05/2024 14:45:50"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 877-1926-2343",
+      "createDateView": "21 Apr 2024 21:25:52",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0325 Dhe Yanto Sosis",
+      "id": 11951,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00291",
+      "email": null,
+      "createDate": "21/04/2024 21:25:52"
+    },
+    {
+      "lastUpdateView": "11 Nov 2025 11:01:04",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 10:15:02",
+      "lastUpdate": "11/11/2025 11:01:04",
+      "name": "FM0325 Feri Hartanti",
+      "id": 15005,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ORDERAN CS ADS",
+        "id": 2050
+      },
+      "customerNo": "CUST.00687",
+      "email": null,
+      "createDate": "05/06/2024 10:15:02"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:19:47",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0325 jufri",
+      "id": 14553,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00513",
+      "email": null,
+      "createDate": "24/05/2024 14:19:47"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 896-8741-4887",
+      "createDateView": "17 Apr 2024 17:05:52",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0326 Ade Azriel",
+      "id": 11702,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00246",
+      "email": null,
+      "createDate": "17/04/2024 17:05:52"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 813-6140-0053",
+      "createDateView": "18 Apr 2024 10:57:54",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0326 Hastuti",
+      "id": 11506,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00251",
+      "email": null,
+      "createDate": "18/04/2024 10:57:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 16:37:10",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0326 Rendrahardi",
+      "id": 14505,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00526",
+      "email": null,
+      "createDate": "24/05/2024 16:37:10"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": null,
+      "createDateView": "05 Jun 2024 08:25:58",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0326 dewanto chatur prasetyo",
+      "id": 15155,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00671",
+      "email": null,
+      "createDate": "05/06/2024 08:25:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 858-8274-8549",
+      "createDateView": "24 Apr 2024 09:41:23",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0326 mardiana",
+      "id": 11801,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00307",
+      "email": null,
+      "createDate": "24/04/2024 09:41:23"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "085883725999",
+      "createDateView": "17 Apr 2024 14:23:08",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0328 Agung WY",
+      "id": 11504,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00240",
+      "email": null,
+      "createDate": "17/04/2024 14:23:08"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 821-1149-5303",
+      "createDateView": "18 Apr 2024 11:29:28",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0328 Bhet@",
+      "id": 11750,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00254",
+      "email": null,
+      "createDate": "18/04/2024 11:29:28"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 821-1149-5303",
+      "createDateView": "11 May 2024 23:03:38",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0328 Bhet@/lukman suryadi",
+      "id": 13400,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00408",
+      "email": null,
+      "createDate": "11/05/2024 23:03:38"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 812-8014-761",
+      "createDateView": "17 Apr 2024 08:31:16",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0328 Firdaus Sani",
+      "id": 11602,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00222",
+      "email": null,
+      "createDate": "17/04/2024 08:31:16"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:28",
+      "mobilePhone": "62 821-8554-6118",
+      "createDateView": "19 Apr 2024 14:27:47",
+      "lastUpdate": "26/03/2025 15:37:28",
+      "name": "FM0328 Warsid",
+      "id": 11560,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00263",
+      "email": null,
+      "createDate": "19/04/2024 14:27:47"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 858-8372-5999",
+      "createDateView": "19 Apr 2024 14:13:18",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0328 agungwy",
+      "id": 11666,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00262",
+      "email": null,
+      "createDate": "19/04/2024 14:13:18"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 821-1331-0256",
+      "createDateView": "29 Apr 2024 08:22:54",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0329 Aris Munandar",
+      "id": 12203,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00338",
+      "email": null,
+      "createDate": "29/04/2024 08:22:54"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 14:00:43",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0329 Hartati Wahyuningsih/tatik suparno",
+      "id": 14650,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00511",
+      "email": null,
+      "createDate": "24/05/2024 14:00:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 15:40:44",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0329 Omjana",
+      "id": 15154,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00664",
+      "email": null,
+      "createDate": "04/06/2024 15:40:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "06 Jun 2024 08:53:53",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0329 Syahrian",
+      "id": 15163,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00708",
+      "email": null,
+      "createDate": "06/06/2024 08:53:53"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "04 Jun 2024 14:51:59",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0330 Indah DP",
+      "id": 14902,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00654",
+      "email": null,
+      "createDate": "04/06/2024 14:51:59"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "27 May 2024 11:26:30",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0330 Kholid Abu Hudzaifah",
+      "id": 14410,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00552",
+      "email": null,
+      "createDate": "27/05/2024 11:26:30"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 857-5242-3032",
+      "createDateView": "18 Apr 2024 11:03:12",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0330 MamaRohid",
+      "id": 11662,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00252",
+      "email": null,
+      "createDate": "18/04/2024 11:03:12"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 812-2939-1177",
+      "createDateView": "17 Apr 2024 17:14:10",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0330 Sri Letterno",
+      "id": 11558,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00247",
+      "email": null,
+      "createDate": "17/04/2024 17:14:10"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": null,
+      "createDateView": "24 May 2024 13:30:00",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0330 Sutimin",
+      "id": 14550,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00505",
+      "email": null,
+      "createDate": "24/05/2024 13:30:00"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 821-2902-3584",
+      "createDateView": "19 Apr 2024 16:00:27",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0331 \"asraf Khan\"",
+      "id": 11706,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00282",
+      "email": null,
+      "createDate": "19/04/2024 16:00:27"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:29",
+      "mobilePhone": "62 853-6071-0005",
+      "createDateView": "17 Apr 2024 05:48:22",
+      "lastUpdate": "26/03/2025 15:37:29",
+      "name": "FM0401 AGUSSALAM NST",
+      "id": 11600,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00219",
+      "email": null,
+      "createDate": "17/04/2024 05:48:22"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 852-8747-5758",
+      "createDateView": "17 Apr 2024 05:55:48",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0401 Marjudin",
+      "id": 11601,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00220",
+      "email": null,
+      "createDate": "17/04/2024 05:55:48"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 812-7756-4191",
+      "createDateView": "17 Apr 2024 08:47:09",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0402 Jamarli",
+      "id": 11651,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00223",
+      "email": null,
+      "createDate": "17/04/2024 08:47:09"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": null,
+      "createDateView": "03 Jun 2024 16:51:26",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0402 Sayifur. R/Ipunk",
+      "id": 14800,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00630",
+      "email": null,
+      "createDate": "03/06/2024 16:51:26"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "087759063123",
+      "createDateView": "04 Apr 2024 07:14:39",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0403",
+      "id": 11350,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00212",
+      "email": null,
+      "createDate": "04/04/2024 07:14:39"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 877-5906-3123",
+      "createDateView": "18 Apr 2024 10:39:42",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0403 Ulil's",
+      "id": 11505,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00249",
+      "email": null,
+      "createDate": "18/04/2024 10:39:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 812-9797-6890",
+      "createDateView": "17 Apr 2024 17:56:51",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0403 Ziza Mecca",
+      "id": 11660,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00248",
+      "email": null,
+      "createDate": "17/04/2024 17:56:51"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 812-3036-5052",
+      "createDateView": "18 Apr 2024 10:49:41",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0403 yayuksariwahyu07",
+      "id": 11661,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00250",
+      "email": null,
+      "createDate": "18/04/2024 10:49:41"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 838-1455-0908",
+      "createDateView": "18 Apr 2024 16:11:30",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0404 Budiman",
+      "id": 11664,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00255",
+      "email": null,
+      "createDate": "18/04/2024 16:11:30"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 815-6334-3231",
+      "createDateView": "18 Apr 2024 16:22:58",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0405 Iqbaal JTV",
+      "id": 11604,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00257",
+      "email": null,
+      "createDate": "18/04/2024 16:22:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 818-745-289",
+      "createDateView": "11 May 2024 23:41:02",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0405 Wys Akuba",
+      "id": 13356,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00418",
+      "email": null,
+      "createDate": "11/05/2024 23:41:02"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 857-1752-1009",
+      "createDateView": "18 Apr 2024 16:30:02",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0405 anidoang",
+      "id": 11703,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00258",
+      "email": null,
+      "createDate": "18/04/2024 16:30:02"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "62 851-6131-5380",
+      "createDateView": "18 Apr 2024 17:34:25",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0406 7imi",
+      "id": 11665,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00260",
+      "email": null,
+      "createDate": "18/04/2024 17:34:25"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:30",
+      "mobilePhone": "085779682437",
+      "createDateView": "16 Apr 2024 21:00:42",
+      "lastUpdate": "26/03/2025 15:37:30",
+      "name": "FM0406 Radi",
+      "id": 11551,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00218",
+      "email": null,
+      "createDate": "16/04/2024 21:00:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081263081975",
+      "createDateView": "18 Apr 2024 17:38:52",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0406 Sahat Lbn raja/S. P. Naingg",
+      "id": 11605,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00261",
+      "email": null,
+      "createDate": "18/04/2024 17:38:52"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "62 823-9754-4533",
+      "createDateView": "19 Apr 2024 14:31:16",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0407 Anwar",
+      "id": 11561,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00264",
+      "email": null,
+      "createDate": "19/04/2024 14:31:16"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "62 813-6762-6220",
+      "createDateView": "19 Apr 2024 14:43:42",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0407 Mastini",
+      "id": 11562,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00266",
+      "email": null,
+      "createDate": "19/04/2024 14:43:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "62 812-1322-0939",
+      "createDateView": "19 Apr 2024 14:38:58",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0407 Tasnobaryanto",
+      "id": 11454,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00265",
+      "email": null,
+      "createDate": "19/04/2024 14:38:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": null,
+      "createDateView": "03 Jun 2024 11:45:41",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0408 Nawir",
+      "id": 14750,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00629",
+      "email": null,
+      "createDate": "03/06/2024 11:45:41"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "81329713445",
+      "createDateView": "17 Apr 2024 10:22:43",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Agus K",
+      "id": 11451,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00225",
+      "email": null,
+      "createDate": "17/04/2024 10:22:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081289263956",
+      "createDateView": "17 Apr 2024 10:11:29",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Akbar Bhakti",
+      "id": 11652,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00224",
+      "email": null,
+      "createDate": "17/04/2024 10:11:29"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081807991069",
+      "createDateView": "17 Apr 2024 10:40:17",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Hendra Irawan",
+      "id": 11503,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00228",
+      "email": null,
+      "createDate": "17/04/2024 10:40:17"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "62 823-3817-5346",
+      "createDateView": "02 May 2024 15:42:18",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Idris",
+      "id": 12755,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00373",
+      "email": null,
+      "createDate": "02/05/2024 15:42:18"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081320145172",
+      "createDateView": "17 Apr 2024 10:44:06",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Puji Astuti Yuliah",
+      "id": 11654,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00229",
+      "email": null,
+      "createDate": "17/04/2024 10:44:06"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081231530235",
+      "createDateView": "17 Apr 2024 10:31:12",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 R Mulawarman",
+      "id": 11502,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00226",
+      "email": null,
+      "createDate": "17/04/2024 10:31:12"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:31",
+      "mobilePhone": "081281291963",
+      "createDateView": "17 Apr 2024 14:34:13",
+      "lastUpdate": "26/03/2025 15:37:31",
+      "name": "FM0409 Safni Chair Situmorang",
+      "id": 11555,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00242",
+      "email": null,
+      "createDate": "17/04/2024 14:34:13"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "085269679495",
+      "createDateView": "17 Apr 2024 13:42:18",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0410 Hardinal Fitra",
+      "id": 11452,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00232",
+      "email": null,
+      "createDate": "17/04/2024 13:42:18"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "087780112084",
+      "createDateView": "17 Apr 2024 13:51:01",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0410 Maria Pire",
+      "id": 11700,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00233",
+      "email": null,
+      "createDate": "17/04/2024 13:51:01"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "62 857-6543-5800",
+      "createDateView": "29 Apr 2024 07:40:04",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0411 Fatimah",
+      "id": 12201,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00327",
+      "email": null,
+      "createDate": "29/04/2024 07:40:04"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "081214695247",
+      "createDateView": "17 Apr 2024 14:13:42",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 Asep Wahyudi",
+      "id": 11657,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00238",
+      "email": null,
+      "createDate": "17/04/2024 14:13:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "085650827591",
+      "createDateView": "17 Apr 2024 14:01:43",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 Dayat",
+      "id": 11553,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00235",
+      "email": null,
+      "createDate": "17/04/2024 14:01:43"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "081355802161",
+      "createDateView": "17 Apr 2024 14:05:08",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 Emas Sri",
+      "id": 11453,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00236",
+      "email": null,
+      "createDate": "17/04/2024 14:05:08"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "082169329719",
+      "createDateView": "17 Apr 2024 14:09:58",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 H. Laupin",
+      "id": 11656,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00237",
+      "email": null,
+      "createDate": "17/04/2024 14:09:58"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "082390007876",
+      "createDateView": "17 Apr 2024 13:57:13",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 Rahman",
+      "id": 11701,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00234",
+      "email": null,
+      "createDate": "17/04/2024 13:57:13"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "62 813-2130-9030",
+      "createDateView": "23 Apr 2024 09:52:33",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0412 Shrie Laksmini",
+      "id": 11956,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00303",
+      "email": null,
+      "createDate": "23/04/2024 09:52:33"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "082228507009",
+      "createDateView": "17 Apr 2024 14:19:06",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0413 Farida Elya",
+      "id": 11658,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00239",
+      "email": null,
+      "createDate": "17/04/2024 14:19:06"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "62 821-5242-8830",
+      "createDateView": "29 Apr 2024 07:42:42",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0413 Maysarah",
+      "id": 12300,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00328",
+      "email": null,
+      "createDate": "29/04/2024 07:42:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:32",
+      "mobilePhone": "62 812-4364-9977",
+      "createDateView": "29 Apr 2024 07:59:16",
+      "lastUpdate": "26/03/2025 15:37:32",
+      "name": "FM0413 Rakezh/husmawati",
+      "id": 12350,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00332",
+      "email": null,
+      "createDate": "29/04/2024 07:59:16"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 858-3878-5634",
+      "createDateView": "21 Apr 2024 20:23:59",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0414 RINO",
+      "id": 11800,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00283",
+      "email": null,
+      "createDate": "21/04/2024 20:23:59"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 817-6652-620",
+      "createDateView": "16 Apr 2024 04:13:49",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0414 Umar Said",
+      "id": 11450,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00214",
+      "email": null,
+      "createDate": "16/04/2024 04:13:49"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 877-6677-0025",
+      "createDateView": "21 Apr 2024 20:35:42",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0414 taryantaryan90",
+      "id": 11900,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00285",
+      "email": null,
+      "createDate": "21/04/2024 20:35:42"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 821-4729-3000",
+      "createDateView": "19 Apr 2024 15:10:26",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0416 Mang",
+      "id": 11751,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00271",
+      "email": null,
+      "createDate": "19/04/2024 15:10:26"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 857-4087-7467",
+      "createDateView": "19 Apr 2024 15:06:03",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0416 Muhammad Jaelani",
+      "id": 11507,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00270",
+      "email": null,
+      "createDate": "19/04/2024 15:06:03"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 822-5916-3551",
+      "createDateView": "19 Apr 2024 14:55:44",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0416 Rachmat Andi Ilham",
+      "id": 11667,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00268",
+      "email": null,
+      "createDate": "19/04/2024 14:55:44"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 857-5708-6213",
+      "createDateView": "19 Apr 2024 15:01:07",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0416 Rinawati",
+      "id": 11606,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00269",
+      "email": null,
+      "createDate": "19/04/2024 15:01:07"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 812-9495-8660",
+      "createDateView": "19 Apr 2024 15:14:55",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0416 Taty Rosmiati",
+      "id": 11563,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00272",
+      "email": null,
+      "createDate": "19/04/2024 15:14:55"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": null,
+      "createDateView": "29 May 2024 10:14:08",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0417 BUDHIARTI SUMANTRI",
+      "id": 14611,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "STARLING",
+        "id": 350
+      },
+      "customerNo": "CUST.00570",
+      "email": null,
+      "createDate": "29/05/2024 10:14:08"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 859-2319-1820",
+      "createDateView": "19 Apr 2024 15:32:05",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0417 Elly Rukhayani",
+      "id": 11670,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00276",
+      "email": null,
+      "createDate": "19/04/2024 15:32:05"
+    },
+    {
+      "lastUpdateView": "26 Mar 2025 15:37:33",
+      "mobilePhone": "62 813-1821-2279",
+      "createDateView": "19 Apr 2024 15:23:05",
+      "lastUpdate": "26/03/2025 15:37:33",
+      "name": "FM0417 Herman",
+      "id": 11669,
+      "category": {
+        "parent": {
+          "sub": false,
+          "parent": null,
+          "lvl": 0,
+          "defaultCategory": false,
+          "nameWithIndentStrip": "Root",
+          "optLock": 0,
+          "name": "Root",
+          "nameWithIndent": "Root",
+          "parentNode": true,
+          "id": 50
+        },
+        "name": "ONLINE",
+        "id": 157
+      },
+      "customerNo": "CUST.00275",
+      "email": null,
+      "createDate": "19/04/2024 15:23:05"
+    }
+  ],
+  "sp": {
+    "page": 17,
+    "sort": null,
+    "pageSize": 100,
+    "pageCount": 59,
+    "rowCount": 5893,
+    "start": 1600,
+    "limit": null
+  }
+}
