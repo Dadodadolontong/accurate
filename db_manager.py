@@ -450,10 +450,10 @@ def upsert_customers(records: list[dict]):
                 _s(r.get("billProvince")),
                 _s(r.get("billZipCode")),
                 _s(r.get("billCountry")),
-                r.get("categoryId") or _nested(r, "category", "id"),
+                _id(r.get("categoryId")) or _id(_nested(r, "category", "id")),
                 _s(_nested(r, "category", "name") or _nested(r, "category", "nameWithIndentStrip")),
                 _s(_nested(r, "currency", "code")),
-                r.get("defaultTermId"),
+                _id(r.get("defaultTermId")),
                 _s(_nested(r, "term", "name")),
                 _s(r.get("notes")),
                 _s(r.get("npwpNo")),
@@ -481,7 +481,7 @@ def _extract_si_from_history(record: dict) -> tuple:
     for h in (record.get("processHistory") or []):
         htype = h.get("historyType") or h.get("HistoryType") or ""
         if htype.upper() == "SI":
-            inv_id   = h.get("id") or h.get("ID")
+            inv_id   = _id(h.get("id") or h.get("ID"))
             inv_name = _s(h.get("historyNumber") or h.get("HistoryNumber"))
             return inv_id, inv_name
     return None, ""
@@ -500,7 +500,7 @@ def upsert_sales_orders(records: list[dict]):
                 _s(r.get("number")),
                 _parse_date(r.get("transDate")),
                 _parse_date(r.get("shipDate")),
-                r.get("customerId") or _nested(r, "customer", "id"),
+                _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
@@ -511,11 +511,11 @@ def upsert_sales_orders(records: list[dict]):
                 _s(r.get("approvalStatus")),
                 _s(r.get("description")),
                 _s(r.get("poNumber")),
-                r.get("masterSalesmanId"),
+                _id(r.get("masterSalesmanId")),
                 _s(r.get("masterSalesmanName")),
-                r.get("branchId"),
+                _id(r.get("branchId")),
                 _s(r.get("branchName")),
-                r.get("currencyId"),
+                _id(r.get("currencyId")),
                 r.get("rate"),
                 _parse_timestamp(r.get("lastUpdate")),
                 *_extract_si_from_history(r),   # sales_invoice_id, sales_invoice_name
@@ -543,10 +543,10 @@ def _insert_sales_order_items(client: Client, now: datetime, pairs: list[tuple])
         "sales_order_items",
         [
             [
-                item.get("id"),
+                _id(item.get("id")),
                 order_id,
                 int(item.get("seq") or 0),
-                item.get("itemId"),
+                _id(item.get("itemId")),
                 _s(_nested(item, "item", "no")),
                 _s(item.get("detailName") or _nested(item, "item", "name")),
                 _s(_nested(item, "itemUnit", "name")),
@@ -574,10 +574,10 @@ def _insert_sales_order_expenses(client: Client, now: datetime, pairs: list[tupl
         "sales_order_expenses",
         [
             [
-                exp.get("id"),
+                _id(exp.get("id")),
                 order_id,
                 int(exp.get("seq") or 0),
-                exp.get("accountId") or _nested(exp, "account", "id"),
+                _id(exp.get("accountId")) or _id(_nested(exp, "account", "id")),
                 _s(_nested(exp, "account", "name")),
                 _s(exp.get("description")),
                 exp.get("amount"),
@@ -611,7 +611,8 @@ def upsert_sales_invoices(records: list[dict]):
                 _parse_date(r.get("dueDate")),
                 _parse_date(r.get("taxDate")),
                 _parse_date(r.get("shipDate")),
-                r.get("customerId") or _nested(r, "customer", "id"),
+                _id(r.get("customerId"), "customerId", _s(r.get("number")))
+                or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
@@ -622,11 +623,11 @@ def upsert_sales_invoices(records: list[dict]):
                 _s(r.get("status")),
                 _s(r.get("approvalStatus")),
                 _s(r.get("description")),
-                r.get("masterSalesmanId"),
+                _id(r.get("masterSalesmanId")),
                 _s(r.get("masterSalesmanName")),
-                r.get("branchId"),
+                _id(r.get("branchId")),
                 _s(r.get("branchName")),
-                r.get("currencyId"),
+                _id(r.get("currencyId")),
                 r.get("rate"),
                 now,
             ]
@@ -648,10 +649,10 @@ def _insert_sales_invoice_items(client: Client, now: datetime, pairs: list[tuple
         "sales_invoice_items",
         [
             [
-                item.get("id"),
+                _id(item.get("id")),
                 invoice_id,
                 int(item.get("seq") or 0),
-                item.get("itemId"),
+                _id(item.get("itemId")),
                 _s(_nested(item, "item", "no")),
                 _s(item.get("detailName") or _nested(item, "item", "name")),
                 _s(_nested(item, "itemUnit", "name")),
@@ -687,9 +688,9 @@ def upsert_sales_returns(records: list[dict]):
                 _s(r.get("number")),
                 _parse_date(r.get("transDate")),
                 _parse_date(r.get("taxDate")),
-                r.get("customerId") or _nested(r, "customer", "id"),
+                _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
                 _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
-                r.get("invoiceId"),
+                _id(r.get("invoiceId")),
                 r.get("totalAmount"),
                 r.get("subTotal"),
                 r.get("returnAmount"),
@@ -699,8 +700,8 @@ def upsert_sales_returns(records: list[dict]):
                 _s(r.get("returnStatusType")),
                 _s(r.get("approvalStatus")),
                 _s(r.get("description")),
-                r.get("branchId"),
-                r.get("currencyId"),
+                _id(r.get("branchId")),
+                _id(r.get("currencyId")),
                 r.get("rate"),
                 now,
             ]
@@ -726,10 +727,10 @@ def _insert_sales_return_items(client: Client, now: datetime, pairs: list[tuple]
         "sales_return_items",
         [
             [
-                item.get("id"),
+                _id(item.get("id")),
                 return_id,
                 int(item.get("seq") or 0),
-                item.get("itemId"),
+                _id(item.get("itemId")),
                 _s(_nested(item, "item", "no")),
                 _s(item.get("detailName") or _nested(item, "item", "name")),
                 _s(_nested(item, "itemUnit", "name")),
@@ -757,10 +758,10 @@ def _insert_sales_return_expenses(client: Client, now: datetime, pairs: list[tup
         "sales_return_expenses",
         [
             [
-                exp.get("id"),
+                _id(exp.get("id")),
                 return_id,
                 int(exp.get("seq") or 0),
-                exp.get("accountId") or _nested(exp, "account", "id"),
+                _id(exp.get("accountId")) or _id(_nested(exp, "account", "id")),
                 _s(_nested(exp, "account", "name")),
                 _s(exp.get("description")),
                 exp.get("amount"),
@@ -786,6 +787,19 @@ def _insert_sales_return_expenses(client: Client, now: datetime, pairs: list[tup
 def _s(value) -> str:
     """Convert None to empty string for non-Nullable String columns."""
     return value if value is not None else ""
+
+
+def _id(value, field: str = "", ref: str = "") -> int | None:
+    """Return None for absent or zero ID values, optionally warning when missing.
+
+    The Accurate API sometimes returns 0 instead of null for missing foreign
+    keys.  This helper normalises 0 and None to None.  Pass ``field`` and
+    ``ref`` to emit a warning when the resolved value is still falsy.
+    """
+    result = int(value) if value else None
+    if field and not result:
+        logger.warning("Missing %s on record %s", field, ref)
+    return result
 
 
 def _nested(obj: dict, *keys):

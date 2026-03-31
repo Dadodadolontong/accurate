@@ -5,6 +5,7 @@ Run directly for a one-off sync:
 """
 
 import logging
+import logging.handlers
 from datetime import datetime
 from typing import Callable
 
@@ -24,7 +25,12 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(levelname)-8s  %(name)s  %(message)s",
     handlers=[
-        logging.FileHandler("accurate_sync.log", encoding="utf-8"),
+        logging.handlers.RotatingFileHandler(
+            filename=LOGGER_FILE,
+            maxBytes=10 * 1024 * 1024,  # 10 MB per file
+            backupCount=7,              # keep 7 rotated files
+            encoding="utf-8",
+        ),
         logging.StreamHandler(),
     ],
 )
