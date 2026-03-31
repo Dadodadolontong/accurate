@@ -4,8 +4,10 @@ Run directly for a one-off sync:
     python sync.py
 """
 
+import json
 import logging
 import logging.handlers
+import os
 from datetime import datetime
 from typing import Callable
 from config import LOGGER_FILE
@@ -100,6 +102,15 @@ def _sync_entity(
 
     records = fetch_fn(client, last_sync, extra_params)
     logger.info("[%s] %d record(s) retrieved", name, len(records))
+
+    # Dump raw API response to JSON for debugging missing records.
+    debug_dir = "debug_responses"
+    os.makedirs(debug_dir, exist_ok=True)
+    ts = sync_started_at.strftime("%Y%m%d_%H%M%S")
+    debug_path = os.path.join(debug_dir, f"{name}_{ts}.json")
+    with open(debug_path, "w", encoding="utf-8") as fh:
+        json.dump(records, fh, ensure_ascii=False, indent=2, default=str)
+    logger.info("[%s] Raw response saved to %s (%d record(s))", name, debug_path, len(records))
 
     if records:
         upsert_fn(records)
