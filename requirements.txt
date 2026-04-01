@@ -3,3 +3,4 @@ clickhouse-connect>=0.7.0
 python-dotenv>=1.0.0
 schedule>=1.2.0
 holidays>=0.46
+flask>=3.0.0

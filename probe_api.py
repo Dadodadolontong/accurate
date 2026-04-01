@@ -23,18 +23,18 @@ HOST       = ACCURATE_HOST
 # ─────────────────────────────────────────────────────────────────────────────
 # CALL  ← change the path and params to probe any endpoint
 # ─────────────────────────────────────────────────────────────────────────────
-PATH   = "/accurate/api/customer/list.do"
+PATH   = "/accurate/api/sales-invoice/detail.do"
 
 PARAMS = {
-    #"number": 'SI.0326.808',
+    "number": 'SI.0326.1041',
     # Uncomment and edit to request specific fields:
-    "fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
+    #"fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     #"fields": "id,customerNo,name,email,mobilePhone,billStreet,billCity,categoryId,category,categoryId,currencyId,currencyId,lastUpdate,createDate",
     # Uncomment to filter by last-update date:
     #"filter.customerNo.op" : "EQUAL",
     #"filter.customerNo.val": "CUST.05026",
     #"sp.page"    : 1,
-    "sp.pageSize": 6000,
+    #"sp.pageSize": 6000,
 }
 
 # Other endpoints you can try (just change PATH above):
