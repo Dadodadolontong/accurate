@@ -1,8 +1,11 @@
-"""webhook_server.py – Dummy HTTP endpoint to receive Accurate webhooks.
+"""webhook_server.py – HTTP endpoint to receive Accurate webhooks.
 
-Accurate does not push deletion events through the sync API; it fires a
-webhook instead.  This server accepts POST requests, dumps the raw payload
-to a timestamped JSON file under PAYLOAD_DIR, and returns 200 OK.
+Accurate fires a webhook for events (including deletions) that are not surfaced
+through the incremental sync API.  This server:
+
+  1. Accepts POST requests and saves the raw payload to a timestamped JSON file.
+  2. Processes DELETE actions by inserting soft-delete tombstones into ClickHouse
+     (is_deleted=1) for the affected records.
 
 Usage:
     python webhook_server.py
@@ -10,13 +13,23 @@ Usage:
 The server listens on HOST:PORT (default 0.0.0.0:5055).
 Configure the same URL in Accurate's webhook settings.
 
-Payload files:
-    webhook_payloads/<event_type>_<timestamp>_<seq>.json
+Payload structure (Accurate sends a JSON array):
+    [
+      {
+        "databaseId": 123,
+        "type": "CUSTOMER",          ← entity type
+        "timestamp": "02/04/2026 ...",
+        "uuid": "...",
+        "data": [
+          {"customerId": 456, "action": "DELETE"},
+          ...
+        ]
+      },
+      ...
+    ]
 
-Each file contains the full request body as received plus two metadata
-fields injected at the top level:
-    _received_at  : ISO-8601 UTC timestamp
-    _remote_addr  : caller IP address
+Payload files:
+    webhook_payloads/<type>_<timestamp>_<seq>.json
 """
 
 import json
@@ -25,7 +38,9 @@ import os
 from datetime import datetime, timezone
 from threading import Lock
 
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
+
+from db_manager import soft_delete_records
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
@@ -33,6 +48,16 @@ from flask import Flask, request, jsonify
 HOST        = "0.0.0.0"
 PORT        = 5055
 PAYLOAD_DIR = "webhook_payloads"
+
+# Mapping of Accurate webhook type → (ClickHouse table, ID field name in data[])
+# Types not listed here are logged as unhandled but still saved to disk.
+TYPE_MAP: dict[str, tuple[str, str]] = {
+    "CUSTOMER_CATEGORY": ("customer_categories", "customerCategoryId"),
+    "CUSTOMER":          ("customers",           "customerId"),
+    "SALES_ORDER":       ("sales_orders",        "salesOrderId"),
+    "SALES_INVOICE":     ("sales_invoices",      "salesInvoiceId"),
+    "SALES_RETURN":      ("sales_returns",        "salesReturnId"),
+}
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Setup
@@ -47,7 +72,6 @@ os.makedirs(PAYLOAD_DIR, exist_ok=True)
 
 app = Flask(__name__)
 
-# Counter keeps filenames unique when multiple webhooks arrive in the same second
 _counter = 0
 _counter_lock = Lock()
 
@@ -61,14 +85,46 @@ def _next_seq() -> int:
 
 def _save_payload(event_type: str, payload: dict) -> str:
     """Write payload to disk. Returns the file path."""
-    ts  = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    seq = _next_seq()
+    ts   = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    seq  = _next_seq()
     slug = event_type.replace("/", "_").replace(" ", "_") or "unknown"
     filename = f"{slug}_{ts}_{seq:04d}.json"
     path = os.path.join(PAYLOAD_DIR, filename)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=2)
     return path
+
+
+def _process_event(event: dict):
+    """Handle a single event object from the Accurate webhook payload."""
+    event_type = (event.get("type") or "").upper()
+    data_items = event.get("data") or []
+
+    mapping = TYPE_MAP.get(event_type)
+    if not mapping:
+        logger.warning("Unhandled webhook type '%s' – saved to disk only", event_type)
+        return
+
+    table, id_field = mapping
+
+    delete_ids = [
+        int(item[id_field])
+        for item in data_items
+        if (item.get("action") or "").upper() == "DELETE" and item.get(id_field)
+    ]
+
+    if delete_ids:
+        logger.info(
+            "DELETE event: type=%s  table=%s  ids=%s",
+            event_type, table, delete_ids,
+        )
+        soft_delete_records(table, delete_ids)
+    else:
+        non_delete = {(item.get("action") or "").upper() for item in data_items}
+        logger.info(
+            "Non-delete event: type=%s  actions=%s – no ClickHouse write",
+            event_type, non_delete,
+        )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -86,25 +142,28 @@ def receive_webhook():
         raw = request.get_data(as_text=True)
         payload = {"_raw": raw}
 
-    # Accurate may send a JSON array at the top level – wrap it so we can
-    # attach metadata uniformly.
+    # Accurate sends a JSON array at the top level – wrap for uniform storage
     if isinstance(payload, list):
+        events = payload
         payload = {"_data": payload}
+    else:
+        events = payload.get("_data") or []
 
-    # Inject metadata without mutating caller's keys
     payload["_received_at"] = received_at
     payload["_remote_addr"] = request.remote_addr
 
-    # Use eventType field (Accurate convention) as filename prefix if present
-    event_type = (
-        payload.get("eventType")
-        or payload.get("event_type")
-        or payload.get("type")
-        or "webhook"
-    )
+    # Use the type of the first event as the filename prefix (best effort)
+    first_type = events[0].get("type") if events else None
+    slug = first_type or payload.get("eventType") or payload.get("type") or "webhook"
+    path = _save_payload(slug, payload)
+    logger.info("Webhook received  type=%-25s  saved=%s", slug, path)
 
-    path = _save_payload(event_type, payload)
-    logger.info("Webhook received  event=%-30s  saved=%s", event_type, path)
+    # Process each event
+    for event in events:
+        try:
+            _process_event(event)
+        except Exception as exc:
+            logger.error("Error processing event %s: %s", event, exc, exc_info=True)
 
     return jsonify({"status": "ok", "saved": path}), 200
 
