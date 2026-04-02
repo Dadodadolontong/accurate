@@ -86,6 +86,11 @@ def receive_webhook():
         raw = request.get_data(as_text=True)
         payload = {"_raw": raw}
 
+    # Accurate may send a JSON array at the top level – wrap it so we can
+    # attach metadata uniformly.
+    if isinstance(payload, list):
+        payload = {"_data": payload}
+
     # Inject metadata without mutating caller's keys
     payload["_received_at"] = received_at
     payload["_remote_addr"] = request.remote_addr

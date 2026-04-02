@@ -214,6 +214,34 @@ def initialize_tables():
     except Exception as exc:
         logger.error("Error initialising ClickHouse tables: %s", exc)
         raise
+    add_is_deleted_columns()
+
+
+# Parent tables that track soft-deletes (child tables are excluded – filter via parent join)
+_PARENT_TABLES = [
+    "customer_categories",
+    "customers",
+    "sales_orders",
+    "sales_invoices",
+    "sales_returns",
+]
+
+
+def add_is_deleted_columns():
+    """Add is_deleted column to parent tables that don't have it yet.
+
+    Safe to call multiple times – uses IF NOT EXISTS.  Called automatically
+    by initialize_tables() so existing deployments are migrated on next startup.
+    """
+    client = _get_client()
+    for table in _PARENT_TABLES:
+        try:
+            client.command(
+                f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS is_deleted UInt8 DEFAULT 0"
+            )
+            logger.debug("Ensured is_deleted column exists on %s", table)
+        except Exception as exc:
+            logger.warning("Could not add is_deleted to %s: %s", table, exc)
 
 
 def reset_table(table_name: str):
@@ -401,6 +429,43 @@ def reset_sync_time(entity: str):
         parameters={"entity": entity},
     )
     logger.info("Reset sync time for '%s' – next run will do a full fetch", entity)
+
+
+# ---------------------------------------------------------------------------
+# Reconciliation helpers
+# ---------------------------------------------------------------------------
+
+def get_live_ids(table: str) -> set[int]:
+    """Return the set of non-deleted IDs currently in *table*.
+
+    Uses FINAL to collapse duplicates from ReplacingMergeTree before comparing.
+    """
+    client = _get_client()
+    result = client.query(
+        f"SELECT DISTINCT id FROM {table} FINAL WHERE is_deleted = 0"
+    )
+    return {row[0] for row in result.result_rows}
+
+
+def soft_delete_records(table: str, ids: list[int]):
+    """Insert soft-delete tombstones for *ids* in *table*.
+
+    Each tombstone is a minimal row (id + is_deleted=1 + fresh updated_at).
+    All other columns take their DEFAULT values.  Because
+    ReplacingMergeTree(updated_at) keeps the row with the latest updated_at,
+    these tombstones will win over the original rows on the next merge/FINAL
+    query.
+    """
+    if not ids:
+        return
+    now = datetime.now()
+    client = _get_client()
+    client.insert(
+        table,
+        [[id_, 1, now] for id_ in ids],
+        column_names=["id", "is_deleted", "updated_at"],
+    )
+    logger.info("Soft-deleted %d record(s) from %s", len(ids), table)
 
 
 # ---------------------------------------------------------------------------

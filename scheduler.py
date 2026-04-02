@@ -13,7 +13,8 @@ import time
 
 import schedule
 
-from config import SYNC_INTERVAL_MINUTES
+from config import RECONCILE_HOUR, SYNC_INTERVAL_MINUTES
+from reconcile import run_reconcile
 from sync import run_sync
 
 logger = logging.getLogger(__name__)
@@ -21,13 +22,16 @@ logger = logging.getLogger(__name__)
 
 def main():
     logger.info(
-        "Scheduler starting – sync every %d minute(s)", SYNC_INTERVAL_MINUTES
+        "Scheduler starting – sync every %d minute(s), reconcile daily at %02d:00",
+        SYNC_INTERVAL_MINUTES,
+        RECONCILE_HOUR,
     )
 
-    # Run immediately on start so we don't wait for the first interval
+    # Run sync immediately on start so we don't wait for the first interval
     run_sync()
 
     schedule.every(SYNC_INTERVAL_MINUTES).minutes.do(run_sync)
+    schedule.every().day.at(f"{RECONCILE_HOUR:02d}:00").do(run_reconcile)
 
     while True:
         schedule.run_pending()

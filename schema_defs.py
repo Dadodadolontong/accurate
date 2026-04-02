@@ -215,6 +215,7 @@ def make_ddl(table: str, columns: list[Column], order_by: str = "id") -> str:
     return f"""
     CREATE TABLE IF NOT EXISTS {table} (
 {col_lines}
+        {'is_deleted':<{width}}  UInt8 DEFAULT 0,
         {'updated_at':<{width}}  DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
     ORDER BY {order_by}

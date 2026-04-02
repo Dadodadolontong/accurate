@@ -24,4 +24,5 @@ CH_SECURE   = os.getenv("CH_SECURE", "false").lower() == "true"
 # Sync settings
 PAGE_SIZE             = int(os.getenv("PAGE_SIZE", "100"))
 SYNC_INTERVAL_MINUTES = int(os.getenv("SYNC_INTERVAL_MINUTES", "60"))
+RECONCILE_HOUR        = int(os.getenv("RECONCILE_HOUR", "2"))   # 24h clock, local time
 LOGGER_FILE           = os.getenv("LOGGER_FILE", "accurate_sync.log")

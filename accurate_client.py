@@ -304,3 +304,14 @@ class AccurateClient:
                 records, "/api/sales-return/detail.do", ["detailItem", "detailExpense"]
             )
         return records
+
+    def get_all_ids(self, path: str, extra_params: dict | None = None) -> set[int]:
+        """Fetch all record IDs from *path* without any lastUpdate filter.
+
+        Uses the list endpoint with no ``fields`` param (returns only ``id``).
+        Intended for reconciliation – comparing what Accurate has vs ClickHouse.
+        """
+        records = self.get_list(path, last_update=None, fields=None, extra_params=extra_params)
+        ids = {int(r["id"]) for r in records if r.get("id")}
+        logger.info("Fetched %d IDs from %s", len(ids), path)
+        return ids
