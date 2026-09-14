@@ -114,7 +114,8 @@ def _sync_entity(
 
     if records:
         upsert_fn(records)
-        update_sync_log(name, sync_started_at, len(records))
+
+    update_sync_log(name, sync_started_at, len(records))
 
     return len(records)
 

@@ -79,10 +79,17 @@ class AccurateClient:
     # Low-level HTTP
     # ------------------------------------------------------------------
 
+    # (connect timeout, read timeout) in seconds – without this a stalled
+    # connection to Accurate blocks the sync process forever (seen in
+    # production: 13+ days hung on one request with no data flowing).
+    REQUEST_TIMEOUT = (10, 60)
+
     def _get(self, path: str, params: dict) -> dict:
         """Execute an authenticated GET request against the Accurate API."""
         url = f"{ACCURATE_HOST}/accurate{path}"
-        response = requests.get(url, params=params, headers=self._build_headers())
+        response = requests.get(
+            url, params=params, headers=self._build_headers(), timeout=self.REQUEST_TIMEOUT
+        )
         response.raise_for_status()
         return response.json()
 

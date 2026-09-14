@@ -883,14 +883,31 @@ def _nested(obj: dict, *keys):
     return obj
 
 
+# ClickHouse Date/DateTime are fixed-width (days/seconds since epoch) and
+# silently corrupt the whole insert batch if a value falls outside their
+# range - e.g. a fat-fingered year like "5959" overflows the UInt16 day
+# count and clickhouse-connect raises a misleading "not Nullable" DataError
+# that aborts every record in the batch, not just the bad one (seen in
+# production: one sales order with shipDate "10/03/5959" blocked all
+# sales_orders syncing for a month). Clamp to the valid range instead.
+_MIN_DATETIME = datetime(1970, 1, 1)
+_MAX_DATETIME = datetime(2106, 2, 7)
+_MIN_DATE = date(1970, 1, 1)
+_MAX_DATE = date(2149, 6, 6)
+
+
 def _parse_timestamp(value: str | None) -> datetime | None:
     """Parse Accurate timestamp format: dd/MM/yyyy HH:mm:ss"""
     if not value:
         return None
     try:
-        return datetime.strptime(value, "%d/%m/%Y %H:%M:%S")
+        parsed = datetime.strptime(value, "%d/%m/%Y %H:%M:%S")
     except (ValueError, TypeError):
         return None
+    if not (_MIN_DATETIME <= parsed <= _MAX_DATETIME):
+        logger.warning("Discarding out-of-range timestamp %r", value)
+        return None
+    return parsed
 
 
 def _parse_date(value: str | None) -> date | None:
@@ -898,6 +915,10 @@ def _parse_date(value: str | None) -> date | None:
     if not value:
         return None
     try:
-        return datetime.strptime(value, "%d/%m/%Y").date()
+        parsed = datetime.strptime(value, "%d/%m/%Y").date()
     except (ValueError, TypeError):
         return None
+    if not (_MIN_DATE <= parsed <= _MAX_DATE):
+        logger.warning("Discarding out-of-range date %r", value)
+        return None
+    return parsed
