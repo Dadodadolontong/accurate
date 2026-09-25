@@ -124,6 +124,7 @@ SALES_INVOICE_COLUMNS: list[Column] = [
     Column("salesAmount",           "sales_amount",    "Nullable(Float64)"),
     Column("tax1Amount",            "tax1_amount",     "Nullable(Float64)"),
     Column("tax1Rate",              "tax1_rate",       "Nullable(Float64)"),
+    Column("cashDiscount",          "cash_discount",   "Nullable(Float64)"),
     Column("outstanding",           "outstanding",     "Bool"),
     Column("status",             "status",          "String"),
     Column("approvalStatus",     "approval_status", "String"),
@@ -162,6 +163,37 @@ SALES_RETURN_COLUMNS: list[Column] = [
     Column("rate",             "rate",               "Nullable(Float64)"),
     Column("detailItem",       "sales_return_items",    ""),  # child table
     Column("detailExpense",    "sales_return_expenses", ""),  # child table
+]
+
+
+# ── item_brands ────────────────────────────────────────────────────────────
+# Master data referenced by products.item_brand_id.  Uses detail.do per
+# record, same as customer_categories (list.do ignores the 'fields' param).
+
+ITEM_BRAND_COLUMNS: list[Column] = [
+    Column("id",   "id",   "Int64"),
+    Column("name", "name", "String"),
+]
+
+# ── products (item dimension) ───────────────────────────────────────────────
+# The 'item' object embedded in sales_order/invoice/return detailItem only
+# carries itemBrandId/itemCategoryId as bare foreign keys (no nested name),
+# so brand_name is resolved at upsert time from the item_brands lookup table
+# rather than from an API dot-path.
+
+PRODUCT_COLUMNS: list[Column] = [
+    Column("id",             "id",               "Int64"),
+    Column("no",             "item_no",          "String"),
+    Column("name",           "name",             "String"),
+    Column("itemType",         "item_type",          "String"),
+    Column("itemCategory.id",  "item_category_id",   "Nullable(Int64)"),
+    Column("itemCategory.name","item_category_name", "String"),
+    Column("itemBrand.id",     "item_brand_id",      "Nullable(Int64)"),
+    Column("itemBrand.name",   "item_brand_name",    "String"),
+    Column("unit1.name",     "base_unit",        "String"),
+    Column("upcNo",          "upc_no",           "String"),
+    Column("suspended",      "suspended",        "Bool"),
+    Column("lastUpdate",     "last_update",      "Nullable(DateTime)"),
 ]
 
 

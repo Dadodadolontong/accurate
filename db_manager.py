@@ -9,6 +9,7 @@ To add, remove, or rename a field, edit schema_defs.py only.
 """
 
 import logging
+from collections.abc import Callable
 from datetime import date, datetime, timedelta
 
 import clickhouse_connect
@@ -18,6 +19,8 @@ from config import CH_DATABASE, CH_HOST, CH_PASSWORD, CH_PORT, CH_SECURE, CH_USE
 from schema_defs import (
     CUSTOMER_CATEGORY_COLUMNS,
     CUSTOMER_COLUMNS,
+    ITEM_BRAND_COLUMNS,
+    PRODUCT_COLUMNS,
     SALES_INVOICE_COLUMNS,
     SALES_ORDER_COLUMNS,
     SALES_RETURN_COLUMNS,
@@ -26,6 +29,19 @@ from schema_defs import (
 )
 
 logger = logging.getLogger(__name__)
+
+# Max ids per ``IN {ids:Array(Int64)}`` lookup.  clickhouse-connect sends query
+# parameters as HTTP form fields, and ClickHouse caps a single field at
+# http_max_field_value_size (131072 bytes by default).  A full-sync id list
+# (~30k invoice ids ≈ 290 KB serialised) blows straight past that and the
+# server rejects it with "HTML Form Exception: Field value too long", so every
+# lookup that takes an id list has to go out in chunks.
+ID_QUERY_CHUNK = 5000
+
+
+def _id_chunks(ids: list[int]) -> list[list[int]]:
+    """Split *ids* into ID_QUERY_CHUNK-sized slices for parameterised lookups."""
+    return [ids[i:i + ID_QUERY_CHUNK] for i in range(0, len(ids), ID_QUERY_CHUNK)]
 
 
 def _get_client() -> Client:
@@ -63,6 +79,8 @@ _DDL = [
     # To add/remove/rename a column, edit schema_defs.py only.
     make_ddl("customer_categories", CUSTOMER_CATEGORY_COLUMNS),
     make_ddl("customers",           CUSTOMER_COLUMNS),
+    make_ddl("item_brands",         ITEM_BRAND_COLUMNS),
+    make_ddl("products",            PRODUCT_COLUMNS),
     make_ddl("sales_orders",        SALES_ORDER_COLUMNS),
 
     # ------------------------------------------------------------------
@@ -84,6 +102,7 @@ _DDL = [
         total_price      Nullable(Float64),
         tax1_rate        Nullable(Float64),
         tax1_amount      Nullable(Float64),
+        is_deleted       UInt8 DEFAULT 0,
         updated_at       DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
     ORDER BY (sales_order_id, id)
@@ -131,6 +150,9 @@ _DDL = [
         total_price      Nullable(Float64),
         tax1_rate        Nullable(Float64),
         tax1_amount      Nullable(Float64),
+        sales_order_id        Nullable(Int64),
+        sales_order_detail_id Nullable(Int64),
+        is_deleted       UInt8 DEFAULT 0,
         updated_at       DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
     ORDER BY (sales_invoice_id, id)
@@ -176,6 +198,7 @@ _DDL = [
         total_price      Nullable(Float64),
         tax1_rate        Nullable(Float64),
         tax1_amount      Nullable(Float64),
+        is_deleted       UInt8 DEFAULT 0,
         updated_at       DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
     ORDER BY (sales_return_id, id)
@@ -204,6 +227,34 @@ _DDL = [
 ]
 
 
+# ---------------------------------------------------------------------------
+# "_current" views – FINAL + is_deleted=0, pre-baked for external readers
+# (Metabase and friends) that would otherwise query the raw ReplacingMergeTree
+# tables directly and silently double-count unmerged duplicate parts.
+# ---------------------------------------------------------------------------
+_CURRENT_VIEW_TABLES = [
+    "customer_categories",
+    "customers",
+    "item_brands",
+    "products",
+    "sales_orders",
+    "sales_order_items",
+    "sales_invoices",
+    "sales_invoice_items",
+    "sales_returns",
+    "sales_return_items",
+]
+
+
+def _create_current_views(client: Client):
+    for table in _CURRENT_VIEW_TABLES:
+        client.command(
+            f"CREATE OR REPLACE VIEW {table}_current AS "
+            f"SELECT * FROM {table} FINAL WHERE is_deleted = 0"
+        )
+    logger.info("Ensured %d '_current' view(s) exist", len(_CURRENT_VIEW_TABLES))
+
+
 def initialize_tables():
     """Create the database and all tables if they do not already exist."""
     client = _get_client()
@@ -215,15 +266,130 @@ def initialize_tables():
         logger.error("Error initialising ClickHouse tables: %s", exc)
         raise
     add_is_deleted_columns()
+    add_invoice_item_so_link_columns(client)
+    add_invoice_cash_discount_column(client)
+    _create_current_views(client)
+    _create_sales_order_backlog_view(client)
+
+
+def add_invoice_item_so_link_columns(client: Client):
+    """Add the sales-order link columns to sales_invoice_items on old deployments.
+
+    Rows written before this migration have NULL links until their invoice is
+    re-synced (run ``python reset_tables.py --entity sales_invoices`` or
+    ``reset_sync_time("sales_invoices")`` to backfill).
+    """
+    for col in ("sales_order_id", "sales_order_detail_id"):
+        client.command(
+            f"ALTER TABLE sales_invoice_items ADD COLUMN IF NOT EXISTS {col} Nullable(Int64)"
+        )
+
+
+def add_invoice_cash_discount_column(client: Client):
+    """Add cash_discount to sales_invoices on old deployments.
+
+    Rows written before this migration have NULL until their invoice is
+    re-synced; Laba/Rugi books this discount against revenue.
+    """
+    client.command(
+        "ALTER TABLE sales_invoices ADD COLUMN IF NOT EXISTS "
+        "cash_discount Nullable(Float64) AFTER tax1_rate"
+    )
+
+
+def _create_sales_order_backlog_view(client: Client):
+    """One row per live sales-order line with what has been invoiced against it.
+
+    backlog_quantity = ordered - invoiced (never negative); backlog_amount
+    values it at the order's unit price. Computed at read time from the
+    current order/invoice lines, so it needs no update step and cannot drift
+    when an invoice is edited or deleted.
+    """
+    client.command("""
+        CREATE OR REPLACE VIEW sales_order_backlog AS
+        SELECT
+            so.id                                        AS sales_order_id,
+            so.number                                    AS sales_order_number,
+            so.trans_date                                AS trans_date,
+            so.ship_date                                 AS ship_date,
+            so.customer_id                               AS customer_id,
+            so.customer_name                             AS customer_name,
+            so.status                                    AS status,
+            soi.id                                       AS sales_order_item_id,
+            soi.seq                                      AS seq,
+            soi.item_id                                  AS item_id,
+            soi.item_no                                  AS item_no,
+            soi.item_name                                AS item_name,
+            soi.item_unit                                AS item_unit,
+            soi.unit_price                               AS unit_price,
+            ifNull(soi.quantity, 0)                      AS ordered_quantity,
+            ifNull(inv.invoiced_quantity, 0)             AS invoiced_quantity,
+            greatest(ordered_quantity - invoiced_quantity, 0) AS backlog_quantity,
+            backlog_quantity * ifNull(soi.unit_price, 0) AS backlog_amount
+        FROM sales_order_items_current AS soi
+        INNER JOIN sales_orders_current AS so ON so.id = soi.sales_order_id
+        LEFT JOIN (
+            SELECT
+                sii.sales_order_detail_id AS sales_order_detail_id,
+                sum(ifNull(sii.quantity, 0)) AS invoiced_quantity
+            FROM sales_invoice_items_current AS sii
+            INNER JOIN sales_invoices_current AS si ON si.id = sii.sales_invoice_id
+            WHERE sii.sales_order_detail_id IS NOT NULL
+            GROUP BY sii.sales_order_detail_id
+        ) AS inv ON inv.sales_order_detail_id = soi.id
+    """)
+    logger.info("Ensured 'sales_order_backlog' view exists")
+
+    # Order-level rollup. Billing state is derived from the invoice-line links
+    # rather than the sales_orders row, because an invoice does not bump the
+    # order's lastUpdate in Accurate, so the order row (status, sales_invoice_id)
+    # is not re-synced when it gets billed and goes stale.
+    client.command("""
+        CREATE OR REPLACE VIEW sales_order_billing_status AS
+        SELECT
+            *,
+            multiIf(
+                backlog_quantity = 0,  'Fully billed',
+                invoiced_quantity = 0, 'Unbilled',
+                'Partially billed'
+            ) AS billing_status
+        FROM (
+            SELECT
+                sales_order_id,
+                any(sales_order_number) AS sales_order_number,
+                any(trans_date)         AS trans_date,
+                any(ship_date)          AS ship_date,
+                any(customer_id)        AS customer_id,
+                any(customer_name)      AS customer_name,
+                sum(ordered_quantity)   AS ordered_quantity,
+                sum(invoiced_quantity)  AS invoiced_quantity,
+                sum(backlog_quantity)   AS backlog_quantity,
+                sum(backlog_amount)     AS backlog_amount
+            FROM sales_order_backlog
+            GROUP BY sales_order_id
+        )
+        """)
+    logger.info("Ensured 'sales_order_billing_status' view exists")
 
 
 # Parent tables that track soft-deletes (child tables are excluded – filter via parent join)
 _PARENT_TABLES = [
     "customer_categories",
     "customers",
+    "item_brands",
+    "products",
     "sales_orders",
     "sales_invoices",
     "sales_returns",
+]
+
+# Child line-item tables also carry is_deleted so individual lines that
+# disappear from a transaction on edit (not just whole-record deletes) can be
+# soft-deleted instead of lingering forever – see _sync_child_items().
+_CHILD_ITEM_TABLES = [
+    "sales_order_items",
+    "sales_invoice_items",
+    "sales_return_items",
 ]
 
 
@@ -234,7 +400,7 @@ def add_is_deleted_columns():
     by initialize_tables() so existing deployments are migrated on next startup.
     """
     client = _get_client()
-    for table in _PARENT_TABLES:
+    for table in _PARENT_TABLES + _CHILD_ITEM_TABLES:
         try:
             client.command(
                 f"ALTER TABLE {table} ADD COLUMN IF NOT EXISTS is_deleted UInt8 DEFAULT 0"
@@ -270,6 +436,8 @@ def reset_table(table_name: str):
 _DATA_TABLES = [
     "customer_categories",
     "customers",
+    "item_brands",
+    "products",
     "sales_orders",
     "sales_order_items",
     "sales_order_expenses",
@@ -447,6 +615,32 @@ def get_live_ids(table: str) -> set[int]:
     return {row[0] for row in result.result_rows}
 
 
+def soft_delete_child_records(table: str, parent_col: str, ids_by_parent: dict[int, list[int]]):
+    """Insert soft-delete tombstones for child rows keyed by (parent_col, id).
+
+    Child item tables (sales_invoice_items etc.) use
+    ``ORDER BY (parent_col, id)`` rather than plain ``id``, so a tombstone MUST
+    carry the correct parent id too -- ``soft_delete_records()`` alone leaves
+    it at the column default (0), which puts the tombstone on a different sort
+    key than the row it's meant to replace and it never collapses on merge/FINAL.
+    """
+    now = datetime.now()
+    rows = [
+        [child_id, parent_id, 1, now]
+        for parent_id, child_ids in ids_by_parent.items()
+        for child_id in child_ids
+    ]
+    if not rows:
+        return
+    client = _get_client()
+    client.insert(
+        table,
+        rows,
+        column_names=["id", parent_col, "is_deleted", "updated_at"],
+    )
+    logger.info("Soft-deleted %d child row(s) from %s", len(rows), table)
+
+
 def soft_delete_records(table: str, ids: list[int]):
     """Insert soft-delete tombstones for *ids* in *table*.
 
@@ -455,6 +649,9 @@ def soft_delete_records(table: str, ids: list[int]):
     ReplacingMergeTree(updated_at) keeps the row with the latest updated_at,
     these tombstones will win over the original rows on the next merge/FINAL
     query.
+
+    Only safe for tables whose ORDER BY key is plain ``id`` (the parent
+    entity tables). For child item tables use soft_delete_child_records().
     """
     if not ids:
         return
@@ -466,6 +663,161 @@ def soft_delete_records(table: str, ids: list[int]):
         column_names=["id", "is_deleted", "updated_at"],
     )
     logger.info("Soft-deleted %d record(s) from %s", len(ids), table)
+
+
+# ---------------------------------------------------------------------------
+# Duplicate-avoidance helpers
+#
+# Every sync writes a brand new ReplacingMergeTree version for each record it
+# touches, even when the record's synced fields are byte-identical to what's
+# already stored (e.g. an invoice's lastUpdate bumps for a reason unrelated to
+# any synced column, or an unchanged record falls inside an overlapping
+# incremental-sync window). Left unchecked this multiplies parts and forces
+# every reader to use FINAL just to get a correct count. These helpers compare
+# against the current live version and skip the insert when nothing changed.
+# ---------------------------------------------------------------------------
+
+def _dedup_rows(client: Client, table: str, columns: list, rows: list[list]) -> list[list]:
+    """Drop rows from *rows* that are identical to the currently live row in *table*.
+
+    ``rows`` must be ``[id, val1, val2, ..., valN, updated_at]`` in the exact
+    order produced by ``col_names(columns)`` (id first, updated_at last).
+    Returns only the rows that are new or whose values actually changed.
+    """
+    if not rows:
+        return rows
+    compare_cols = col_names(columns)[1:-1]  # drop leading id, trailing updated_at
+    if not compare_cols:
+        return rows
+    ids = [row[0] for row in rows]
+    cols_sql = ", ".join(compare_cols)
+    chunks = _id_chunks(ids)
+    current: dict = {}
+    for n, chunk in enumerate(chunks, 1):
+        result = client.query(
+            f"SELECT id, {cols_sql} FROM {table} FINAL "
+            f"WHERE id IN {{ids:Array(Int64)}} AND is_deleted = 0",
+            parameters={"ids": chunk},
+        )
+        current.update({r[0]: tuple(r[1:]) for r in result.result_rows})
+        if len(chunks) > 1:
+            logger.info(
+                "  %s dedup lookup: chunk %d/%d (%d/%d id(s), %d live row(s) so far)",
+                table, n, len(chunks), min(n * ID_QUERY_CHUNK, len(ids)),
+                len(ids), len(current),
+            )
+    changed = [row for row in rows if current.get(row[0]) != tuple(row[1:-1])]
+    skipped = len(rows) - len(changed)
+    if skipped:
+        logger.info("Skipped %d unchanged %s row(s)", skipped, table)
+    return changed
+
+
+_CHILD_ITEM_COLUMNS = [
+    "seq", "item_id", "item_no", "item_name", "item_unit",
+    "quantity", "unit_price", "total_price", "tax1_rate", "tax1_amount",
+]
+
+
+def _sync_child_items(
+    client: Client,
+    now: datetime,
+    table: str,
+    parent_col: str,
+    pairs: list[tuple],
+    extra_cols: dict[str, Callable[[dict], object]] | None = None,
+):
+    """Upsert detailItem child rows for a parent transaction (sales invoice/order/return).
+
+    Unlike a plain insert, this reconciles the child table against the parent's
+    *current* detailItem list instead of only ever adding rows:
+
+    - Line items no longer present on the parent (e.g. removed/replaced when
+      the transaction was edited in Accurate, which assigns the replacement a
+      new detail-item id) are soft-deleted instead of lingering forever as
+      orphans that inflate SUM()s.
+    - Line items whose values are unchanged from the current live row are
+      skipped instead of writing a redundant duplicate version.
+
+    ``extra_cols`` maps additional table-specific column names (after the
+    common ``_CHILD_ITEM_COLUMNS``) to a function extracting the value from
+    the API item, e.g. the sales-order link on invoice lines.
+    """
+    if not pairs:
+        return
+    extra_cols = extra_cols or {}
+    value_cols = _CHILD_ITEM_COLUMNS + list(extra_cols)
+
+    rows: list[list] = []
+    new_ids_by_parent: dict[int, set[int]] = {}
+    for parent_id, item in pairs:
+        item_id = _id(item.get("id"))
+        if item_id is None:
+            continue
+        new_ids_by_parent.setdefault(parent_id, set()).add(item_id)
+        rows.append([
+            item_id,
+            parent_id,
+            int(item.get("seq") or 0),
+            _id(item.get("itemId")),
+            _s(_nested(item, "item", "no")),
+            _s(item.get("detailName") or _nested(item, "item", "name")),
+            _s(_nested(item, "itemUnit", "name")),
+            item.get("quantity"),
+            item.get("unitPrice"),
+            item.get("totalPrice"),
+            item.get("tax1Rate"),
+            item.get("tax1Amount"),
+            *(fn(item) for fn in extra_cols.values()),
+        ])
+
+    parent_ids = list(new_ids_by_parent.keys())
+    live_ids_by_parent: dict[int, set[int]] = {}
+    current_values: dict[int, tuple] = {}
+    chunks = _id_chunks(parent_ids)
+    for n, chunk in enumerate(chunks, 1):
+        live = client.query(
+            f"SELECT {parent_col}, id, {', '.join(value_cols)} FROM {table} FINAL "
+            f"WHERE {parent_col} IN {{ids:Array(Int64)}} AND is_deleted = 0",
+            parameters={"ids": chunk},
+        )
+        for row in live.result_rows:
+            pid, iid = row[0], row[1]
+            live_ids_by_parent.setdefault(pid, set()).add(iid)
+            current_values[iid] = tuple(row[2:])
+        if len(chunks) > 1:
+            logger.info(
+                "  %s live lookup: chunk %d/%d (%d/%d parent(s), %d live row(s) so far)",
+                table, n, len(chunks), min(n * ID_QUERY_CHUNK, len(parent_ids)),
+                len(parent_ids), len(current_values),
+            )
+
+    stale_by_parent = {
+        pid: list(live_ids - new_ids_by_parent.get(pid, set()))
+        for pid, live_ids in live_ids_by_parent.items()
+        if live_ids - new_ids_by_parent.get(pid, set())
+    }
+    stale_ids = [iid for ids in stale_by_parent.values() for iid in ids]
+    if stale_by_parent:
+        soft_delete_child_records(table, parent_col, stale_by_parent)
+        logger.info(
+            "Soft-deleted %d orphaned %s row(s) no longer on their parent",
+            len(stale_ids), table,
+        )
+
+    changed_rows = [row for row in rows if current_values.get(row[0]) != tuple(row[2:])]
+    skipped = len(rows) - len(changed_rows)
+
+    if changed_rows:
+        client.insert(
+            table,
+            [row + [now] for row in changed_rows],
+            column_names=["id", parent_col, *value_cols, "updated_at"],
+        )
+    logger.info(
+        "Upserted %d %s row(s) (%d unchanged skipped, %d orphan(s) removed)",
+        len(changed_rows), table, skipped, len(stale_ids),
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -540,6 +892,73 @@ def upsert_customers(records: list[dict]):
     logger.info("Upserted %d customers", len(records))
 
 
+def upsert_item_brands(records: list[dict]):
+    if not records:
+        return
+    now = datetime.now()
+    client = _get_client()
+    client.insert(
+        "item_brands",
+        [
+            [
+                r["id"],
+                _s(r.get("name")),
+                now,
+            ]
+            for r in records
+        ],
+        column_names=col_names(ITEM_BRAND_COLUMNS),
+    )
+    logger.info("Upserted %d item_brands", len(records))
+
+
+def get_item_brand_map() -> dict[int, str]:
+    """Return {item_brand_id: name} for every non-deleted brand.
+
+    Fallback for products.item_brand_name when a record's nested itemBrand
+    object is absent (e.g. detail.do responses, which return a flat
+    itemBrandId with no nested relation, unlike list.do).
+    """
+    client = _get_client()
+    result = client.query(
+        "SELECT id, name FROM item_brands FINAL WHERE is_deleted = 0"
+    )
+    return {row[0]: row[1] for row in result.result_rows}
+
+
+def _product_row(r: dict, brand_map: dict[int, str], now: datetime) -> list:
+    brand_id = _id(_nested(r, "itemBrand", "id"))
+    return [
+        r["id"],
+        _s(r.get("no")),
+        _s(r.get("name")),
+        _s(r.get("itemType")),
+        _id(_nested(r, "itemCategory", "id")),
+        _s(_nested(r, "itemCategory", "name")),
+        brand_id,
+        _s(_nested(r, "itemBrand", "name")) or brand_map.get(brand_id, ""),
+        _s(_nested(r, "unit1", "name")),
+        _s(r.get("upcNo")),
+        bool(r.get("suspended")),
+        _parse_timestamp(r.get("lastUpdate")),
+        now,
+    ]
+
+
+def upsert_products(records: list[dict]):
+    if not records:
+        return
+    now = datetime.now()
+    client = _get_client()
+    brand_map = get_item_brand_map()
+    client.insert(
+        "products",
+        [_product_row(r, brand_map, now) for r in records],
+        column_names=col_names(PRODUCT_COLUMNS),
+    )
+    logger.info("Upserted %d products", len(records))
+
+
 def _extract_si_from_history(record: dict) -> tuple:
     """Scan processHistory for the first entry with historyType == 'SI'.
 
@@ -561,82 +980,50 @@ def upsert_sales_orders(records: list[dict]):
         return
     now = datetime.now()
     client = _get_client()
-    client.insert(
-        "sales_orders",
+    rows = [
         [
-            [
-                r["id"],
-                _s(r.get("number")),
-                _parse_date(r.get("transDate")),
-                _parse_date(r.get("shipDate")),
-                _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
-                _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
-                _s(_nested(r, "customer", "customerNo")),
-                r.get("totalAmount"),
-                r.get("subTotal"),
-                r.get("salesAmount"),
-                r.get("tax1Amount"),
-                r.get("tax1Rate"),
-                _s(r.get("status")),
-                _s(r.get("approvalStatus")),
-                _s(r.get("description")),
-                _s(r.get("poNumber")),
-                _id(r.get("masterSalesmanId")),
-                _s(r.get("masterSalesmanName")),
-                _id(r.get("branchId")),
-                _s(r.get("branchName")),
-                _id(r.get("currencyId")),
-                r.get("rate"),
-                _parse_timestamp(r.get("lastUpdate")),
-                *_extract_si_from_history(r),   # sales_invoice_id, sales_invoice_name
-                now,
-            ]
-            for r in records
-        ],
-        column_names=col_names(SALES_ORDER_COLUMNS),
-    )
-    logger.info("Upserted %d sales_orders", len(records))
+            r["id"],
+            _s(r.get("number")),
+            _parse_date(r.get("transDate")),
+            _parse_date(r.get("shipDate")),
+            _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
+            _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+            _s(_nested(r, "customer", "customerNo")),
+            r.get("totalAmount"),
+            r.get("subTotal"),
+            r.get("salesAmount"),
+            r.get("tax1Amount"),
+            r.get("tax1Rate"),
+            _s(r.get("status")),
+            _s(r.get("approvalStatus")),
+            _s(r.get("description")),
+            _s(r.get("poNumber")),
+            _id(r.get("masterSalesmanId")),
+            _s(r.get("masterSalesmanName")),
+            _id(r.get("branchId")),
+            _s(r.get("branchName")),
+            _id(r.get("currencyId")),
+            r.get("rate"),
+            _parse_timestamp(r.get("lastUpdate")),
+            *_extract_si_from_history(r),   # sales_invoice_id, sales_invoice_name
+            now,
+        ]
+        for r in records
+    ]
+    rows = _dedup_rows(client, "sales_orders", SALES_ORDER_COLUMNS, rows)
+    if rows:
+        client.insert("sales_orders", rows, column_names=col_names(SALES_ORDER_COLUMNS))
+    logger.info("Upserted %d sales_orders (%d unchanged skipped)", len(rows), len(records) - len(rows))
 
     # Line items
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
-        _insert_sales_order_items(client, now, all_items)
+        _sync_child_items(client, now, "sales_order_items", "sales_order_id", all_items)
 
     # Expense line items
     all_expenses = [(r["id"], exp) for r in records for exp in (r.get("detailExpense") or [])]
     if all_expenses:
         _insert_sales_order_expenses(client, now, all_expenses)
-
-
-def _insert_sales_order_items(client: Client, now: datetime, pairs: list[tuple]):
-    client.insert(
-        "sales_order_items",
-        [
-            [
-                _id(item.get("id")),
-                order_id,
-                int(item.get("seq") or 0),
-                _id(item.get("itemId")),
-                _s(_nested(item, "item", "no")),
-                _s(item.get("detailName") or _nested(item, "item", "name")),
-                _s(_nested(item, "itemUnit", "name")),
-                item.get("quantity"),
-                item.get("unitPrice"),
-                item.get("totalPrice"),
-                item.get("tax1Rate"),
-                item.get("tax1Amount"),
-                now,
-            ]
-            for order_id, item in pairs
-        ],
-        column_names=[
-            "id", "sales_order_id", "seq",
-            "item_id", "item_no", "item_name", "item_unit",
-            "quantity", "unit_price", "total_price",
-            "tax1_rate", "tax1_amount", "updated_at",
-        ],
-    )
-    logger.info("Upserted %d sales_order_items", len(pairs))
 
 
 def _insert_sales_order_expenses(client: Client, now: datetime, pairs: list[tuple]):
@@ -666,84 +1053,66 @@ def _insert_sales_order_expenses(client: Client, now: datetime, pairs: list[tupl
     logger.info("Upserted %d sales_order_expenses", len(pairs))
 
 
+def _item_sales_order_id(item: dict) -> int | None:
+    return _id(item.get("salesOrderId")) or _id(_nested(item, "salesOrder", "id"))
+
+
+def _item_sales_order_detail_id(item: dict) -> int | None:
+    return _id(item.get("salesOrderDetailId")) or _id(_nested(item, "salesOrderDetail", "id"))
+
+
 def upsert_sales_invoices(records: list[dict]):
     if not records:
         return
     now = datetime.now()
     client = _get_client()
-    client.insert(
-        "sales_invoices",
+    rows = [
         [
-            [
-                r["id"],
-                _s(r.get("number")),
-                _parse_date(r.get("transDate")),
-                _parse_date(r.get("dueDate")),
-                _parse_date(r.get("taxDate")),
-                _parse_date(r.get("shipDate")),
-                _id(r.get("customerId"), "customerId", _s(r.get("number")))
-                or _id(_nested(r, "customer", "id")),
-                _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
-                _s(_nested(r, "customer", "customerNo")),
-                r.get("totalAmount"),
-                r.get("subTotal"),
-                r.get("salesAmount"),
-                r.get("tax1Amount"),
-                r.get("tax1Rate"),
-                bool(r.get("outstanding")),
-                _s(r.get("status")),
-                _s(r.get("approvalStatus")),
-                _s(r.get("description")),
-                _id(r.get("masterSalesmanId")),
-                _s(r.get("masterSalesmanName")),
-                _id(r.get("branchId")),
-                _s(r.get("branchName")),
-                _id(r.get("currencyId")),
-                r.get("rate"),
-                now,
-            ]
-            for r in records
-        ],
-        column_names=col_names(SALES_INVOICE_COLUMNS),
-    )
-    logger.info("Upserted %d sales_invoices", len(records))
+            r["id"],
+            _s(r.get("number")),
+            _parse_date(r.get("transDate")),
+            _parse_date(r.get("dueDate")),
+            _parse_date(r.get("taxDate")),
+            _parse_date(r.get("shipDate")),
+            _id(r.get("customerId"), "customerId", _s(r.get("number")))
+            or _id(_nested(r, "customer", "id")),
+            _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+            _s(_nested(r, "customer", "customerNo")),
+            r.get("totalAmount"),
+            r.get("subTotal"),
+            r.get("salesAmount"),
+            r.get("tax1Amount"),
+            r.get("tax1Rate"),
+            r.get("cashDiscount"),
+            bool(r.get("outstanding")),
+            _s(r.get("status")),
+            _s(r.get("approvalStatus")),
+            _s(r.get("description")),
+            _id(r.get("masterSalesmanId")),
+            _s(r.get("masterSalesmanName")),
+            _id(r.get("branchId")),
+            _s(r.get("branchName")),
+            _id(r.get("currencyId")),
+            r.get("rate"),
+            now,
+        ]
+        for r in records
+    ]
+    rows = _dedup_rows(client, "sales_invoices", SALES_INVOICE_COLUMNS, rows)
+    if rows:
+        client.insert("sales_invoices", rows, column_names=col_names(SALES_INVOICE_COLUMNS))
+    logger.info("Upserted %d sales_invoices (%d unchanged skipped)", len(rows), len(records) - len(rows))
 
     # Line items
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
-        logger.info("Upserting %d sales_invoice_items", len(all_items)) 
-        _insert_sales_invoice_items(client, now, all_items)
-
-
-def _insert_sales_invoice_items(client: Client, now: datetime, pairs: list[tuple]):
-    client.insert(
-        "sales_invoice_items",
-        [
-            [
-                _id(item.get("id")),
-                invoice_id,
-                int(item.get("seq") or 0),
-                _id(item.get("itemId")),
-                _s(_nested(item, "item", "no")),
-                _s(item.get("detailName") or _nested(item, "item", "name")),
-                _s(_nested(item, "itemUnit", "name")),
-                item.get("quantity"),
-                item.get("unitPrice"),
-                item.get("totalPrice"),
-                item.get("tax1Rate"),
-                item.get("tax1Amount"),
-                now,
-            ]
-            for invoice_id, item in pairs
-        ],
-        column_names=[
-            "id", "sales_invoice_id", "seq",
-            "item_id", "item_no", "item_name", "item_unit",
-            "quantity", "unit_price", "total_price",
-            "tax1_rate", "tax1_amount", "updated_at",
-        ],
-    )
-    logger.info("Upserted %d sales_invoice_items", len(pairs))
+        _sync_child_items(
+            client, now, "sales_invoice_items", "sales_invoice_id", all_items,
+            extra_cols={
+                "sales_order_id": _item_sales_order_id,
+                "sales_order_detail_id": _item_sales_order_detail_id,
+            },
+        )
 
 
 def upsert_sales_returns(records: list[dict]):
@@ -751,78 +1120,46 @@ def upsert_sales_returns(records: list[dict]):
         return
     now = datetime.now()
     client = _get_client()
-    client.insert(
-        "sales_returns",
+    rows = [
         [
-            [
-                r["id"],
-                _s(r.get("number")),
-                _parse_date(r.get("transDate")),
-                _parse_date(r.get("taxDate")),
-                _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
-                _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
-                _s(_nested(r, "customer", "customerNo")),
-                _id(r.get("invoiceId")),
-                r.get("totalAmount"),
-                r.get("subTotal"),
-                r.get("returnAmount"),
-                r.get("tax1Amount"),
-                r.get("tax1Rate"),
-                _s(r.get("returnType")),
-                _s(r.get("returnStatusType")),
-                _s(r.get("approvalStatus")),
-                _s(r.get("description")),
-                _id(r.get("branchId")),
-                _id(r.get("currencyId")),
-                r.get("rate"),
-                now,
-            ]
-            for r in records
-        ],
-        column_names=col_names(SALES_RETURN_COLUMNS),
-    )
-    logger.info("Upserted %d sales_returns", len(records))
+            r["id"],
+            _s(r.get("number")),
+            _parse_date(r.get("transDate")),
+            _parse_date(r.get("taxDate")),
+            _id(r.get("customerId")) or _id(_nested(r, "customer", "id")),
+            _s(_nested(r, "customer", "name") or _nested(r, "customer", "wpName")),
+            _s(_nested(r, "customer", "customerNo")),
+            _id(r.get("invoiceId")),
+            r.get("totalAmount"),
+            r.get("subTotal"),
+            r.get("returnAmount"),
+            r.get("tax1Amount"),
+            r.get("tax1Rate"),
+            _s(r.get("returnType")),
+            _s(r.get("returnStatusType")),
+            _s(r.get("approvalStatus")),
+            _s(r.get("description")),
+            _id(r.get("branchId")),
+            _id(r.get("currencyId")),
+            r.get("rate"),
+            now,
+        ]
+        for r in records
+    ]
+    rows = _dedup_rows(client, "sales_returns", SALES_RETURN_COLUMNS, rows)
+    if rows:
+        client.insert("sales_returns", rows, column_names=col_names(SALES_RETURN_COLUMNS))
+    logger.info("Upserted %d sales_returns (%d unchanged skipped)", len(rows), len(records) - len(rows))
 
     # Line items
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
-        _insert_sales_return_items(client, now, all_items)
+        _sync_child_items(client, now, "sales_return_items", "sales_return_id", all_items)
 
     # Expense line items
     all_expenses = [(r["id"], exp) for r in records for exp in (r.get("detailExpense") or [])]
     if all_expenses:
         _insert_sales_return_expenses(client, now, all_expenses)
-
-
-def _insert_sales_return_items(client: Client, now: datetime, pairs: list[tuple]):
-    client.insert(
-        "sales_return_items",
-        [
-            [
-                _id(item.get("id")),
-                return_id,
-                int(item.get("seq") or 0),
-                _id(item.get("itemId")),
-                _s(_nested(item, "item", "no")),
-                _s(item.get("detailName") or _nested(item, "item", "name")),
-                _s(_nested(item, "itemUnit", "name")),
-                item.get("quantity"),
-                item.get("unitPrice"),
-                item.get("totalPrice"),
-                item.get("tax1Rate"),
-                item.get("tax1Amount"),
-                now,
-            ]
-            for return_id, item in pairs
-        ],
-        column_names=[
-            "id", "sales_return_id", "seq",
-            "item_id", "item_no", "item_name", "item_unit",
-            "quantity", "unit_price", "total_price",
-            "tax1_rate", "tax1_amount", "updated_at",
-        ],
-    )
-    logger.info("Upserted %d sales_return_items", len(pairs))
 
 
 def _insert_sales_return_expenses(client: Client, now: datetime, pairs: list[tuple]):

@@ -8,17 +8,20 @@ import json
 import logging
 import logging.handlers
 import os
+import time
 from datetime import datetime
 from typing import Callable
 from config import LOGGER_FILE
 
-from accurate_client import AccurateClient
+from accurate_client import AccurateClient, fmt_duration
 from db_manager import (
     get_last_sync_time,
     initialize_tables,
     update_sync_log,
     upsert_customer_categories,
     upsert_customers,
+    upsert_item_brands,
+    upsert_products,
     upsert_sales_orders,
     upsert_sales_invoices,
     upsert_sales_returns,
@@ -66,6 +69,16 @@ ENTITIES: list[dict] = [
         # "extra_params": {"filter.suspended.op": "EQUAL", "filter.suspended.val": "false"},
     },
     {
+        "name":   "item_brands",
+        "fetch":  lambda client, since, p: client.get_item_brands(since),
+        "upsert": upsert_item_brands,
+    },
+    {
+        "name":   "products",
+        "fetch":  lambda client, since, p: client.get_products(since, extra_params=p),
+        "upsert": upsert_products,
+    },
+    {
         "name":   "sales_orders",
         "fetch":  lambda client, since, p: client.get_sales_orders(since, extra_params=p),
         "upsert": upsert_sales_orders,
@@ -100,8 +113,12 @@ def _sync_entity(
     else:
         logger.info("[%s] Full sync (no previous sync found)", name)
 
+    t0 = time.monotonic()
     records = fetch_fn(client, last_sync, extra_params)
-    logger.info("[%s] %d record(s) retrieved", name, len(records))
+    fetch_secs = time.monotonic() - t0
+    logger.info(
+        "[%s] %d record(s) retrieved in %s", name, len(records), fmt_duration(fetch_secs)
+    )
 
     # Dump raw API response to JSON for debugging missing records.
     debug_dir = "debug_responses"
@@ -113,9 +130,18 @@ def _sync_entity(
     logger.info("[%s] Raw response saved to %s (%d record(s))", name, debug_path, len(records))
 
     if records:
+        logger.info("[%s] Upserting %d record(s) into ClickHouse…", name, len(records))
+        t1 = time.monotonic()
         upsert_fn(records)
+        logger.info(
+            "[%s] Upsert finished in %s", name, fmt_duration(time.monotonic() - t1)
+        )
 
     update_sync_log(name, sync_started_at, len(records))
+    logger.info(
+        "[%s] DONE – %d record(s), total %s",
+        name, len(records), fmt_duration(time.monotonic() - t0),
+    )
 
     return len(records)
 

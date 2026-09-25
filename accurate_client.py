@@ -30,12 +30,14 @@ import base64
 import hashlib
 import hmac
 import logging
+import time
 from datetime import datetime, timezone
 
 import requests
 
 from schema_defs import (
     CUSTOMER_COLUMNS,
+    PRODUCT_COLUMNS,
     SALES_INVOICE_COLUMNS,
     SALES_ORDER_COLUMNS,
     SALES_RETURN_COLUMNS,
@@ -49,6 +51,19 @@ from config import (
 )
 
 logger = logging.getLogger(__name__)
+
+# How often the per-record detail loop logs a progress line.
+_DETAIL_PROGRESS_EVERY = 250
+
+
+def fmt_duration(seconds: float) -> str:
+    """Render a duration as 45s / 7m21s / 2h17m for progress lines."""
+    seconds = int(seconds)
+    if seconds < 60:
+        return f"{seconds}s"
+    if seconds < 3600:
+        return f"{seconds // 60}m{seconds % 60:02d}s"
+    return f"{seconds // 3600}h{(seconds % 3600) // 60:02d}m"
 
 
 class AccurateClient:
@@ -194,6 +209,7 @@ class AccurateClient:
     _FIELDS_SALES_INVOICE = make_fields_param(SALES_INVOICE_COLUMNS)
     _FIELDS_SALES_ORDER   = make_fields_param(SALES_ORDER_COLUMNS)
     _FIELDS_SALES_RETURN  = make_fields_param(SALES_RETURN_COLUMNS)
+    _FIELDS_PRODUCT       = make_fields_param(PRODUCT_COLUMNS)
 
     def get_customer_categories(self, last_update: datetime | None = None) -> list[dict]:
         """Fetch all customer categories.
@@ -220,6 +236,43 @@ class AccurateClient:
         logger.info("Fetched %d customer categories (via detail endpoint)", len(results))
         return results
 
+    def get_item_brands(self, last_update: datetime | None = None) -> list[dict]:
+        """Fetch all item brands (master data referenced by items.itemBrandId).
+
+        Same caveat as customer-category: list.do returns only the id, so we
+        fetch IDs first, then detail.do each record individually. There are
+        typically very few brands (<100).
+        """
+        id_records = self.get_list(
+            "/api/item-brand/list.do",
+            last_update,
+            fields=None,          # only id is ever returned
+        )
+        results: list[dict] = []
+        for rec in id_records:
+            brand_id = rec.get("id")
+            if not brand_id:
+                continue
+            body = self._get("/api/item-brand/detail.do", {"id": brand_id})
+            if body.get("s") and body.get("d"):
+                results.append(body["d"])
+            else:
+                logger.warning("Could not fetch item-brand detail for id=%s", brand_id)
+        logger.info("Fetched %d item brands (via detail endpoint)", len(results))
+        return results
+
+    def get_products(
+        self,
+        last_update: datetime | None = None,
+        extra_params: dict | None = None,
+    ) -> list[dict]:
+        return self.get_list(
+            "/api/item/list.do",
+            last_update,
+            fields=self._FIELDS_PRODUCT,
+            extra_params=extra_params,
+        )
+
     def get_customers(
         self,
         last_update: datetime | None = None,
@@ -243,10 +296,16 @@ class AccurateClient:
         Used to retrieve array fields (detailItem, detailExpense) that the list
         endpoint does not return even when included in the ``fields`` parameter.
         """
+        total = len(records)
         logger.info(
             "Fetching detail for %d record(s) from %s (fields: %s)",
-            len(records), detail_path, fields,
+            total, detail_path, fields,
         )
+        # One sequential request per record: a full invoice sync is ~30k calls
+        # and well over an hour.  Emit a heartbeat so a stalled run is visible
+        # while it is happening instead of only in the post-mortem.
+        started = time.monotonic()
+        done = failed = 0
         for rec in records:
             rec_id = rec.get("id")
             if not rec_id:
@@ -258,9 +317,23 @@ class AccurateClient:
                     for field in fields:
                         rec[field] = detail.get(field)
                 else:
+                    failed += 1
                     logger.warning("Detail fetch returned no data for id=%s", rec_id)
             except Exception as exc:
+                failed += 1
                 logger.warning("Detail fetch failed for id=%s: %s", rec_id, exc)
+
+            done += 1
+            if done % _DETAIL_PROGRESS_EVERY == 0 or done == total:
+                elapsed = time.monotonic() - started
+                rate = done / elapsed if elapsed else 0.0
+                remaining = (total - done) / rate if rate else 0.0
+                logger.info(
+                    "  %s detail %d/%d (%.1f%%) · %.1f rec/s · elapsed %s · ETA %s%s",
+                    detail_path, done, total, 100.0 * done / total, rate,
+                    fmt_duration(elapsed), fmt_duration(remaining),
+                    f" · {failed} failed" if failed else "",
+                )
 
     def get_sales_orders(
         self,

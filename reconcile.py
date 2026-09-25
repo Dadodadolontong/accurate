@@ -62,6 +62,16 @@ RECONCILE_ENTITIES: list[dict] = [
         "ch_table": "customers",
     },
     {
+        "name":     "item_brands",
+        "api_path": "/api/item-brand/list.do",
+        "ch_table": "item_brands",
+    },
+    {
+        "name":     "products",
+        "api_path": "/api/item/list.do",
+        "ch_table": "products",
+    },
+    {
         "name":     "sales_orders",
         "api_path": "/api/sales-order/list.do",
         "ch_table": "sales_orders",
