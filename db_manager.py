@@ -25,6 +25,7 @@ from schema_defs import (
     SALES_INVOICE_COLUMNS,
     SALES_ORDER_COLUMNS,
     SALES_RETURN_COLUMNS,
+    SELLING_PRICE_COLUMNS,
     col_names,
     make_ddl,
 )
@@ -82,6 +83,7 @@ _DDL = [
     make_ddl("customers",           CUSTOMER_COLUMNS),
     make_ddl("item_brands",         ITEM_BRAND_COLUMNS),
     make_ddl("products",            PRODUCT_COLUMNS),
+    make_ddl("selling_prices",      SELLING_PRICE_COLUMNS),
     make_ddl("sales_orders",        SALES_ORDER_COLUMNS),
 
     # ------------------------------------------------------------------
@@ -238,6 +240,7 @@ _CURRENT_VIEW_TABLES = [
     "customers",
     "item_brands",
     "products",
+    "selling_prices",
     "sales_orders",
     "sales_order_items",
     "sales_invoices",
@@ -271,6 +274,7 @@ def initialize_tables():
     add_invoice_cash_discount_column(client)
     _create_current_views(client)
     _create_sales_order_backlog_view(client)
+    _create_sales_invoice_detail_view(client)
 
 
 def add_invoice_item_so_link_columns(client: Client):
@@ -373,12 +377,93 @@ def _create_sales_order_backlog_view(client: Client):
     logger.info("Ensured 'sales_order_billing_status' view exists")
 
 
+def _create_sales_invoice_detail_view(client: Client):
+    """One row per live sales-invoice / sales-return line, with item, brand and HET.
+
+    Mirrors net_sales (returns negative, cash discount pro-rated onto lines by
+    value, amounts tax-inclusive unless named *_exclude_tax) so totals
+    reconcile with Accurate's Laba/Rugi.  het_price is the HET price-list price
+    for the line's item + unit in effect on the invoice date (ASOF join on
+    selling_prices); NULL when no HET price covers that item/unit/date.
+    """
+    client.command("""
+        CREATE OR REPLACE VIEW sales_invoice_detail AS
+        SELECT
+            l.*,
+            nullIf(h.price, 0)                                   AS het_price,
+            if(het_price IS NULL, NULL, h.effective_date)        AS het_effective_date,
+            l.qty * het_price                                    AS het_amount,
+            l.net_unit_price - het_price                         AS price_vs_het,
+            if(het_price > 0, 1 - l.net_unit_price / het_price, NULL) AS discount_vs_het_pct
+        FROM (
+            SELECT
+                'SALES'                                          AS cat,
+                si.id                                            AS doc_id,
+                si.number                                        AS number,
+                assumeNotNull(si.trans_date)                     AS trans_date,
+                si.customer_id                                   AS customer_id,
+                si.customer_name                                 AS customer_name,
+                c.category_name                                  AS category_name,
+                si.salesman_name                                 AS salesman_name,
+                sii.id                                           AS line_id,
+                sii.seq                                          AS seq,
+                sii.item_id                                      AS item_id,
+                sii.item_no                                      AS item_no,
+                sii.item_name                                    AS item_name,
+                p.item_category_name                             AS item_category_name,
+                p.item_brand_name                                AS brand_name,
+                sii.item_unit                                    AS item_unit,
+                sii.quantity                                     AS qty,
+                sii.unit_price                                   AS selling_price,
+                if(sii.quantity != 0, sii.total_price / sii.quantity, NULL) AS net_unit_price,
+                sii.quantity * sii.unit_price - sii.total_price  AS line_discount,
+                if(si.sub_total != 0,
+                   ifNull(si.cash_discount, 0) * sii.total_price / si.sub_total, 0) AS cash_discount_share,
+                sii.total_price - cash_discount_share            AS amount,
+                sii.tax1_amount                                  AS tax,
+                amount - tax                                     AS amount_exclude_tax
+            FROM sales_invoice_items_current AS sii
+            INNER JOIN sales_invoices_current AS si ON si.id = sii.sales_invoice_id
+            LEFT JOIN customers_current AS c ON c.id = si.customer_id
+            LEFT JOIN products_current AS p ON p.id = sii.item_id
+
+            UNION ALL
+
+            SELECT
+                'RETURN', sr.id, sr.number, assumeNotNull(sr.trans_date),
+                sr.customer_id, sr.customer_name, c.category_name, '',
+                sri.id, sri.seq, sri.item_id, sri.item_no, sri.item_name,
+                p.item_category_name, p.item_brand_name, sri.item_unit,
+                -sri.quantity,
+                sri.unit_price,
+                if(sri.quantity != 0, sri.total_price / sri.quantity, NULL),
+                -(sri.quantity * sri.unit_price - sri.total_price),
+                0,
+                -sri.total_price,
+                -sri.tax1_amount,
+                -(sri.total_price - sri.tax1_amount)
+            FROM sales_return_items_current AS sri
+            INNER JOIN sales_returns_current AS sr ON sr.id = sri.sales_return_id
+            LEFT JOIN customers_current AS c ON c.id = sr.customer_id
+            LEFT JOIN products_current AS p ON p.id = sri.item_id
+        ) AS l
+        ASOF LEFT JOIN (
+            SELECT item_id, unit_name, assumeNotNull(effective_date) AS effective_date, price
+            FROM selling_prices_current
+            WHERE price_category_name = 'HET' AND effective_date IS NOT NULL
+        ) AS h
+            ON l.item_id = h.item_id AND l.item_unit = h.unit_name AND l.trans_date >= h.effective_date
+    """)
+    logger.info("Ensured 'sales_invoice_detail' view exists")
+
+
 # Parent tables that track soft-deletes (child tables are excluded – filter via parent join)
 _PARENT_TABLES = [
     "customer_categories",
     "customers",
     "item_brands",
     "products",
+    "selling_prices",
     "sales_orders",
     "sales_invoices",
     "sales_returns",
@@ -439,6 +524,7 @@ _DATA_TABLES = [
     "customers",
     "item_brands",
     "products",
+    "selling_prices",
     "sales_orders",
     "sales_order_items",
     "sales_order_expenses",
@@ -958,6 +1044,54 @@ def upsert_products(records: list[dict]):
         column_names=col_names(PRODUCT_COLUMNS),
     )
     logger.info("Upserted %d products", len(records))
+
+
+def upsert_selling_prices(records: list[dict]):
+    """Flatten selling-price adjustments into one selling_prices row per line.
+
+    Lines dropped from an adjustment since the last sync are soft-deleted so a
+    removed price stops applying.
+    """
+    if not records:
+        return
+    now = datetime.now()
+    client = _get_client()
+    rows = []
+    for r in records:
+        effective_date = _parse_date(r.get("transDate"))
+        for li in r.get("detailItem") or []:
+            rows.append([
+                li["id"],
+                r["id"],
+                _s(r.get("number")),
+                effective_date,
+                _id(_nested(li, "priceCategory", "id")) or _id(li.get("priceCategoryId")),
+                _s(_nested(li, "priceCategory", "name")),
+                _id(li.get("itemId")) or _id(_nested(li, "item", "id")),
+                _s(_nested(li, "item", "no")),
+                _s(_nested(li, "item", "name")),
+                _id(li.get("itemUnitId")) or _id(_nested(li, "itemUnit", "id")),
+                _s(_nested(li, "itemUnit", "name")),
+                li.get("price"),
+                li.get("minQuantity"),
+                now,
+            ])
+
+    new_ids = {row[0] for row in rows}
+    live = client.query(
+        "SELECT id FROM selling_prices FINAL "
+        "WHERE adjustment_id IN {ids:Array(Int64)} AND is_deleted = 0",
+        parameters={"ids": [r["id"] for r in records]},
+    )
+    soft_delete_records("selling_prices", [x[0] for x in live.result_rows if x[0] not in new_ids])
+
+    changed = _dedup_rows(client, "selling_prices", SELLING_PRICE_COLUMNS, rows)
+    if changed:
+        client.insert("selling_prices", changed, column_names=col_names(SELLING_PRICE_COLUMNS))
+    logger.info(
+        "Upserted %d selling_prices row(s) from %d adjustment(s) (%d unchanged skipped)",
+        len(changed), len(records), len(rows) - len(changed),
+    )
 
 
 def _extract_si_from_history(record: dict) -> tuple:

@@ -22,6 +22,7 @@ from db_manager import (
     upsert_customers,
     upsert_item_brands,
     upsert_products,
+    upsert_selling_prices,
     upsert_sales_orders,
     upsert_sales_invoices,
     upsert_sales_returns,
@@ -77,6 +78,11 @@ ENTITIES: list[dict] = [
         "name":   "products",
         "fetch":  lambda client, since, p: client.get_products(since, extra_params=p),
         "upsert": upsert_products,
+    },
+    {
+        "name":   "selling_prices",
+        "fetch":  lambda client, since, p: client.get_selling_price_adjustments(since),
+        "upsert": upsert_selling_prices,
     },
     {
         "name":   "sales_orders",

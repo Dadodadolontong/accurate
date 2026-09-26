@@ -280,6 +280,24 @@ class AccurateClient:
             extra_params=extra_params,
         )
 
+    def get_selling_price_adjustments(self, last_update: datetime | None = None) -> list[dict]:
+        """Fetch selling-price adjustments (price-list changes) with their lines.
+
+        Each adjustment sets prices for one price category (e.g. HET) from its
+        transDate onward; the per-item prices live in detailItem, which only
+        detail.do returns.  There are few of these (tens, not thousands).
+        """
+        records = self.get_list(
+            "/api/sellingprice-adjustment/list.do",
+            last_update,
+            fields="id,number,transDate,priceCategory",
+        )
+        if records:
+            self._enrich_detail_fields(
+                records, "/api/sellingprice-adjustment/detail.do", ["detailItem"]
+            )
+        return records
+
     def get_customers(
         self,
         last_update: datetime | None = None,

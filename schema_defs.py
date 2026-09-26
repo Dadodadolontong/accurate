@@ -196,6 +196,29 @@ PRODUCT_COLUMNS: list[Column] = [
     Column("lastUpdate",     "last_update",      "Nullable(DateTime)"),
 ]
 
+# ── selling_prices (price-list history) ─────────────────────────────────────
+# One row per detailItem line of a selling-price adjustment (Penyesuaian Harga
+# Jual): the price of one item/unit in one price category, effective from the
+# adjustment's transDate.  Rows are flattened from header + line at upsert
+# time, so api_path documents the source ("detailItem." = line field) and no
+# _FIELDS_ string is derived from this – it is listed here for DDL only.
+
+SELLING_PRICE_COLUMNS: list[Column] = [
+    Column("detailItem.id",                 "id",                  "Int64"),
+    Column("id",                            "adjustment_id",       "Int64"),
+    Column("number",                        "adjustment_number",   "String"),
+    Column("transDate",                     "effective_date",      "Nullable(Date)"),
+    Column("detailItem.priceCategory.id",   "price_category_id",   "Nullable(Int64)"),
+    Column("detailItem.priceCategory.name", "price_category_name", "String"),
+    Column("detailItem.itemId",             "item_id",             "Nullable(Int64)"),
+    Column("detailItem.item.no",            "item_no",             "String"),
+    Column("detailItem.item.name",          "item_name",           "String"),
+    Column("detailItem.itemUnitId",         "unit_id",             "Nullable(Int64)"),
+    Column("detailItem.itemUnit.name",      "unit_name",           "String"),
+    Column("detailItem.price",              "price",               "Nullable(Float64)"),
+    Column("detailItem.minQuantity",        "min_quantity",        "Nullable(Float64)"),
+]
+
 
 # ---------------------------------------------------------------------------
 # Helpers used by accurate_client.py and db_manager.py

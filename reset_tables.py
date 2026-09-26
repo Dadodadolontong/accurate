@@ -50,6 +50,10 @@ ENTITIES: dict[str, dict] = {
         "tables": ["products"],
         "sync_key": "products",
     },
+    "selling_prices": {
+        "tables": ["selling_prices"],
+        "sync_key": "selling_prices",
+    },
     "sales_invoices": {
         "tables": ["sales_invoice_items", "sales_invoices"],
         "sync_key": "sales_invoices",
