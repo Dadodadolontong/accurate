@@ -89,7 +89,7 @@ _DDL = [
     # ------------------------------------------------------------------
     # sales_order_items
     # API detailItem fields: id, seq, itemId, item{no,name}, itemUnit{name},
-    #   quantity, unitPrice, totalPrice, tax1Rate, tax1Amount
+    #   quantity, unitPrice, totalPrice, tax1Rate, tax1Amount, manualClosed
     # ------------------------------------------------------------------
     """
     CREATE TABLE IF NOT EXISTS sales_order_items (
@@ -105,6 +105,7 @@ _DDL = [
         total_price      Nullable(Float64),
         tax1_rate        Nullable(Float64),
         tax1_amount      Nullable(Float64),
+        manual_closed    Nullable(UInt8),
         is_deleted       UInt8 DEFAULT 0,
         updated_at       DateTime DEFAULT now()
     ) ENGINE = ReplacingMergeTree(updated_at)
@@ -272,6 +273,7 @@ def initialize_tables():
     add_is_deleted_columns()
     add_invoice_item_so_link_columns(client)
     add_invoice_cash_discount_column(client)
+    add_order_item_manual_closed_column(client)
     _create_current_views(client)
     _create_sales_order_backlog_view(client)
     _create_sales_invoice_detail_view(client)
@@ -302,11 +304,27 @@ def add_invoice_cash_discount_column(client: Client):
     )
 
 
+def add_order_item_manual_closed_column(client: Client):
+    """Add manual_closed to sales_order_items on old deployments.
+
+    Sourced from manualClosed, not closed: Accurate also sets closed once a
+    line is fully delivered, even though it may not be invoiced yet.
+
+    Rows written before this migration have NULL until their order is
+    re-synced; a whole-order close is still caught via sales_orders.status.
+    """
+    client.command(
+        "ALTER TABLE sales_order_items ADD COLUMN IF NOT EXISTS "
+        "manual_closed Nullable(UInt8) AFTER tax1_amount"
+    )
+
+
 def _create_sales_order_backlog_view(client: Client):
     """One row per live sales-order line with what has been invoiced against it.
 
-    backlog_quantity = ordered - invoiced (never negative); backlog_amount
-    values it at the order's unit price. Computed at read time from the
+    backlog_quantity = ordered - invoiced (never negative), or 0 once the line
+    is closed ("Tutup pesanan" on the order, or a single line closed);
+    backlog_amount values it at the order's unit price. Computed at read time from the
     current order/invoice lines, so it needs no update step and cannot drift
     when an invoice is edited or deleted.
     """
@@ -329,7 +347,8 @@ def _create_sales_order_backlog_view(client: Client):
             soi.unit_price                               AS unit_price,
             ifNull(soi.quantity, 0)                      AS ordered_quantity,
             ifNull(inv.invoiced_quantity, 0)             AS invoiced_quantity,
-            greatest(ordered_quantity - invoiced_quantity, 0) AS backlog_quantity,
+            so.status = 'CLOSED' OR ifNull(soi.manual_closed, 0) = 1 AS closed,
+            if(closed, 0, greatest(ordered_quantity - invoiced_quantity, 0)) AS backlog_quantity,
             backlog_quantity * ifNull(soi.unit_price, 0) AS backlog_amount
         FROM sales_order_items_current AS soi
         INNER JOIN sales_orders_current AS so ON so.id = soi.sales_order_id
@@ -354,6 +373,7 @@ def _create_sales_order_backlog_view(client: Client):
         SELECT
             *,
             multiIf(
+                status = 'CLOSED' AND invoiced_quantity < ordered_quantity, 'Closed',
                 backlog_quantity = 0,  'Fully billed',
                 invoiced_quantity = 0, 'Unbilled',
                 'Partially billed'
@@ -366,6 +386,7 @@ def _create_sales_order_backlog_view(client: Client):
                 any(ship_date)          AS ship_date,
                 any(customer_id)        AS customer_id,
                 any(customer_name)      AS customer_name,
+                any(status)             AS status,
                 sum(ordered_quantity)   AS ordered_quantity,
                 sum(invoiced_quantity)  AS invoiced_quantity,
                 sum(backlog_quantity)   AS backlog_quantity,
@@ -1173,7 +1194,12 @@ def upsert_sales_orders(records: list[dict]):
     # Line items
     all_items = [(r["id"], item) for r in records for item in (r.get("detailItem") or [])]
     if all_items:
-        _sync_child_items(client, now, "sales_order_items", "sales_order_id", all_items)
+        _sync_child_items(
+            client, now, "sales_order_items", "sales_order_id", all_items,
+            extra_cols={"manual_closed": lambda i: (
+                None if i.get("manualClosed") is None else int(bool(i["manualClosed"]))
+            )},
+        )
 
     # Expense line items
     all_expenses = [(r["id"], exp) for r in records for exp in (r.get("detailExpense") or [])]
