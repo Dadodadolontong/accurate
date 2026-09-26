@@ -55,6 +55,13 @@ logger = logging.getLogger(__name__)
 # How often the per-record detail loop logs a progress line.
 _DETAIL_PROGRESS_EVERY = 250
 
+# Tries per detail.do call before giving up on a record.
+_DETAIL_ATTEMPTS = 3
+
+# Set on a record whose detail.do fetch failed: its detail-only fields
+# (detailItem, processHistory, ...) are absent, not empty.
+DETAIL_FAILED = "_detail_failed"
+
 
 def fmt_duration(seconds: float) -> str:
     """Render a duration as 45s / 7m21s / 2h17m for progress lines."""
@@ -310,18 +317,32 @@ class AccurateClient:
             rec_id = rec.get("id")
             if not rec_id:
                 continue
-            try:
-                body = self._get(detail_path, {"id": rec_id})
-                if body.get("s") and body.get("d"):
-                    detail = body["d"]
-                    for field in fields:
-                        rec[field] = detail.get(field)
-                else:
-                    failed += 1
-                    logger.warning("Detail fetch returned no data for id=%s", rec_id)
-            except Exception as exc:
+            detail = None
+            for attempt in range(1, _DETAIL_ATTEMPTS + 1):
+                try:
+                    body = self._get(detail_path, {"id": rec_id})
+                    if body.get("s") and body.get("d"):
+                        detail = body["d"]
+                        break
+                    logger.warning(
+                        "Detail fetch returned no data for id=%s (attempt %d/%d)",
+                        rec_id, attempt, _DETAIL_ATTEMPTS,
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Detail fetch failed for id=%s (attempt %d/%d): %s",
+                        rec_id, attempt, _DETAIL_ATTEMPTS, exc,
+                    )
+                if attempt < _DETAIL_ATTEMPTS:
+                    time.sleep(2 * attempt)
+            if detail is not None:
+                for field in fields:
+                    rec[field] = detail.get(field)
+            else:
+                # Flag it so upserts don't mistake the missing detail fields
+                # for "no lines / no history" and blank out good stored data.
                 failed += 1
-                logger.warning("Detail fetch failed for id=%s: %s", rec_id, exc)
+                rec[DETAIL_FAILED] = True
 
             done += 1
             if done % _DETAIL_PROGRESS_EVERY == 0 or done == total:

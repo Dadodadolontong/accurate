@@ -15,6 +15,7 @@ from datetime import date, datetime, timedelta
 import clickhouse_connect
 from clickhouse_connect.driver.client import Client
 
+from accurate_client import DETAIL_FAILED
 from config import CH_DATABASE, CH_HOST, CH_PASSWORD, CH_PORT, CH_SECURE, CH_USER
 from schema_defs import (
     CUSTOMER_CATEGORY_COLUMNS,
@@ -980,6 +981,26 @@ def upsert_sales_orders(records: list[dict]):
         return
     now = datetime.now()
     client = _get_client()
+
+    # An order whose detail.do fetch failed has no processHistory/detailItem;
+    # writing it would blank the stored sales_invoice link. Keep the stored
+    # version when there is one; a new order is still inserted header-only.
+    failed_ids = [r["id"] for r in records if r.get(DETAIL_FAILED)]
+    if failed_ids:
+        stored = {
+            row[0] for row in client.query(
+                "SELECT id FROM sales_orders FINAL "
+                "WHERE id IN {ids:Array(Int64)} AND is_deleted = 0",
+                parameters={"ids": failed_ids},
+            ).result_rows
+        }
+        if stored:
+            logger.warning(
+                "Skipping %d stored sales_order(s) whose detail fetch failed: %s",
+                len(stored), sorted(stored),
+            )
+            records = [r for r in records if r["id"] not in stored]
+
     rows = [
         [
             r["id"],
